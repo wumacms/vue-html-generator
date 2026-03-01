@@ -25,6 +25,17 @@ pnpm run export
 node src/cli.js --input site.json --out dist
 ```
 
+### 在页面上点击按钮生成
+
+若不想在终端敲命令，可启动本地管理页，在浏览器中点击「生成静态站点」触发生成：
+
+```bash
+# 确保已执行过 build:ssr 和 build:css
+pnpm run dev
+```
+
+`dev` 会先构建管理页（Vue 应用，输出到 `dist-admin/`），再启动服务。浏览器打开 http://localhost:3579/ ，点击「生成静态站点」即可根据根目录 `site.json` 生成到 `dist/`。端口可通过环境变量 `PORT` 修改。仅更新管理页 UI 时可单独执行 `pnpm run build:admin`。
+
 生成结果在 `dist/`：`index.html`（首页）、`about/index.html`（关于页）、`assets/style.css`（Tailwind 编译样式）等，可直接部署到任意静态托管或 GitHub Pages。
 
 ## 输入：网站 JSON
@@ -52,7 +63,12 @@ node src/cli.js --input site.json --out dist
 
 ```
 ├── src/
-│   ├── cli.js              # 生成脚本入口
+│   ├── cli.js              # 生成脚本入口（命令行）
+│   ├── generate.js         # 生成核心逻辑（CLI 与 API 共用）
+│   ├── server.js           # 本地管理服务（托管 dist-admin + /api/generate）
+│   ├── admin/              # 管理页 Vue 应用
+│   │   ├── main.js         # 入口
+│   │   └── App.vue         # 管理页组件（「生成静态站点」按钮）
 │   ├── entry-server.js     # SSR 入口（renderPage）
 │   ├── PageRenderer.vue    # 页面壳 + 区块列表
 │   ├── template.html       # HTML 壳模板
@@ -62,8 +78,11 @@ node src/cli.js --input site.json --out dist
 │   └── utils/
 │       ├── pathToFile.js
 │       └── validateSite.js
+├── admin.html              # 管理页 HTML 入口（Vite 构建用）
+├── vite.config.admin.js    # 管理页构建配置（输出 dist-admin/）
 ├── site.json               # 示例网站 JSON
-├── dist/                   # 生成输出（gitignore）
+├── dist/                   # 静态站点生成输出（gitignore）
+├── dist-admin/             # 管理页构建输出（gitignore）
 └── docs/                   # 设计文档
 ```
 

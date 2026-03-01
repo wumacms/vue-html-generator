@@ -8,7 +8,9 @@
     "build:ssr": "vite build --ssr src/entry-server.js --outDir dist/ssr",
     "generate": "node src/cli.js",
     "build:css": "vite build --config vite.config.css.js",
-    "export": "pnpm run build:ssr && pnpm run build:css && pnpm run generate"
+    "export": "pnpm run build:ssr && pnpm run build:css && pnpm run generate",
+    "build:admin": "vite build --config vite.config.admin.js",
+    "dev": "pnpm run build:admin && node src/server.js"
   },
   "keywords": [
     "static-site-generator",
