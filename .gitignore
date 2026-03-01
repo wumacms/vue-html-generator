@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# Cache & temp
+.cache/
+.temp/
+.tmp/
+*.tsbuildinfo
+
+# Test / Coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Optional: Vercel / Turbo 等部署/构建缓存
+.vercel
+.turbo

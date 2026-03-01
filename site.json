@@ -1,0 +1,99 @@
+{
+  "id": "site-demo",
+  "name": "示例站点",
+  "basePath": "",
+  "theme": "default",
+  "seo": {
+    "title": "示例站点",
+    "description": "由 vue-html-generator 生成的静态站点示例"
+  },
+  "pages": [
+    {
+      "id": "page-home",
+      "path": "/",
+      "title": "首页",
+      "meta": { "description": "欢迎来到示例站点首页" },
+      "layout": "default",
+      "blocks": [
+        {
+          "id": "b1",
+          "type": "hero",
+          "order": 0,
+          "props": {
+            "title": "欢迎使用静态站点生成器",
+            "subtitle": "基于 Vue 3 与网站 JSON，一键生成多页静态站并发布到 GitHub Pages。"
+          },
+          "styles": {}
+        },
+        {
+          "id": "b2",
+          "type": "features",
+          "order": 1,
+          "props": {
+            "title": "功能特点",
+            "items": [
+              { "title": "JSON 配置化", "description": "网站、页面、区块均用 JSON 描述，与建站平台预览一致" },
+              { "title": "多页静态", "description": "每个页面生成独立 HTML，适合 SEO 与 GitHub Pages" },
+              { "title": "区块模板", "description": "内置 Hero、Features、CTA、Footer 等区块，可扩展" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "b3",
+          "type": "cta",
+          "order": 2,
+          "props": {
+            "title": "开始使用",
+            "text": "查看文档或参与贡献。",
+            "buttonText": "查看文档",
+            "buttonUrl": "https://github.com"
+          },
+          "styles": {}
+        },
+        {
+          "id": "b4",
+          "type": "footer",
+          "order": 3,
+          "props": {
+            "copyright": "© 2024 示例站点",
+            "links": [
+              { "label": "首页", "url": "/" },
+              { "label": "关于", "url": "/about" }
+            ]
+          },
+          "styles": {}
+        }
+      ]
+    },
+    {
+      "id": "page-about",
+      "path": "/about",
+      "title": "关于",
+      "meta": { "description": "关于本示例站点" },
+      "layout": "default",
+      "blocks": [
+        {
+          "id": "b5",
+          "type": "hero",
+          "order": 0,
+          "props": {
+            "title": "关于我们",
+            "subtitle": "这是一个由 JSON 驱动的静态页面。"
+          },
+          "styles": {}
+        },
+        {
+          "id": "b6",
+          "type": "footer",
+          "order": 1,
+          "props": {
+            "copyright": "© 2024 示例站点",
+            "links": [{ "label": "返回首页", "url": "/" }]
+          },
+          "styles": {}
+        }
+      ]
+    }
+  ]
+}

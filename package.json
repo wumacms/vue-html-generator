@@ -1,0 +1,31 @@
+{
+  "name": "vue-html-generator",
+  "version": "0.1.0",
+  "description": "静态站点生成模块：根据网站 JSON 生成多页静态 HTML，用于 GitHub Pages 等",
+  "type": "module",
+  "main": "dist/ssr/entry-server.js",
+  "scripts": {
+    "build:ssr": "vite build --ssr src/entry-server.js --outDir dist/ssr",
+    "generate": "node src/cli.js",
+    "build:css": "vite build --config vite.config.css.js",
+    "export": "pnpm run build:ssr && pnpm run build:css && pnpm run generate"
+  },
+  "keywords": [
+    "static-site-generator",
+    "vue",
+    "ssg",
+    "github-pages"
+  ],
+  "packageManager": "pnpm@9.15.0",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/server-renderer": "^3.4.0",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "tailwindcss": "^4.2.1",
+    "vite": "^5.0.0"
+  }
+}
