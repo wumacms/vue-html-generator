@@ -1,0 +1,45 @@
+# 不部署管理页，只用 CI 生成并部署到 GitHub Pages
+# 详见 docs/静态站点生成模块-实现思路.md 第十二节
+
+name: 生成并部署静态站
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # 在 GitHub Actions 页可手动点「Run workflow」触发
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 构建 SSR 入口
+        run: pnpm run build:ssr
+
+      - name: 构建样式
+        run: pnpm run build:css
+
+      - name: 生成静态站
+        run: pnpm run generate
+
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

@@ -36,6 +36,18 @@ pnpm run dev
 
 `dev` 会先构建管理页（Vue 应用，输出到 `dist-admin/`），再启动服务。浏览器打开 http://localhost:3579/ ，点击「生成静态站点」即可根据根目录 `site.json` 生成到 `dist/`。端口可通过环境变量 `PORT` 修改。仅更新管理页 UI 时可单独执行 `pnpm run build:admin`。
 
+### 通过 CI 生成并部署到 GitHub Pages（不部署管理页）
+
+不跑管理页和 API，只在 CI 里生成并把 `dist/` 推到 GitHub Pages：
+
+1. **仓库内保留**根目录 `site.json`（或由 workflow 从别处拉取）。
+2. **开启 GitHub Pages**：仓库 Settings → Pages → Source 选 **Deploy from a branch**，Branch 选 **gh-pages**（CI 会把 `dist/` 推到这个分支）。
+3. **触发方式**：
+   - **Push**：推送到 `main` 分支会自动跑 workflow，生成并部署。
+   - **手动**：在 GitHub 的 Actions 页选择「生成并部署静态站」，点「Run workflow」。
+
+workflow 定义在 [.github/workflows/deploy.yml](./.github/workflows/deploy.yml)，详细说明见文档 [静态站点生成模块-实现思路.md 第十二节](./docs/静态站点生成模块-实现思路.md#十二不部署管理页只用-ci-生成的实现方式详细)。
+
 生成结果在 `dist/`：`index.html`（首页）、`about/index.html`（关于页）、`assets/style.css`（Tailwind 编译样式）等，可直接部署到任意静态托管或 GitHub Pages。
 
 ## 输入：网站 JSON
@@ -78,6 +90,8 @@ pnpm run dev
 │   └── utils/
 │       ├── pathToFile.js
 │       └── validateSite.js
+├── .github/workflows/
+│   └── deploy.yml           # CI：生成静态站并部署到 GitHub Pages
 ├── admin.html              # 管理页 HTML 入口（Vite 构建用）
 ├── vite.config.admin.js    # 管理页构建配置（输出 dist-admin/）
 ├── site.json               # 示例网站 JSON
