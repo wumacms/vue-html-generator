@@ -11,6 +11,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 推送到 gh-pages 分支需要写权限
     steps:
       - name: Checkout
         uses: actions/checkout@v4
