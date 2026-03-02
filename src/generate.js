@@ -66,6 +66,15 @@ function fillTemplate(template, { title, baseTag, metaDescription: metaDesc, sty
     .replace('<!--app-html-->', appHtml)
 }
 
+/** 按页面深度将 HTML 中的 images/ 路径改为相对路径，便于 GitHub Pages 等子路径部署 */
+function fixImagePathsForPage(html, pagePath, basePath) {
+  if (basePath) return html
+  const segments = (pagePath || '/').replace(/^\/+|\/+$/g, '').split('/').filter(Boolean)
+  const depth = segments.length
+  const prefix = depth === 0 ? '' : '../'.repeat(depth)
+  return html.replace(/src="images\//g, `src="${prefix}images/`)
+}
+
 /**
  * 执行静态站点生成
  * @param {Object} options
@@ -122,7 +131,8 @@ export async function runGenerate({ inputPath, distRoot, projectRoot = defaultPr
   for (const page of pages) {
     const appHtml = await renderPage(page, siteForRender)
     const replacements = getTemplateReplacements(page, site, appHtml)
-    const html = fillTemplate(template, replacements)
+    let html = fillTemplate(template, replacements)
+    html = fixImagePathsForPage(html, page.path, site.basePath)
     const outputFile = pathToOutputFile(page.path)
     const outPath = join(resolvedDist, outputFile)
     await mkdir(dirname(outPath), { recursive: true })

@@ -69,7 +69,7 @@ export async function downloadOneImage(url, imagesDir, projectRoot) {
     await copyFile(localPath, outPath).catch(() => readFile(localPath).then((b) => writeFile(outPath, b)))
   }
 
-  return `/images/${filename}`
+  return `images/${filename}`
 }
 
 /**
