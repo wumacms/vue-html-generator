@@ -1,4 +1,4 @@
-import { ssrRenderAttrs, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderClass, ssrRenderComponent, renderToString } from "@vue/server-renderer";
+import { ssrRenderAttrs, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderClass, ssrRenderVNode, ssrRenderComponent, renderToString } from "@vue/server-renderer";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 var vue = { exports: {} };
 var vue_cjs_prod = {};
@@ -35777,8 +35777,8 @@ function getHref(currentPath, targetPath, basePath = "") {
   const rel = up + down;
   return rel || ".";
 }
-const _sfc_main$g = {
-  __name: "Hero",
+const _sfc_main$s = {
+  __name: "HeroArticle",
   __ssrInlineRender: true,
   props: {
     block: { type: Object, required: true },
@@ -35790,177 +35790,246 @@ const _sfc_main$g = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    const variant = () => {
-      var _a;
-      return ((_a = props.block.props) == null ? void 0 : _a.variant) || "default";
-    };
-    const isCover = () => variant() === "cover";
-    const isArticle = () => variant() === "article";
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x;
-      if (isArticle()) {
-        _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative py-24 md:py-32 overflow-hidden" }, _attrs))}><div class="absolute inset-0 z-0">`);
-        if ((_a = __props.block.props) == null ? void 0 : _a.image) {
-          _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="lazy">`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"></div></div><div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">`);
-        if ((((_b = __props.block.props) == null ? void 0 : _b.breadcrumb) ?? []).length) {
-          _push(`<div class="text-sm text-gray-300 mb-4"><!--[-->`);
-          ssrRenderList(__props.block.props.breadcrumb, (item, i) => {
-            _push(`<!--[-->`);
-            if (item.url) {
-              _push(`<a${ssrRenderAttr("href", linkHref(item.url))} class="hover:text-yellow-300 transition">${ssrInterpolate(item.label)}</a>`);
-            } else {
-              _push(`<span class="text-yellow-300">${ssrInterpolate(item.label)}</span>`);
-            }
-            if (i < __props.block.props.breadcrumb.length - 1) {
-              _push(`<span class="mx-2 text-gray-400">/</span>`);
-            } else {
-              _push(`<!---->`);
-            }
-            _push(`<!--]-->`);
-          });
-          _push(`<!--]--></div>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if (((_c = __props.block.props) == null ? void 0 : _c.badge) || ((_d = __props.block.props) == null ? void 0 : _d.date)) {
-          _push(`<div class="flex gap-3 items-center mb-4">`);
-          if ((_e = __props.block.props) == null ? void 0 : _e.badge) {
-            _push(`<span class="bg-yellow-300 text-black text-xs px-3 py-1 rounded-full font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          if ((_f = __props.block.props) == null ? void 0 : _f.date) {
-            _push(`<span class="text-gray-200 text-sm">${ssrInterpolate(__props.block.props.date)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-yellow-300 leading-tight drop-shadow-lg">${ssrInterpolate(((_g = __props.block.props) == null ? void 0 : _g.title) ?? "")}</h1>`);
-        if ((((_h = __props.block.props) == null ? void 0 : _h.meta) ?? []).length) {
-          _push(`<div class="flex items-center gap-4 mt-6 text-gray-200"><!--[-->`);
-          ssrRenderList(__props.block.props.meta, (m, i) => {
-            _push(`<span>${ssrInterpolate(m)}</span>`);
-          });
-          _push(`<!--]--></div>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`</div></section>`);
-      } else if (isCover()) {
-        _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative pt-16 pb-20 md:py-24 overflow-hidden min-h-[28rem] md:min-h-[32rem] flex items-center" }, _attrs))}><div class="absolute inset-0 z-0">`);
-        if ((_i = __props.block.props) == null ? void 0 : _i.image) {
-          _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="eager">`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`<div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/60"></div></div><div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center max-w-3xl mx-auto">`);
-        if ((_j = __props.block.props) == null ? void 0 : _j.badge) {
-          _push(`<span class="inline-block bg-yellow-300/10 text-yellow-300 border border-yellow-300/30 px-4 py-1 rounded-full text-sm font-bold mb-6 drop-shadow-lg">${ssrInterpolate(__props.block.props.badge)}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`<h1 class="text-5xl md:text-6xl font-black leading-tight drop-shadow-lg">`);
-        if ((_k = __props.block.props) == null ? void 0 : _k.titleLine1) {
-          _push(`<span>${ssrInterpolate(__props.block.props.titleLine1)}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if ((_l = __props.block.props) == null ? void 0 : _l.titleHighlight) {
-          _push(`<span class="text-yellow-300">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if ((_m = __props.block.props) == null ? void 0 : _m.titleLine2) {
-          _push(`<span>${ssrInterpolate(__props.block.props.titleLine2)}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`</h1>`);
-        if ((_n = __props.block.props) == null ? void 0 : _n.subtitle) {
-          _push(`<p class="text-xl text-gray-200 mt-6 max-w-2xl mx-auto drop-shadow-md">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if ((((_o = __props.block.props) == null ? void 0 : _o.tags) ?? []).length) {
-          _push(`<div class="flex flex-wrap gap-3 justify-center mt-10"><!--[-->`);
-          ssrRenderList(__props.block.props.tags, (tag, i) => {
-            _push(`<span class="bg-black/50 backdrop-blur-sm text-yellow-300 px-4 py-2 rounded-full text-sm border border-yellow-300/30 shadow-lg">${ssrInterpolate(tag)}</span>`);
-          });
-          _push(`<!--]--></div>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`</div></div></section>`);
+      var _a, _b, _c, _d, _e, _f, _g, _h;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative py-24 md:py-32 overflow-hidden" }, _attrs))}><div class="absolute inset-0 z-0">`);
+      if ((_a = __props.block.props) == null ? void 0 : _a.image) {
+        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="lazy">`);
       } else {
-        _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative bg-gradient-to-b from-black to-zinc-900 overflow-hidden" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28"><div class="grid md:grid-cols-2 gap-12 items-center"><div class="space-y-6">`);
-        if ((_p = __props.block.props) == null ? void 0 : _p.badge) {
-          _push(`<span class="inline-block bg-yellow-300/10 text-yellow-300 border border-yellow-300/30 px-4 py-1.5 rounded-full text-sm font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`<h1 class="text-5xl md:text-6xl font-black leading-tight">`);
-        if (((_q = __props.block.props) == null ? void 0 : _q.titleLine1) && __props.block.props.titleLine1 !== ((_r = __props.block.props) == null ? void 0 : _r.titleHighlight)) {
-          _push(`<span class="text-white">${ssrInterpolate(__props.block.props.titleLine1)}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if ((_s = __props.block.props) == null ? void 0 : _s.titleHighlight) {
-          _push(`<span class="text-yellow-300">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if ((_t = __props.block.props) == null ? void 0 : _t.titleLine2) {
-          _push(`<span>${" " + (__props.block.props.titleLine2 || "").replace(/\n/g, "<br>")}</span>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`</h1>`);
-        if ((_u = __props.block.props) == null ? void 0 : _u.subtitle) {
-          _push(`<p class="text-xl text-gray-300 max-w-lg">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if ((_v = __props.block.props) == null ? void 0 : _v.note) {
-          _push(`<p class="text-gray-400 text-sm">${ssrInterpolate(__props.block.props.note)}</p>`);
-        } else {
-          _push(`<!---->`);
-        }
-        if ((((_w = __props.block.props) == null ? void 0 : _w.buttons) ?? []).length) {
-          _push(`<div class="flex flex-wrap gap-4 pt-4"><!--[-->`);
-          ssrRenderList(__props.block.props.buttons, (btn, i) => {
-            _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
-              btn.primary ? "bg-yellow-300 text-black px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-yellow-300/40 hover:bg-yellow-200 transition" : "border-2 border-yellow-300 text-yellow-300 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition"
-            ])}">${ssrInterpolate(btn.text)}</a>`);
-          });
-          _push(`<!--]--></div>`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`</div><div class="relative h-72 sm:h-80 md:h-96">`);
-        if ((_x = __props.block.props) == null ? void 0 : _x.image) {
-          _push(`<img${ssrRenderAttr("src", __props.basePath ? __props.basePath.replace(/\/$/, "") + __props.block.props.image : __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover rounded-3xl border-4 border-yellow-300/30 shadow-2xl" loading="eager">`);
-        } else {
-          _push(`<!---->`);
-        }
-        _push(`</div></div></div></section>`);
+        _push(`<!---->`);
       }
+      _push(`<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"></div></div><div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">`);
+      if ((((_b = __props.block.props) == null ? void 0 : _b.breadcrumb) ?? []).length) {
+        _push(`<div class="text-sm text-gray-300 mb-4"><!--[-->`);
+        ssrRenderList(__props.block.props.breadcrumb, (item, i) => {
+          _push(`<!--[-->`);
+          if (item.url) {
+            _push(`<a${ssrRenderAttr("href", linkHref(item.url))} class="hover:text-yellow-300 transition">${ssrInterpolate(item.label)}</a>`);
+          } else {
+            _push(`<span class="text-yellow-300">${ssrInterpolate(item.label)}</span>`);
+          }
+          if (i < __props.block.props.breadcrumb.length - 1) {
+            _push(`<span class="mx-2 text-gray-400">/</span>`);
+          } else {
+            _push(`<!---->`);
+          }
+          _push(`<!--]-->`);
+        });
+        _push(`<!--]--></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (((_c = __props.block.props) == null ? void 0 : _c.badge) || ((_d = __props.block.props) == null ? void 0 : _d.date)) {
+        _push(`<div class="flex gap-3 items-center mb-4">`);
+        if ((_e = __props.block.props) == null ? void 0 : _e.badge) {
+          _push(`<span class="bg-yellow-300 text-black text-xs px-3 py-1 rounded-full font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if ((_f = __props.block.props) == null ? void 0 : _f.date) {
+          _push(`<span class="text-gray-200 text-sm">${ssrInterpolate(__props.block.props.date)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-yellow-300 leading-tight drop-shadow-lg">${ssrInterpolate(((_g = __props.block.props) == null ? void 0 : _g.title) ?? "")}</h1>`);
+      if ((((_h = __props.block.props) == null ? void 0 : _h.meta) ?? []).length) {
+        _push(`<div class="flex items-center gap-4 mt-6 text-gray-200"><!--[-->`);
+        ssrRenderList(__props.block.props.meta, (m, i) => {
+          _push(`<span>${ssrInterpolate(m)}</span>`);
+        });
+        _push(`<!--]--></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></section>`);
     };
   }
 };
-const _sfc_setup$g = _sfc_main$g.setup;
-_sfc_main$g.setup = (props, ctx) => {
+const _sfc_setup$s = _sfc_main$s.setup;
+_sfc_main$s.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/HeroArticle.vue");
+  return _sfc_setup$s ? _sfc_setup$s(props, ctx) : void 0;
+};
+const _sfc_main$r = {
+  __name: "HeroCover",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a, _b, _c, _d, _e, _f, _g;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative pt-16 pb-20 md:py-24 overflow-hidden min-h-[28rem] md:min-h-[32rem] flex items-center" }, _attrs))}><div class="absolute inset-0 z-0">`);
+      if ((_a = __props.block.props) == null ? void 0 : _a.image) {
+        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="eager">`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/60"></div></div><div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center max-w-3xl mx-auto">`);
+      if ((_b = __props.block.props) == null ? void 0 : _b.badge) {
+        _push(`<span class="inline-block bg-yellow-300/10 text-yellow-300 border border-yellow-300/30 px-4 py-1 rounded-full text-sm font-bold mb-6 drop-shadow-lg">${ssrInterpolate(__props.block.props.badge)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<h1 class="text-5xl md:text-6xl font-black leading-tight drop-shadow-lg">`);
+      if ((_c = __props.block.props) == null ? void 0 : _c.titleLine1) {
+        _push(`<span>${ssrInterpolate(__props.block.props.titleLine1)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((_d = __props.block.props) == null ? void 0 : _d.titleHighlight) {
+        _push(`<span class="text-yellow-300">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((_e = __props.block.props) == null ? void 0 : _e.titleLine2) {
+        _push(`<span>${ssrInterpolate(__props.block.props.titleLine2)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</h1>`);
+      if ((_f = __props.block.props) == null ? void 0 : _f.subtitle) {
+        _push(`<p class="text-xl text-gray-200 mt-6 max-w-2xl mx-auto drop-shadow-md">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((((_g = __props.block.props) == null ? void 0 : _g.tags) ?? []).length) {
+        _push(`<div class="flex flex-wrap gap-3 justify-center mt-10"><!--[-->`);
+        ssrRenderList(__props.block.props.tags, (tag, i) => {
+          _push(`<span class="bg-black/50 backdrop-blur-sm text-yellow-300 px-4 py-2 rounded-full text-sm border border-yellow-300/30 shadow-lg">${ssrInterpolate(tag)}</span>`);
+        });
+        _push(`<!--]--></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></div></section>`);
+    };
+  }
+};
+const _sfc_setup$r = _sfc_main$r.setup;
+_sfc_main$r.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/HeroCover.vue");
+  return _sfc_setup$r ? _sfc_setup$r(props, ctx) : void 0;
+};
+const _sfc_main$q = {
+  __name: "HeroDefault",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const props = __props;
+    function linkHref(url) {
+      return getHref(props.currentPagePath, url || "#", props.basePath);
+    }
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a, _b, _c, _d, _e, _f, _g, _h, _i;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative bg-gradient-to-b from-black to-zinc-900 overflow-hidden" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28"><div class="grid md:grid-cols-2 gap-12 items-center"><div class="space-y-6">`);
+      if ((_a = __props.block.props) == null ? void 0 : _a.badge) {
+        _push(`<span class="inline-block bg-yellow-300/10 text-yellow-300 border border-yellow-300/30 px-4 py-1.5 rounded-full text-sm font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<h1 class="text-5xl md:text-6xl font-black leading-tight">`);
+      if (((_b = __props.block.props) == null ? void 0 : _b.titleLine1) && __props.block.props.titleLine1 !== ((_c = __props.block.props) == null ? void 0 : _c.titleHighlight)) {
+        _push(`<span class="text-white">${ssrInterpolate(__props.block.props.titleLine1)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((_d = __props.block.props) == null ? void 0 : _d.titleHighlight) {
+        _push(`<span class="text-yellow-300">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((_e = __props.block.props) == null ? void 0 : _e.titleLine2) {
+        _push(`<span>${" " + (__props.block.props.titleLine2 || "").replace(/\n/g, "<br>")}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</h1>`);
+      if ((_f = __props.block.props) == null ? void 0 : _f.subtitle) {
+        _push(`<p class="text-xl text-gray-300 max-w-lg">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((_g = __props.block.props) == null ? void 0 : _g.note) {
+        _push(`<p class="text-gray-400 text-sm">${ssrInterpolate(__props.block.props.note)}</p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((((_h = __props.block.props) == null ? void 0 : _h.buttons) ?? []).length) {
+        _push(`<div class="flex flex-wrap gap-4 pt-4"><!--[-->`);
+        ssrRenderList(__props.block.props.buttons, (btn, i) => {
+          _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
+            btn.primary ? "bg-yellow-300 text-black px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-yellow-300/40 hover:bg-yellow-200 transition" : "border-2 border-yellow-300 text-yellow-300 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition"
+          ])}">${ssrInterpolate(btn.text)}</a>`);
+        });
+        _push(`<!--]--></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div><div class="relative h-72 sm:h-80 md:h-96">`);
+      if ((_i = __props.block.props) == null ? void 0 : _i.image) {
+        _push(`<img${ssrRenderAttr("src", __props.basePath ? __props.basePath.replace(/\/$/, "") + __props.block.props.image : __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover rounded-3xl border-4 border-yellow-300/30 shadow-2xl" loading="eager">`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></div></div></section>`);
+    };
+  }
+};
+const _sfc_setup$q = _sfc_main$q.setup;
+_sfc_main$q.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/HeroDefault.vue");
+  return _sfc_setup$q ? _sfc_setup$q(props, ctx) : void 0;
+};
+const _sfc_main$p = {
+  __name: "Hero",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const variantComponents = {
+      article: _sfc_main$s,
+      cover: _sfc_main$r,
+      default: _sfc_main$q
+    };
+    const props = __props;
+    const HeroComponent = vueExports.computed(() => {
+      var _a;
+      const v = ((_a = props.block.props) == null ? void 0 : _a.variant) || "default";
+      return variantComponents[v] ?? _sfc_main$q;
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      ssrRenderVNode(_push, vueExports.createVNode(vueExports.resolveDynamicComponent(HeroComponent.value), vueExports.mergeProps({
+        block: __props.block,
+        "base-path": __props.basePath,
+        "current-page-path": __props.currentPagePath
+      }, _attrs), null), _parent);
+    };
+  }
+};
+const _sfc_setup$p = _sfc_main$p.setup;
+_sfc_main$p.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Hero.vue");
-  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
+  return _sfc_setup$p ? _sfc_setup$p(props, ctx) : void 0;
 };
-const _sfc_main$f = {
+const _sfc_main$o = {
   __name: "Features",
   __ssrInlineRender: true,
   props: {
@@ -35970,20 +36039,22 @@ const _sfc_main$f = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-20" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12">`);
-      if ((_a = __props.block.props) == null ? void 0 : _a.title) {
+      var _a, _b, _c, _d;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({
+        class: [((_a = __props.block.props) == null ? void 0 : _a.variant) === "zinc" ? "bg-zinc-950" : "bg-black", "py-20"]
+      }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12">`);
+      if ((_b = __props.block.props) == null ? void 0 : _b.title) {
         _push(`<h2 class="text-3xl md:text-4xl font-black text-yellow-300">${ssrInterpolate(__props.block.props.title)}</h2>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_b = __props.block.props) == null ? void 0 : _b.subtitle) {
+      if ((_c = __props.block.props) == null ? void 0 : _c.subtitle) {
         _push(`<p class="text-gray-400 text-lg mt-2">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div><div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!--[-->`);
-      ssrRenderList(((_c = __props.block.props) == null ? void 0 : _c.items) ?? [], (item, i) => {
+      ssrRenderList(((_d = __props.block.props) == null ? void 0 : _d.items) ?? [], (item, i) => {
         _push(`<div class="bg-zinc-900 p-6 rounded-3xl border border-yellow-300/20 hover:border-yellow-300 transition group">`);
         if (item.icon) {
           _push(`<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">${ssrInterpolate(item.icon)}</div>`);
@@ -36002,13 +36073,13 @@ const _sfc_main$f = {
     };
   }
 };
-const _sfc_setup$f = _sfc_main$f.setup;
-_sfc_main$f.setup = (props, ctx) => {
+const _sfc_setup$o = _sfc_main$o.setup;
+_sfc_main$o.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Features.vue");
-  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
+  return _sfc_setup$o ? _sfc_setup$o(props, ctx) : void 0;
 };
-const _sfc_main$e = {
+const _sfc_main$n = {
   __name: "Cta",
   __ssrInlineRender: true,
   props: {
@@ -36021,36 +36092,53 @@ const _sfc_main$e = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
+    const isDark = () => {
+      var _a;
+      return ((_a = props.block.props) == null ? void 0 : _a.variant) === "dark";
+    };
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c, _d, _e, _f;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-yellow-300 py-20" }, _attrs))}><div class="max-w-3xl mx-auto text-center px-4">`);
-      if ((_a = __props.block.props) == null ? void 0 : _a.badge) {
-        _push(`<span class="text-black bg-white/30 px-3 py-1 rounded-full text-sm font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
+      var _a, _b, _c, _d, _e, _f, _g, _h;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({
+        class: [
+          isDark() ? "bg-black py-16 border-y border-yellow-300/20" : "bg-yellow-300 py-20"
+        ]
+      }, _attrs))}><div class="${ssrRenderClass([
+        isDark() ? "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" : "max-w-3xl mx-auto text-center px-4",
+        isDark() && (((_a = __props.block.props) == null ? void 0 : _a.buttons) ?? []).length ? "grid md:grid-cols-2 gap-8 items-center" : ""
+      ])}"><div class="${ssrRenderClass(isDark() && (((_b = __props.block.props) == null ? void 0 : _b.buttons) ?? []).length ? "md:col-span-1" : "")}">`);
+      if ((_c = __props.block.props) == null ? void 0 : _c.badge) {
+        _push(`<span class="${ssrRenderClass([
+          isDark() ? "text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-sm font-bold inline-block mb-4" : "text-black bg-white/30 px-3 py-1 rounded-full text-sm font-bold"
+        ])}">${ssrInterpolate(__props.block.props.badge)}</span>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_b = __props.block.props) == null ? void 0 : _b.title) {
-        _push(`<h2 class="${ssrRenderClass([{ "mt-6": (_c = __props.block.props) == null ? void 0 : _c.badge }, "text-4xl md:text-5xl font-black text-black mb-4"])}">${ssrInterpolate(__props.block.props.title)}</h2>`);
+      if ((_d = __props.block.props) == null ? void 0 : _d.title) {
+        _push(`<h2 class="${ssrRenderClass([
+          isDark() ? "text-2xl font-bold text-yellow-300 mb-2" : "text-4xl md:text-5xl font-black text-black mb-4",
+          { "mt-6": ((_e = __props.block.props) == null ? void 0 : _e.badge) && !isDark() }
+        ])}">${ssrInterpolate(__props.block.props.title)}</h2>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_d = __props.block.props) == null ? void 0 : _d.text) {
-        _push(`<p class="text-lg text-black/80 mb-8">${ssrInterpolate(__props.block.props.text)}</p>`);
+      if ((_f = __props.block.props) == null ? void 0 : _f.text) {
+        _push(`<p class="${ssrRenderClass([isDark() ? "text-gray-400 mt-2" : "text-lg text-black/80 mb-8"])}">${ssrInterpolate(__props.block.props.text)}</p>`);
       } else {
         _push(`<!---->`);
       }
-      if ((((_e = __props.block.props) == null ? void 0 : _e.buttons) ?? []).length) {
-        _push(`<div class="flex flex-wrap gap-4 justify-center"><!--[-->`);
+      _push(`</div>`);
+      if ((((_g = __props.block.props) == null ? void 0 : _g.buttons) ?? []).length) {
+        _push(`<div class="${ssrRenderClass([isDark() ? "md:col-span-1 text-right" : "flex flex-wrap gap-4 justify-center"])}"><!--[-->`);
         ssrRenderList(__props.block.props.buttons, (btn, i) => {
           _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
-            btn.primary ? "bg-black text-yellow-300 px-10 py-4 rounded-full font-bold text-xl shadow-2xl hover:bg-zinc-900 transition" : "bg-transparent border-4 border-black text-black px-10 py-4 rounded-full font-bold text-xl hover:bg-black hover:text-yellow-300 transition"
+            isDark() ? "border-2 border-yellow-300 text-yellow-300 px-8 py-3 rounded-full font-bold hover:bg-yellow-300 hover:text-black transition inline-block" : btn.primary ? "bg-black text-yellow-300 px-10 py-4 rounded-full font-bold text-xl shadow-2xl hover:bg-zinc-900 transition" : "bg-transparent border-4 border-black text-black px-10 py-4 rounded-full font-bold text-xl hover:bg-black hover:text-yellow-300 transition"
           ])}">${ssrInterpolate(btn.text)}</a>`);
         });
         _push(`<!--]--></div>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_f = __props.block.props) == null ? void 0 : _f.footerNote) {
+      if (((_h = __props.block.props) == null ? void 0 : _h.footerNote) && !isDark()) {
         _push(`<p class="text-sm text-black/60 mt-6">${ssrInterpolate(__props.block.props.footerNote)}</p>`);
       } else {
         _push(`<!---->`);
@@ -36059,13 +36147,13 @@ const _sfc_main$e = {
     };
   }
 };
-const _sfc_setup$e = _sfc_main$e.setup;
-_sfc_main$e.setup = (props, ctx) => {
+const _sfc_setup$n = _sfc_main$n.setup;
+_sfc_main$n.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Cta.vue");
-  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
+  return _sfc_setup$n ? _sfc_setup$n(props, ctx) : void 0;
 };
-const _sfc_main$d = {
+const _sfc_main$m = {
   __name: "Footer",
   __ssrInlineRender: true,
   props: {
@@ -36125,13 +36213,13 @@ const _sfc_main$d = {
     };
   }
 };
-const _sfc_setup$d = _sfc_main$d.setup;
-_sfc_main$d.setup = (props, ctx) => {
+const _sfc_setup$m = _sfc_main$m.setup;
+_sfc_main$m.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Footer.vue");
-  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
+  return _sfc_setup$m ? _sfc_setup$m(props, ctx) : void 0;
 };
-const _sfc_main$c = {
+const _sfc_main$l = {
   __name: "Partners",
   __ssrInlineRender: true,
   props: {
@@ -36168,13 +36256,13 @@ const _sfc_main$c = {
     };
   }
 };
-const _sfc_setup$c = _sfc_main$c.setup;
-_sfc_main$c.setup = (props, ctx) => {
+const _sfc_setup$l = _sfc_main$l.setup;
+_sfc_main$l.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Partners.vue");
-  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
+  return _sfc_setup$l ? _sfc_setup$l(props, ctx) : void 0;
 };
-const _sfc_main$b = {
+const _sfc_main$k = {
   __name: "ImageText",
   __ssrInlineRender: true,
   props: {
@@ -36233,13 +36321,13 @@ const _sfc_main$b = {
     };
   }
 };
-const _sfc_setup$b = _sfc_main$b.setup;
-_sfc_main$b.setup = (props, ctx) => {
+const _sfc_setup$k = _sfc_main$k.setup;
+_sfc_main$k.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/ImageText.vue");
-  return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
+  return _sfc_setup$k ? _sfc_setup$k(props, ctx) : void 0;
 };
-const _sfc_main$a = {
+const _sfc_main$j = {
   __name: "Testimonials",
   __ssrInlineRender: true,
   props: {
@@ -36276,13 +36364,13 @@ const _sfc_main$a = {
     };
   }
 };
-const _sfc_setup$a = _sfc_main$a.setup;
-_sfc_main$a.setup = (props, ctx) => {
+const _sfc_setup$j = _sfc_main$j.setup;
+_sfc_main$j.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Testimonials.vue");
-  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
+  return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
 };
-const _sfc_main$9 = {
+const _sfc_main$i = {
   __name: "Stats",
   __ssrInlineRender: true,
   props: {
@@ -36301,13 +36389,13 @@ const _sfc_main$9 = {
     };
   }
 };
-const _sfc_setup$9 = _sfc_main$9.setup;
-_sfc_main$9.setup = (props, ctx) => {
+const _sfc_setup$i = _sfc_main$i.setup;
+_sfc_main$i.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Stats.vue");
-  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
+  return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
 };
-const _sfc_main$8 = {
+const _sfc_main$h = {
   __name: "Faq",
   __ssrInlineRender: true,
   props: {
@@ -36326,13 +36414,13 @@ const _sfc_main$8 = {
     };
   }
 };
-const _sfc_setup$8 = _sfc_main$8.setup;
-_sfc_main$8.setup = (props, ctx) => {
+const _sfc_setup$h = _sfc_main$h.setup;
+_sfc_main$h.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/Faq.vue");
-  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
+  return _sfc_setup$h ? _sfc_setup$h(props, ctx) : void 0;
 };
-const _sfc_main$7 = {
+const _sfc_main$g = {
   __name: "FilterTabs",
   __ssrInlineRender: true,
   props: {
@@ -36361,14 +36449,263 @@ const _sfc_main$7 = {
     };
   }
 };
-const _sfc_setup$7 = _sfc_main$7.setup;
-_sfc_main$7.setup = (props, ctx) => {
+const _sfc_setup$g = _sfc_main$g.setup;
+_sfc_main$g.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/FilterTabs.vue");
-  return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
+  return _sfc_setup$g ? _sfc_setup$g(props, ctx) : void 0;
 };
-const _sfc_main$6 = {
-  __name: "CardGrid",
+const _sfc_main$f = {
+  __name: "CardGridDefault",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5" }, _attrs))}><!--[-->`);
+      ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
+        _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 flex items-start gap-4">`);
+        if (card.icon) {
+          _push(`<span class="text-3xl bg-yellow-300/10 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">${ssrInterpolate(card.icon)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<div><h3 class="font-bold text-white text-lg">${ssrInterpolate(card.title)}</h3>`);
+        if (card.subtitle) {
+          _push(`<p class="text-sm text-gray-400">${ssrInterpolate(card.subtitle)}</p>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div></div>`);
+      });
+      _push(`<!--]--></div>`);
+    };
+  }
+};
+const _sfc_setup$f = _sfc_main$f.setup;
+_sfc_main$f.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGridDefault.vue");
+  return _sfc_setup$f ? _sfc_setup$f(props, ctx) : void 0;
+};
+const _sfc_main$e = {
+  __name: "CardGridTeacher",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-2 lg:grid-cols-3 gap-8" }, _attrs))}><!--[-->`);
+      ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
+        _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-80 overflow-hidden">`);
+        if (card.image) {
+          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-yellow-300 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
+        if (card.badge) {
+          _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">${ssrInterpolate(card.badge)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
+        if (card.description) {
+          _push(`<p class="text-gray-400 text-sm mt-4">${ssrInterpolate(card.description)}</p>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if ((card.meta ?? []).length) {
+          _push(`<div class="flex gap-4 mt-4 text-sm text-gray-500"><!--[-->`);
+          ssrRenderList(card.meta, (m, j) => {
+            _push(`<span>${ssrInterpolate(m)}</span>`);
+          });
+          _push(`<!--]--></div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div></div>`);
+      });
+      _push(`<!--]--></div>`);
+    };
+  }
+};
+const _sfc_setup$e = _sfc_main$e.setup;
+_sfc_main$e.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGridTeacher.vue");
+  return _sfc_setup$e ? _sfc_setup$e(props, ctx) : void 0;
+};
+const _sfc_main$d = {
+  __name: "CardGridCampus",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const props = __props;
+    function linkHref(url) {
+      return getHref(props.currentPagePath, url, props.basePath);
+    }
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-2 lg:grid-cols-3 gap-8" }, _attrs))}><!--[-->`);
+      ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
+        _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-60 overflow-hidden">`);
+        if (card.image) {
+          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-yellow-300 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
+        if (card.badge) {
+          _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">${ssrInterpolate(card.badge)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
+        if (card.description) {
+          _push(`<p class="text-gray-400 text-sm mt-3">${ssrInterpolate(card.description)}</p>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if ((card.tags ?? []).length) {
+          _push(`<div class="flex flex-wrap gap-2 mt-4"><!--[-->`);
+          ssrRenderList(card.tags, (tag, j) => {
+            _push(`<span class="bg-black border border-yellow-300/30 text-gray-300 text-xs px-2 py-1 rounded-full">${ssrInterpolate(tag)}</span>`);
+          });
+          _push(`<!--]--></div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<div class="flex gap-3 mt-5"><a${ssrRenderAttr("href", linkHref("#"))} class="bg-yellow-300 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-200 transition">${ssrInterpolate(card.primaryButton ?? "预约参观")}</a><a${ssrRenderAttr("href", linkHref("#"))} class="border border-yellow-300 text-yellow-300 px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-300 hover:text-black transition">${ssrInterpolate(card.secondaryButton ?? "路线")}</a></div></div></div>`);
+      });
+      _push(`<!--]--></div>`);
+    };
+  }
+};
+const _sfc_setup$d = _sfc_main$d.setup;
+_sfc_main$d.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGridCampus.vue");
+  return _sfc_setup$d ? _sfc_setup$d(props, ctx) : void 0;
+};
+const _sfc_main$c = {
+  __name: "CardGridEvent",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const props = __props;
+    function linkHref(url) {
+      return getHref(props.currentPagePath, url, props.basePath);
+    }
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5" }, _attrs))}><!--[-->`);
+      ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
+        _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition"><div class="flex justify-between items-start">`);
+        if (card.badge) {
+          _push(`<span class="bg-yellow-300 text-black text-xs font-bold px-3 py-1 rounded-full">${ssrInterpolate(card.badge)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if (card.meta) {
+          _push(`<span class="text-yellow-300 text-sm">${ssrInterpolate(card.meta)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div><h3 class="font-bold text-white text-lg mt-3">${ssrInterpolate(card.title)}</h3>`);
+        if (card.subtitle) {
+          _push(`<p class="text-sm text-gray-400">${ssrInterpolate(card.subtitle)}</p>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if (card.note) {
+          _push(`<p class="text-xs text-gray-500 mt-2">${ssrInterpolate(card.note)}</p>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if (card.linkText) {
+          _push(`<a${ssrRenderAttr("href", linkHref("#"))} class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div>`);
+      });
+      _push(`<!--]--></div>`);
+    };
+  }
+};
+const _sfc_setup$c = _sfc_main$c.setup;
+_sfc_main$c.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGridEvent.vue");
+  return _sfc_setup$c ? _sfc_setup$c(props, ctx) : void 0;
+};
+const _sfc_main$b = {
+  __name: "CardGridEventReview",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const props = __props;
+    function linkHref(url) {
+      return getHref(props.currentPagePath, url, props.basePath);
+    }
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-3 gap-6" }, _attrs))}><!--[-->`);
+      ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
+        _push(`<div class="bg-zinc-900 rounded-3xl overflow-hidden border border-yellow-300/20">`);
+        if (card.image) {
+          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="h-56 w-full object-cover">`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<div class="p-4">`);
+        if (card.date) {
+          _push(`<span class="text-yellow-300 text-sm font-bold">${ssrInterpolate(card.date)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<h4 class="font-bold text-white">${ssrInterpolate(card.title)}</h4>`);
+        if (card.subtitle) {
+          _push(`<p class="text-xs text-gray-400 mt-1">${ssrInterpolate(card.subtitle)}</p>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if (card.linkText) {
+          _push(`<a${ssrRenderAttr("href", linkHref(card.linkUrl || "#"))} class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div></div>`);
+      });
+      _push(`<!--]--></div>`);
+    };
+  }
+};
+const _sfc_setup$b = _sfc_main$b.setup;
+_sfc_main$b.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGridEventReview.vue");
+  return _sfc_setup$b ? _sfc_setup$b(props, ctx) : void 0;
+};
+const _sfc_main$a = {
+  __name: "CardGridNews",
   __ssrInlineRender: true,
   props: {
     block: { type: Object, required: true },
@@ -36380,14 +36717,99 @@ const _sfc_main$6 = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    const variant = () => {
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid sm:grid-cols-2 lg:grid-cols-3 gap-6" }, _attrs))}><!--[-->`);
+      ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
+        _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition">`);
+        if (card.badge) {
+          _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full inline-block mb-3">${ssrInterpolate(card.badge)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<h3 class="font-bold text-white text-lg mb-2">${ssrInterpolate(card.title)}</h3>`);
+        if (card.subtitle) {
+          _push(`<p class="text-sm text-gray-400 mb-3">${ssrInterpolate(card.subtitle)}</p>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<div class="flex justify-between items-center">`);
+        if (card.date) {
+          _push(`<span class="text-gray-500 text-xs">${ssrInterpolate(card.date)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if (card.linkText) {
+          _push(`<a${ssrRenderAttr("href", linkHref(card.link))} class="text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div></div>`);
+      });
+      _push(`<!--]--></div>`);
+    };
+  }
+};
+const _sfc_setup$a = _sfc_main$a.setup;
+_sfc_main$a.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGridNews.vue");
+  return _sfc_setup$a ? _sfc_setup$a(props, ctx) : void 0;
+};
+const _sfc_main$9 = {
+  __name: "CardGridFallback",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true }
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid gap-4" }, _attrs))}><!--[-->`);
+      ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
+        _push(`<div class="p-4 border border-yellow-300/20 rounded-2xl"><h3 class="font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-gray-400 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
+      });
+      _push(`<!--]--></div>`);
+    };
+  }
+};
+const _sfc_setup$9 = _sfc_main$9.setup;
+_sfc_main$9.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGridFallback.vue");
+  return _sfc_setup$9 ? _sfc_setup$9(props, ctx) : void 0;
+};
+const _sfc_main$8 = {
+  __name: "CardGrid",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const variantComponents = {
+      default: _sfc_main$f,
+      teacher: _sfc_main$e,
+      campus: _sfc_main$d,
+      event: _sfc_main$c,
+      eventReview: _sfc_main$b,
+      news: _sfc_main$a
+    };
+    const props = __props;
+    const variant = vueExports.computed(() => {
       var _a;
       return ((_a = props.block.props) == null ? void 0 : _a.variant) || "default";
-    };
+    });
+    const GridComponent = vueExports.computed(() => variantComponents[variant.value] ?? _sfc_main$9);
+    const sectionClass = vueExports.computed(() => variant.value === "event" ? "bg-zinc-950" : "bg-black");
+    function linkHref(url) {
+      return getHref(props.currentPagePath, url, props.basePath);
+    }
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j;
+      var _a, _b, _c, _d, _e, _f;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({
-        class: [variant() === "event" ? "bg-zinc-950" : "bg-black", "py-20"]
+        class: [sectionClass.value, "py-20"]
       }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">`);
       if (((_a = __props.block.props) == null ? void 0 : _a.title) || ((_b = __props.block.props) == null ? void 0 : _b.subtitle)) {
         _push(`<div class="text-center mb-12">`);
@@ -36405,170 +36827,27 @@ const _sfc_main$6 = {
       } else {
         _push(`<!---->`);
       }
-      if (variant() === "default") {
-        _push(`<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"><!--[-->`);
-        ssrRenderList(((_e = __props.block.props) == null ? void 0 : _e.cards) ?? [], (card, i) => {
-          _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 flex items-start gap-4">`);
-          if (card.icon) {
-            _push(`<span class="text-3xl bg-yellow-300/10 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">${ssrInterpolate(card.icon)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`<div><h3 class="font-bold text-white text-lg">${ssrInterpolate(card.title)}</h3>`);
-          if (card.subtitle) {
-            _push(`<p class="text-sm text-gray-400">${ssrInterpolate(card.subtitle)}</p>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div></div>`);
-        });
-        _push(`<!--]--></div>`);
-      } else if (variant() === "teacher") {
-        _push(`<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!--[-->`);
-        ssrRenderList(((_f = __props.block.props) == null ? void 0 : _f.cards) ?? [], (card, i) => {
-          _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-80 overflow-hidden">`);
-          if (card.image) {
-            _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-yellow-300 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
-          if (card.badge) {
-            _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">${ssrInterpolate(card.badge)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div>`);
-          if (card.description) {
-            _push(`<p class="text-gray-400 text-sm mt-4">${ssrInterpolate(card.description)}</p>`);
-          } else {
-            _push(`<!---->`);
-          }
-          if ((card.meta ?? []).length) {
-            _push(`<div class="flex gap-4 mt-4 text-sm text-gray-500"><!--[-->`);
-            ssrRenderList(card.meta, (m, j) => {
-              _push(`<span>${ssrInterpolate(m)}</span>`);
-            });
-            _push(`<!--]--></div>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div></div>`);
-        });
-        _push(`<!--]--></div>`);
-      } else if (variant() === "campus") {
-        _push(`<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><!--[-->`);
-        ssrRenderList(((_g = __props.block.props) == null ? void 0 : _g.cards) ?? [], (card, i) => {
-          _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-60 overflow-hidden">`);
-          if (card.image) {
-            _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-yellow-300 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
-          if (card.badge) {
-            _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">${ssrInterpolate(card.badge)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div>`);
-          if (card.description) {
-            _push(`<p class="text-gray-400 text-sm mt-3">${ssrInterpolate(card.description)}</p>`);
-          } else {
-            _push(`<!---->`);
-          }
-          if ((card.tags ?? []).length) {
-            _push(`<div class="flex flex-wrap gap-2 mt-4"><!--[-->`);
-            ssrRenderList(card.tags, (tag, j) => {
-              _push(`<span class="bg-black border border-yellow-300/30 text-gray-300 text-xs px-2 py-1 rounded-full">${ssrInterpolate(tag)}</span>`);
-            });
-            _push(`<!--]--></div>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`<div class="flex gap-3 mt-5"><a${ssrRenderAttr("href", linkHref("#"))} class="bg-yellow-300 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-200 transition">${ssrInterpolate(card.primaryButton ?? "预约参观")}</a><a${ssrRenderAttr("href", linkHref("#"))} class="border border-yellow-300 text-yellow-300 px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-300 hover:text-black transition">${ssrInterpolate(card.secondaryButton ?? "路线")}</a></div></div></div>`);
-        });
-        _push(`<!--]--></div>`);
-      } else if (variant() === "event") {
-        _push(`<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"><!--[-->`);
-        ssrRenderList(((_h = __props.block.props) == null ? void 0 : _h.cards) ?? [], (card, i) => {
-          _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition"><div class="flex justify-between items-start">`);
-          if (card.badge) {
-            _push(`<span class="bg-yellow-300 text-black text-xs font-bold px-3 py-1 rounded-full">${ssrInterpolate(card.badge)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          if (card.meta) {
-            _push(`<span class="text-yellow-300 text-sm">${ssrInterpolate(card.meta)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div><h3 class="font-bold text-white text-lg mt-3">${ssrInterpolate(card.title)}</h3>`);
-          if (card.subtitle) {
-            _push(`<p class="text-sm text-gray-400">${ssrInterpolate(card.subtitle)}</p>`);
-          } else {
-            _push(`<!---->`);
-          }
-          if (card.note) {
-            _push(`<p class="text-xs text-gray-500 mt-2">${ssrInterpolate(card.note)}</p>`);
-          } else {
-            _push(`<!---->`);
-          }
-          if (card.linkText) {
-            _push(`<a${ssrRenderAttr("href", linkHref("#"))} class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div>`);
-        });
-        _push(`<!--]--></div>`);
-      } else if (variant() === "news") {
-        _push(`<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><!--[-->`);
-        ssrRenderList(((_i = __props.block.props) == null ? void 0 : _i.cards) ?? [], (card, i) => {
-          _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition">`);
-          if (card.badge) {
-            _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full inline-block mb-3">${ssrInterpolate(card.badge)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`<h3 class="font-bold text-white text-lg mb-2">${ssrInterpolate(card.title)}</h3>`);
-          if (card.subtitle) {
-            _push(`<p class="text-sm text-gray-400 mb-3">${ssrInterpolate(card.subtitle)}</p>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`<div class="flex justify-between items-center">`);
-          if (card.date) {
-            _push(`<span class="text-gray-500 text-xs">${ssrInterpolate(card.date)}</span>`);
-          } else {
-            _push(`<!---->`);
-          }
-          if (card.linkText) {
-            _push(`<a${ssrRenderAttr("href", linkHref(card.link))} class="text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
-          } else {
-            _push(`<!---->`);
-          }
-          _push(`</div></div>`);
-        });
-        _push(`<!--]--></div>`);
+      ssrRenderVNode(_push, vueExports.createVNode(vueExports.resolveDynamicComponent(GridComponent.value), {
+        block: __props.block,
+        "base-path": __props.basePath,
+        "current-page-path": __props.currentPagePath
+      }, null), _parent);
+      if ((_f = (_e = __props.block.props) == null ? void 0 : _e.bottomButton) == null ? void 0 : _f.text) {
+        _push(`<div class="text-center mt-12"><a${ssrRenderAttr("href", linkHref(__props.block.props.bottomButton.href || "#"))} class="bg-transparent border-2 border-yellow-300 text-yellow-300 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition inline-flex items-center gap-2">${ssrInterpolate(__props.block.props.bottomButton.text)}</a></div>`);
       } else {
-        _push(`<div class="grid gap-4"><!--[-->`);
-        ssrRenderList(((_j = __props.block.props) == null ? void 0 : _j.cards) ?? [], (card, i) => {
-          _push(`<div class="p-4 border border-yellow-300/20 rounded-2xl"><h3 class="font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-gray-400 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
-        });
-        _push(`<!--]--></div>`);
+        _push(`<!---->`);
       }
       _push(`</div></section>`);
     };
   }
 };
-const _sfc_setup$6 = _sfc_main$6.setup;
-_sfc_main$6.setup = (props, ctx) => {
+const _sfc_setup$8 = _sfc_main$8.setup;
+_sfc_main$8.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/CardGrid.vue");
-  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
+  return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
 };
-const _sfc_main$5 = {
+const _sfc_main$7 = {
   __name: "FeaturedCard",
   __ssrInlineRender: true,
   props: {
@@ -36632,10 +36911,180 @@ const _sfc_main$5 = {
     };
   }
 };
+const _sfc_setup$7 = _sfc_main$7.setup;
+_sfc_main$7.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/FeaturedCard.vue");
+  return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
+};
+const _sfc_main$6 = {
+  __name: "EventHotSection",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const props = __props;
+    function linkHref(url) {
+      return getHref(props.currentPagePath, url || "#", props.basePath);
+    }
+    const title = () => {
+      var _a;
+      return ((_a = props.block.props) == null ? void 0 : _a.title) ?? "";
+    };
+    const linkText = () => {
+      var _a;
+      return ((_a = props.block.props) == null ? void 0 : _a.linkText) ?? "";
+    };
+    const linkUrl = () => {
+      var _a;
+      return ((_a = props.block.props) == null ? void 0 : _a.linkUrl) ?? "#";
+    };
+    const featured = () => {
+      var _a;
+      return ((_a = props.block.props) == null ? void 0 : _a.featured) ?? {};
+    };
+    const secondaryCards = () => {
+      var _a;
+      return ((_a = props.block.props) == null ? void 0 : _a.secondaryCards) ?? [];
+    };
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-end mb-10"><h2 class="text-3xl md:text-4xl font-black text-yellow-300">${ssrInterpolate(title())}</h2>`);
+      if (linkText()) {
+        _push(`<a${ssrRenderAttr("href", linkHref(linkUrl()))} class="text-yellow-300 border-b border-yellow-300/30 pb-0.5 text-sm font-bold hover:text-white transition">${ssrInterpolate(linkText())}</a>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+      if (featured().image || featured().title) {
+        _push(`<div class="bg-zinc-900 rounded-3xl border-2 border-yellow-300/30 overflow-hidden mb-8 hover:border-yellow-300 transition"><div class="grid md:grid-cols-2"><div class="h-80 md:h-auto overflow-hidden">`);
+        if (featured().image) {
+          _push(`<img${ssrRenderAttr("src", featured().image)}${ssrRenderAttr("alt", featured().imageAlt || featured().title)} class="w-full h-full object-cover">`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div><div class="p-8 flex flex-col justify-center">`);
+        if (featured().badge) {
+          _push(`<span class="text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-xs font-bold inline-block w-fit mb-4">${ssrInterpolate(featured().badge)}</span>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`<h3 class="text-3xl font-black text-white mb-3">${ssrInterpolate(featured().title)}</h3><p class="text-gray-300 mb-4">${ssrInterpolate(featured().description)}</p>`);
+        if ((featured().meta ?? []).length) {
+          _push(`<div class="flex gap-4 text-sm text-gray-400 mb-5"><!--[-->`);
+          ssrRenderList(featured().meta, (m, i) => {
+            _push(`<span>${ssrInterpolate(m)}</span>`);
+          });
+          _push(`<!--]--></div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        if ((featured().buttons ?? []).length) {
+          _push(`<div class="flex gap-3"><!--[-->`);
+          ssrRenderList(featured().buttons, (btn, i) => {
+            _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
+              btn.primary ? "bg-yellow-300 text-black hover:bg-yellow-200" : "border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black",
+              "px-6 py-3 rounded-full font-bold text-sm transition"
+            ])}">${ssrInterpolate(btn.text)}</a>`);
+          });
+          _push(`<!--]--></div>`);
+        } else {
+          _push(`<!---->`);
+        }
+        _push(`</div></div></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (secondaryCards().length) {
+        _push(`<div class="grid md:grid-cols-2 gap-6"><!--[-->`);
+        ssrRenderList(secondaryCards(), (card, i) => {
+          _push(`<div class="bg-zinc-900 rounded-2xl border border-yellow-300/20 overflow-hidden flex flex-col md:flex-row hover:border-yellow-300 transition"><div class="md:w-2/5 h-40 overflow-hidden shrink-0">`);
+          if (card.image) {
+            _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover">`);
+          } else {
+            _push(`<!---->`);
+          }
+          _push(`</div><div class="p-5 md:w-3/5">`);
+          if (card.badge) {
+            _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full">${ssrInterpolate(card.badge)}</span>`);
+          } else {
+            _push(`<!---->`);
+          }
+          _push(`<h4 class="font-bold text-white text-lg mt-2">${ssrInterpolate(card.title)}</h4><p class="text-gray-400 text-sm">${ssrInterpolate(card.subtitle)}</p>`);
+          if (card.linkText) {
+            _push(`<a${ssrRenderAttr("href", linkHref(card.linkUrl || "#"))} class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+          } else {
+            _push(`<!---->`);
+          }
+          _push(`</div></div>`);
+        });
+        _push(`<!--]--></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></section>`);
+    };
+  }
+};
+const _sfc_setup$6 = _sfc_main$6.setup;
+_sfc_main$6.setup = (props, ctx) => {
+  const ssrContext = vueExports.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/EventHotSection.vue");
+  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
+};
+const _sfc_main$5 = {
+  __name: "NewsletterSubscribe",
+  __ssrInlineRender: true,
+  props: {
+    block: { type: Object, required: true },
+    basePath: { type: String, default: "" },
+    currentPagePath: { type: String, default: "/" }
+  },
+  setup(__props) {
+    const props = __props;
+    function linkHref(url) {
+      return getHref(props.currentPagePath, url, props.basePath);
+    }
+    return (_ctx, _push, _parent, _attrs) => {
+      var _a, _b, _c, _d, _e, _f;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-zinc-950 py-16" }, _attrs))}><div class="max-w-3xl mx-auto text-center px-4">`);
+      if ((_a = __props.block.props) == null ? void 0 : _a.badge) {
+        _push(`<span class="text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-sm font-bold inline-block mb-4">${ssrInterpolate(__props.block.props.badge)}</span>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((_b = __props.block.props) == null ? void 0 : _b.title) {
+        _push(`<h2 class="text-4xl font-black text-yellow-300 mb-4">${ssrInterpolate(__props.block.props.title)}</h2>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if ((_c = __props.block.props) == null ? void 0 : _c.text) {
+        _push(`<p class="text-gray-400 text-lg mb-8">${ssrInterpolate(__props.block.props.text)}</p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4"><input type="email"${ssrRenderAttr("placeholder", (_d = __props.block.props) == null ? void 0 : _d.emailPlaceholder)} class="bg-black border border-yellow-300/30 rounded-full px-6 py-4 flex-1 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-300">`);
+      if ((_e = __props.block.props) == null ? void 0 : _e.subscribeButtonText) {
+        _push(`<a${ssrRenderAttr("href", linkHref(__props.block.props.subscribeButtonUrl || "#"))} class="bg-yellow-300 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-200 transition whitespace-nowrap text-center">${ssrInterpolate(__props.block.props.subscribeButtonText)}</a>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+      if ((_f = __props.block.props) == null ? void 0 : _f.footerNote) {
+        _push(`<p class="text-xs text-gray-500 mt-4">${ssrInterpolate(__props.block.props.footerNote)}</p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></section>`);
+    };
+  }
+};
 const _sfc_setup$5 = _sfc_main$5.setup;
 _sfc_main$5.setup = (props, ctx) => {
   const ssrContext = vueExports.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/FeaturedCard.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/blocks/NewsletterSubscribe.vue");
   return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
 const _sfc_main$4 = {
@@ -36803,18 +37252,21 @@ const _sfc_main$1 = {
   },
   setup(__props) {
     const blockComponents = {
-      hero: _sfc_main$g,
-      features: _sfc_main$f,
-      cta: _sfc_main$e,
-      footer: _sfc_main$d,
-      partners: _sfc_main$c,
-      imageText: _sfc_main$b,
-      testimonials: _sfc_main$a,
-      stats: _sfc_main$9,
-      faq: _sfc_main$8,
-      filterTabs: _sfc_main$7,
-      cardGrid: _sfc_main$6,
-      featuredCard: _sfc_main$5,
+      hero: _sfc_main$p,
+      features: _sfc_main$o,
+      cta: _sfc_main$n,
+      footer: _sfc_main$m,
+      partners: _sfc_main$l,
+      imageText: _sfc_main$k,
+      testimonials: _sfc_main$j,
+      stats: _sfc_main$i,
+      faq: _sfc_main$h,
+      filterTabs: _sfc_main$g,
+      cardGrid: _sfc_main$8,
+      featuredCard: _sfc_main$7,
+      eventHotSection: _sfc_main$6,
+      newsHotSection: _sfc_main$6,
+      newsletterSubscribe: _sfc_main$5,
       articleContent: _sfc_main$4,
       articleMeta: _sfc_main$3,
       articleNav: _sfc_main$2
@@ -36883,19 +37335,30 @@ const _sfc_main = {
       return ((_a = props.site.nav) == null ? void 0 : _a.cta) ?? null;
     });
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b;
+      var _a, _b, _c, _d;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({
         class: ["min-h-screen", { "bg-black text-white antialiased": isYellowKeys.value }]
       }, _attrs))}>`);
       if (hasNav.value) {
-        _push(`<nav class="${ssrRenderClass([{ "border-yellow-300/20": isYellowKeys.value }, "bg-black border-b border-yellow-300/20 sticky top-0 z-50"])}"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-20"><a${ssrRenderAttr("href", hrefTo("/"))} class="flex items-center gap-2">`);
+        _push(`<nav class="${ssrRenderClass([{ "border-yellow-300/20": isYellowKeys.value }, "bg-black border-b border-yellow-300/20 sticky top-0 z-50"])}"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-20"><a${ssrRenderAttr("href", hrefTo("/"))} class="flex items-center gap-2 no-underline">`);
         if ((_a = __props.site.nav) == null ? void 0 : _a.logoEmoji) {
           _push(`<span class="text-4xl filter drop-shadow-lg">${ssrInterpolate(__props.site.nav.logoEmoji)}</span>`);
         } else {
           _push(`<!---->`);
         }
         if ((_b = __props.site.nav) == null ? void 0 : _b.logoText) {
-          _push(`<span class="${ssrRenderClass([isYellowKeys.value ? "text-yellow-300" : "text-gray-900", "text-2xl font-black tracking-tight"])}">${ssrInterpolate(__props.site.nav.logoText)}</span>`);
+          _push(`<!--[-->`);
+          if (((_c = __props.site.nav) == null ? void 0 : _c.logoTextTail) && isYellowKeys.value) {
+            _push(`<span class="text-2xl font-black tracking-tight text-yellow-300">${ssrInterpolate(__props.site.nav.logoText)}</span>`);
+          } else {
+            _push(`<!---->`);
+          }
+          if (((_d = __props.site.nav) == null ? void 0 : _d.logoTextTail) && isYellowKeys.value) {
+            _push(`<span class="text-2xl font-black tracking-tight text-white">${ssrInterpolate(__props.site.nav.logoTextTail)}</span>`);
+          } else {
+            _push(`<span class="${ssrRenderClass([isYellowKeys.value ? "text-yellow-300" : "text-gray-900", "text-2xl font-black tracking-tight"])}">${ssrInterpolate(__props.site.nav.logoText)}${ssrInterpolate(__props.site.nav.logoTextTail || "")}</span>`);
+          }
+          _push(`<!--]-->`);
         } else {
           _push(`<!---->`);
         }
