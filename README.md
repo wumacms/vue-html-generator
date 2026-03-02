@@ -2,6 +2,8 @@
 
 基于 Vue 3 的**静态站点生成模块**：根据「网站 JSON」生成多页静态 HTML，用于拖拽式建站平台发布到 GitHub Pages 等场景。
 
+**在线示例**：[https://wumacms.github.io/vue-html-generator/](https://wumacms.github.io/vue-html-generator/)（由本仓库 CI 自动生成并部署）
+
 ## 快速开始
 
 ```bash

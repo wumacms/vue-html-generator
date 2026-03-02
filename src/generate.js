@@ -68,20 +68,28 @@ function fillTemplate(template, { title, baseTag, metaDescription: metaDesc, sty
 /**
  * 执行静态站点生成
  * @param {Object} options
- * @param {string} options.inputPath - site.json 的绝对路径
- * @param {string} options.distRoot - 输出目录的绝对路径
+ * @param {string} [options.inputPath] - site.json 的路径（与 options.site 二选一）
+ * @param {Object} [options.site] - 完整网站 JSON 对象（与 options.inputPath 二选一，传入则不从文件读取）
+ * @param {string} options.distRoot - 输出目录的绝对路径或相对 projectRoot 的路径
  * @param {string} [options.projectRoot] - 项目根目录（用于定位 template、SSR 入口、public）
  * @returns {Promise<{ success: boolean, message: string, pagesCount?: number, error?: string }>}
  */
-export async function runGenerate({ inputPath, distRoot, projectRoot = defaultProjectRoot }) {
-  const resolvedInput = isAbsolute(inputPath) ? inputPath : join(projectRoot, inputPath)
+export async function runGenerate({ inputPath, distRoot, projectRoot = defaultProjectRoot, site: siteOption }) {
   const resolvedDist = isAbsolute(distRoot) ? distRoot : join(projectRoot, distRoot)
 
   let site
-  try {
-    site = await loadSiteJson(resolvedInput)
-  } catch (e) {
-    return { success: false, message: '读取网站 JSON 失败', error: e.message }
+  if (siteOption != null && typeof siteOption === 'object' && !Array.isArray(siteOption)) {
+    site = siteOption
+  } else {
+    if (inputPath == null || inputPath === '') {
+      return { success: false, message: '请提供 inputPath 或 site', error: 'inputPath 与 site 至少需要提供其一' }
+    }
+    const resolvedInput = isAbsolute(inputPath) ? inputPath : join(projectRoot, inputPath)
+    try {
+      site = await loadSiteJson(resolvedInput)
+    } catch (e) {
+      return { success: false, message: '读取网站 JSON 失败', error: e.message }
+    }
   }
 
   const { valid, errors } = validateSite(site)
