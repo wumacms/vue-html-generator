@@ -6,6 +6,7 @@ import { dirname, join, isAbsolute } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { pathToOutputFile } from './utils/pathToFile.js'
 import { validateSite } from './utils/validateSite.js'
+import { localizeSiteImages } from './utils/images.js'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
@@ -115,10 +116,11 @@ export async function runGenerate({ inputPath, distRoot, projectRoot = defaultPr
   }
 
   const template = await getHtmlTemplate(projectRoot)
-  const pages = site.pages
+  const siteForRender = await localizeSiteImages(site, resolvedDist, projectRoot)
+  const pages = siteForRender.pages
 
   for (const page of pages) {
-    const appHtml = await renderPage(page, site)
+    const appHtml = await renderPage(page, siteForRender)
     const replacements = getTemplateReplacements(page, site, appHtml)
     const html = fillTemplate(template, replacements)
     const outputFile = pathToOutputFile(page.path)
