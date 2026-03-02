@@ -12,6 +12,8 @@ import Faq from './blocks/Faq.vue'
 import FilterTabs from './blocks/FilterTabs.vue'
 import CardGrid from './blocks/CardGrid.vue'
 import FeaturedCard from './blocks/FeaturedCard.vue'
+import EventHotSection from './blocks/EventHotSection.vue'
+import NewsletterSubscribe from './blocks/NewsletterSubscribe.vue'
 import ArticleContent from './blocks/ArticleContent.vue'
 import ArticleMeta from './blocks/ArticleMeta.vue'
 import ArticleNav from './blocks/ArticleNav.vue'
@@ -29,6 +31,9 @@ const blockComponents = {
   filterTabs: FilterTabs,
   cardGrid: CardGrid,
   featuredCard: FeaturedCard,
+  eventHotSection: EventHotSection,
+  newsHotSection: EventHotSection,
+  newsletterSubscribe: NewsletterSubscribe,
   articleContent: ArticleContent,
   articleMeta: ArticleMeta,
   articleNav: ArticleNav,

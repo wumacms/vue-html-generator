@@ -38,15 +38,22 @@ const navCta = computed(() => props.site.nav?.cta ?? null)
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
-          <a :href="hrefTo('/')" class="flex items-center gap-2">
+          <a :href="hrefTo('/')" class="flex items-center gap-2 no-underline">
             <span v-if="site.nav?.logoEmoji" class="text-4xl filter drop-shadow-lg">{{ site.nav.logoEmoji }}</span>
-            <span
-              v-if="site.nav?.logoText"
-              class="text-2xl font-black tracking-tight"
-              :class="isYellowKeys ? 'text-yellow-300' : 'text-gray-900'"
-            >
-              {{ site.nav.logoText }}
-            </span>
+            <template v-if="site.nav?.logoText">
+              <span
+                v-if="site.nav?.logoTextTail && isYellowKeys"
+                class="text-2xl font-black tracking-tight text-yellow-300"
+              >{{ site.nav.logoText }}</span><span
+                v-if="site.nav?.logoTextTail && isYellowKeys"
+                class="text-2xl font-black tracking-tight text-white"
+              >{{ site.nav.logoTextTail }}</span>
+              <span
+                v-else
+                class="text-2xl font-black tracking-tight"
+                :class="isYellowKeys ? 'text-yellow-300' : 'text-gray-900'"
+              >{{ site.nav.logoText }}{{ site.nav.logoTextTail || '' }}</span>
+            </template>
           </a>
           <div class="hidden md:flex space-x-8 text-sm font-medium">
             <a

@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="bg-black py-20">
+  <section :class="[block.props?.variant === 'zinc' ? 'bg-zinc-950' : 'bg-black', 'py-20']">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 v-if="block.props?.title" class="text-3xl md:text-4xl font-black text-yellow-300">

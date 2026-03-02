@@ -9,7 +9,8 @@
   },
   "nav": {
     "logoEmoji": "🎵",
-    "logoText": "YELLOWKEYS",
+    "logoText": "YELLOW",
+    "logoTextTail": "KEYS",
     "links": [
       { "label": "首页", "path": "/" },
       { "label": "课程", "path": "/courses" },
@@ -266,13 +267,17 @@
           "props": {
             "title": "全课程一览",
             "subtitle": "每个孩子/成人都能找到自己的音乐方向",
+            "bottomButton": { "text": "📥 下载详细课程手册", "href": "#" },
             "cards": [
               { "icon": "🎹", "title": "钢琴启蒙课", "subtitle": "4-6岁 · 音乐绘本+键盘游戏" },
               { "icon": "🎸", "title": "木吉他弹唱", "subtitle": "7岁+ / 成人 · 弹唱/指弹" },
               { "icon": "🥁", "title": "爵士鼓系统课", "subtitle": "5岁+ · 手脚协调/摇滚/放克" },
-              { "icon": "🎤", "title": "流行演唱", "subtitle": "8岁+ · 声乐技巧+舞台表现" },
-              { "icon": "🎻", "title": "小提琴启蒙", "subtitle": "4岁+ · 铃木教学法" },
-              { "icon": "🎼", "title": "乐理与视唱练耳", "subtitle": "全龄 · 考级必修" }
+              { "icon": "🎤", "title": "现代声乐课", "subtitle": "流行/音乐剧演唱 混声技巧" },
+              { "icon": "🎻", "title": "小提琴/大提琴", "subtitle": "一对一 · 乐团预备班" },
+              { "icon": "🎼", "title": "音乐制作/编曲", "subtitle": "Logic / Cubase 基础到实战" },
+              { "icon": "📯", "title": "管乐 (萨克斯/小号)", "subtitle": "爵士/古典 一对一指导" },
+              { "icon": "🎹", "title": "即兴伴奏/键盘和声", "subtitle": "流行/爵士和弦编配" },
+              { "icon": "👥", "title": "亲子音乐课", "subtitle": "2-4岁 + 家长 奥尔夫启蒙" }
             ]
           },
           "styles": {}
@@ -284,8 +289,9 @@
           "props": {
             "title": "课程 · 常见问题",
             "items": [
-              { "question": "一节课多长时间？", "answer": "启蒙/少儿多为45分钟，进阶与成人为60分钟。乐队课为90分钟。" },
-              { "question": "可以换老师吗？", "answer": "可以。我们会根据您的需求匹配最合适的导师，也可申请试听多位老师后选择。" },
+              { "question": "如何选择适合我/孩子的课程？", "answer": "入学前提供一对一课程顾问+专业老师测评，根据年龄、音乐基础、兴趣目标推荐最适合的班型。" },
+              { "question": "课程费用怎么算？有套餐吗？", "answer": "季度/年度课包享受优惠，平均单价180-350元/节（一对一）。乐队小组课人均更低。免费体验课现场报价。" },
+              { "question": "缺课或请假怎么办？", "answer": "每月有2次补课机会，可平行班插班或预约一对一补课。乐队课提供教学视频自学+线上指导。" },
               { "question": "一定要买乐器才能上课吗？", "answer": "所有教室提供上课乐器，练习区可免费预约。如需购买，合作品牌提供学员专属折扣。" }
             ]
           },
@@ -379,19 +385,89 @@
             "title": "首席导师 · 艺术领路人",
             "subtitle": "舞台上的演奏家，讲台上的引路人",
             "variant": "teacher",
+            "bottomButton": { "text": "📋 查看全部52位教师 →", "href": "#" },
             "cards": [
               { "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop", "title": "张奕", "subtitle": "钢琴 · 艺术总监", "badge": "施坦威荣誉教师", "description": "上海音乐学院钢琴系硕士、柏林艺术大学访问学者。曾获中国音乐金钟奖，学员屡获国内外钢琴赛事金奖。", "meta": ["🎓 教龄18年", "🏅 英皇考官"] },
               { "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop", "title": "陈曦", "subtitle": "小提琴 · 室内乐主任", "badge": "前爱乐首席", "description": "中央音乐学院硕士，原中国爱乐乐团副首席。多次担任国内外弦乐比赛评委，其学生考入柯蒂斯、新英格兰等名校。", "meta": ["🎓 教龄15年", "🏅 国际比赛评委"] },
               { "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop", "title": "林清", "subtitle": "声乐 · 流行演唱", "badge": "金曲奖提名", "description": "伯克利音乐学院毕业，活跃于爵士音乐节。擅长SLS唱法教学，指导学员登上《中国好声音》舞台。", "meta": ["🎓 教龄12年", "🏅 明星导师"] },
-              { "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop", "title": "黄骏", "subtitle": "电吉他/指弹吉他", "badge": "代言人", "description": "知名乐手，Fender品牌合作艺术家。参与录制《我是歌手》现场吉他手，擅长摇滚、Fusion风格教学。", "meta": ["🎓 教龄14年"] }
+              { "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop", "title": "黄骏", "subtitle": "电吉他/指弹吉他", "badge": "代言人", "description": "知名乐手，Fender品牌合作艺术家。参与录制《我是歌手》现场吉他手，擅长摇滚、Fusion风格教学。", "meta": ["🎓 教龄14年", "🏅 演唱会乐手"] },
+              { "image": "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1974&auto=format&fit=crop", "title": "李舒", "subtitle": "大提琴 · 低音提琴", "badge": "乐团首席", "description": "上海音乐学院博士，上海歌剧院大提琴声部首席。多次出访欧洲交流演出，学员考入德国汉斯·艾斯勒音乐学院。", "meta": ["🎓 教龄16年", "🏅 国际比赛获奖"] },
+              { "image": "https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1974&auto=format&fit=crop", "title": "王雷", "subtitle": "爵士鼓 · 拉丁打击乐", "badge": "IPEA 委员", "description": "上海音乐学院现代器乐系教师，IPEA国际打击乐比赛评委。编写多套爵士鼓考级教材，学生遍布各大音乐学院。", "meta": ["🎓 教龄20年", "🏅 教材主编"] }
             ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "t-why",
+          "type": "features",
+          "order": 3,
+          "props": {
+            "variant": "zinc",
+            "title": "为什么选择我们的导师？",
+            "subtitle": "不仅是教音乐，更是传递音乐家的思维",
+            "items": [
+              { "icon": "🎯", "title": "舞台经验", "description": "所有导师保持每年至少10场演出，把最新的舞台经验带回课堂。" },
+              { "icon": "📚", "title": "自主研发教材", "description": "结合国际体系与本土学员特点，教学法科学且有趣。" },
+              { "icon": "👥", "title": "双师制辅导", "description": "主课老师+助教练习课，确保每周练习问题及时解决。" },
+              { "icon": "🎓", "title": "升学/考级规划", "description": "导师均为国内外考级评委或音乐学院校友，精准指导升学。" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "t-master",
+          "type": "imageText",
+          "order": 4,
+          "props": {
+            "badge": "🎻 近期活动 · 名额有限",
+            "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "大师班现场",
+            "title": "陈曦小提琴大师班",
+            "description": "4月15日 · 上海总部音乐厅。公开指导+旁听，一对一指点演奏技巧与音乐处理。对外开放10个席位。",
+            "tags": ["⏰ 报名截止4月10日", "📍 仅限6级以上学员"],
+            "buttons": [
+              { "text": "立即预约旁听", "url": "#", "primary": true },
+              { "text": "其他大师课", "url": "#", "primary": false }
+            ],
+            "reverse": false
+          },
+          "styles": {}
+        },
+        {
+          "id": "t-stories",
+          "type": "testimonials",
+          "order": 5,
+          "props": {
+            "title": "名师 · 育人故事",
+            "subtitle": "听听导师们的教学理念与学员成长",
+            "items": [
+              { "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop", "name": "张奕 · 钢琴", "subtitle": "\"音乐是情感的语言\"", "quote": "\"我有个学生刚来时特别内向，通过即兴演奏慢慢打开自己，现在能自信地在音乐厅独奏。每个孩子都有自己的音乐密码。\"" },
+              { "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop", "name": "林清 · 声乐", "subtitle": "\"流行演唱不只有技巧\"", "quote": "\"教过最年长的学生62岁，退休后开始学唱歌，现在在社区合唱团担任领唱。唱歌是每个人都拥有的权利。\"" },
+              { "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop", "name": "陈曦 · 小提琴", "subtitle": "\"乐团思维培养合作\"", "quote": "\"我的学生组了一个弦乐四重奏，去年获得上海国际青少年室内乐比赛一等奖。看到他们享受合奏，比拿奖更开心。\"" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "t-cta",
+          "type": "cta",
+          "order": 6,
+          "props": {
+            "badge": "✨ 免费体验名师一对一",
+            "title": "选择你的专属导师",
+            "text": "30分钟体验课，感受演奏级教师的魅力",
+            "buttons": [
+              { "text": "预约名师体验", "url": "#", "primary": true },
+              { "text": "师资咨询", "url": "#", "primary": false }
+            ],
+            "footerNote": "或联系课程顾问匹配最适合你的老师"
           },
           "styles": {}
         },
         {
           "id": "t-footer",
           "type": "footer",
-          "order": 3,
+          "order": 7,
           "props": {
             "brandName": "YELLOWKEYS",
             "logoEmoji": "🎵",
@@ -451,19 +527,42 @@
           "styles": {}
         },
         {
-          "id": "e-featured",
-          "type": "featuredCard",
+          "id": "e-hot",
+          "type": "eventHotSection",
           "order": 2,
           "props": {
-            "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=2070&auto=format&fit=crop",
-            "imageAlt": "黄黑键春季音乐节",
-            "badge": "🎪 年度盛事 · 4月30日-5月2日",
-            "title": "黄黑键 · 首届春季原音乐节",
-            "description": "三天户外音乐派对，学员乐队、教师乐团、特邀嘉宾轮番登场。现场设乐器体验区、亲子工坊、创意市集。",
-            "meta": ["📍 上海 · 浦江音乐公园", "👥 预计2000+观众"],
-            "buttons": [
-              { "text": "免费预约观摩", "url": "#", "primary": true },
-              { "text": "演出报名(学员)", "url": "#", "primary": false }
+            "title": "🔥 热门推荐 · 即将开启",
+            "linkText": "查看全部活动 →",
+            "linkUrl": "#",
+            "featured": {
+              "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=2070&auto=format&fit=crop",
+              "imageAlt": "黄黑键春季音乐节",
+              "badge": "🎪 年度盛事 · 4月30日-5月2日",
+              "title": "黄黑键 · 首届春季原音乐节",
+              "description": "三天户外音乐派对，学员乐队、教师乐团、特邀嘉宾轮番登场。现场设乐器体验区、亲子工坊、创意市集。",
+              "meta": ["📍 上海 · 浦江音乐公园", "👥 预计2000+观众"],
+              "buttons": [
+                { "text": "免费预约观摩", "url": "#", "primary": true },
+                { "text": "演出报名(学员)", "url": "#", "primary": false }
+              ]
+            },
+            "secondaryCards": [
+              {
+                "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
+                "title": "张奕钢琴大师班",
+                "badge": "👑 大师课 · 少量余位",
+                "subtitle": "4月15日 14:00 · 上海总部 · 公开指导+旁听",
+                "linkText": "立即预约旁听 →",
+                "linkUrl": "#"
+              },
+              {
+                "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop",
+                "title": "\"指尖星光\"钢琴汇报音乐会",
+                "badge": "🎹 学员专场 · 免费观演",
+                "subtitle": "4月20日 19:00 · 施坦威音乐厅",
+                "linkText": "获取电子节目单 →",
+                "linkUrl": "#"
+              }
             ]
           },
           "styles": {}
@@ -475,18 +574,70 @@
           "props": {
             "title": "📅 四月活动日历",
             "variant": "event",
+            "bottomButton": { "text": "📆 下载四月活动日历", "href": "#" },
             "cards": [
               { "badge": "4月5日 周六", "meta": "14:00-15:30", "title": "爵士即兴工作坊", "subtitle": "黄骏(吉他) + 王雷(鼓) · 适合3级以上", "note": "📍 深圳校区 · 演奏厅", "linkText": "免费预约" },
               { "badge": "4月9日 周三", "meta": "19:00-20:30", "title": "英皇考级说明会", "subtitle": "英皇官方代表+资深考官解读新考纲", "note": "📍 上海总部 · 线上同步直播", "linkText": "预约席位" },
-              { "badge": "4月12日 周六", "meta": "10:00-11:30", "title": "亲子音乐启蒙体验", "subtitle": "3-6岁 · 音乐游戏+节奏律动", "note": "📍 北京朝阳校区", "linkText": "立即报名" }
+              { "badge": "4月13日 周日", "meta": "10:00-17:00", "title": "乐器开放日 · 亲子体验", "subtitle": "钢琴/小提琴/鼓/吉他免费试奏，老师现场指导", "note": "📍 北京校区 · 全部教室", "linkText": "报名体验" },
+              { "badge": "4月18日 周五", "meta": "19:30-21:00", "title": "教师室内乐音乐会", "subtitle": "陈曦(小提琴) / 李舒(大提琴) / 张奕(钢琴)", "note": "📍 上海 · 施坦威音乐厅", "linkText": "购票(学员免费)" },
+              { "badge": "4月22日 周二", "meta": "18:00-19:30", "title": "儿童音乐启蒙讲座", "subtitle": "针对2-6岁家长，如何在家做音乐游戏", "note": "📍 深圳校区 · 家长课堂", "linkText": "预约(限家长)" },
+              { "badge": "4月28日 周一", "meta": "全天", "title": "春季考级模拟测试", "subtitle": "考官一对一模拟，视频录制+点评", "note": "📍 三校区同时进行", "linkText": "预约时段" }
             ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "e-review",
+          "type": "cardGrid",
+          "order": 4,
+          "props": {
+            "title": "📸 往期精彩回顾",
+            "subtitle": "每一次登台，都是成长的见证",
+            "variant": "eventReview",
+            "bottomButton": { "text": "📺 观看更多活动视频", "href": "#" },
+            "cards": [
+              { "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop", "date": "2025.01.01", "title": "新年音乐会 · 上海东方艺术中心", "subtitle": "120名学员登台，全场座无虚席", "linkText": "观看", "linkUrl": "#" },
+              { "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop", "date": "2024.12.10", "title": "格莱美吉他手Andy大师课", "subtitle": "学员即兴合奏，获大师称赞", "linkText": "观看", "linkUrl": "#" },
+              { "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop", "date": "2024.09.21", "title": "首届黄黑键草坪音乐节", "subtitle": "30+学员乐队、2000+观众", "linkText": "观看", "linkUrl": "#" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "e-faq",
+          "type": "faq",
+          "order": 5,
+          "props": {
+            "title": "关于活动 · 常见问题",
+            "items": [
+              { "question": "学员如何报名参加演出？", "answer": "任课老师会提前1-2个月在班级群发布招募通知，填写报名表并提交演奏视频进行审核即可。" },
+              { "question": "非学员可以观摩活动吗？", "answer": "绝大部分活动对外开放，但部分大师课旁听席位有限，需提前预约。公益演出免预约入场。" },
+              { "question": "活动会收取费用吗？", "answer": "学员汇报音乐会、开放日等免费；大师课、音乐节等视情况收取少量成本费或划扣课时，具体见活动详情。" },
+              { "question": "如何获取最新活动提醒？", "answer": "关注公众号“黄黑键音乐学校”或添加校区教务微信，每周推送活动日历。" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "e-cta",
+          "type": "cta",
+          "order": 6,
+          "props": {
+            "badge": "🎟️ 第一时间获取活动名额",
+            "title": "不错过任何精彩",
+            "text": "订阅活动通知，优先预约大师课/音乐会席位",
+            "buttons": [
+              { "text": "订阅活动日历", "url": "#", "primary": true },
+              { "text": "咨询活动顾问", "url": "#", "primary": false }
+            ],
+            "footerNote": "或添加校区微信，备注“活动”"
           },
           "styles": {}
         },
         {
           "id": "e-footer",
           "type": "footer",
-          "order": 4,
+          "order": 7,
           "props": {
             "brandName": "YELLOWKEYS",
             "logoEmoji": "🎵",
@@ -558,15 +709,53 @@
             "cards": [
               { "image": "https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?q=80&w=1974&auto=format&fit=crop", "title": "上海 · 徐汇校区", "subtitle": "总部 · 旗舰店", "badge": "🎓 施坦威音乐厅", "description": "徐汇区创意音乐谷B座 · 地铁1/7号线常熟路站", "tags": ["三角琴房12间", "录音棚", "容纳200人音乐厅"], "primaryButton": "预约参观", "secondaryButton": "路线" },
               { "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop", "title": "北京 · 朝阳校区", "subtitle": "望京 · 艺术区", "badge": "🎸 乐队排练厅", "description": "朝阳区艺术大街108号 · 14号线望京南站", "tags": ["电声教室x4", "鼓隔音间x6", "黑胶休息区"], "primaryButton": "预约参观", "secondaryButton": "路线" },
-              { "image": "https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=2070&auto=format&fit=crop", "title": "深圳 · 南山校区", "subtitle": "后海 · 海岸城", "badge": "🌊 海景琴房", "description": "南山区后海汇L3 · 2号线后海站", "tags": ["雅马哈CFX琴房", "多媒体教室", "学员休息露台"], "primaryButton": "预约参观", "secondaryButton": "路线" }
+              { "image": "https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=2070&auto=format&fit=crop", "title": "深圳 · 南山校区", "subtitle": "后海 · 海岸城", "badge": "🌊 海景琴房", "description": "南山区后海汇L3 · 2号线后海站", "tags": ["雅马哈CFX琴房", "多媒体教室", "学员休息露台"], "primaryButton": "预约参观", "secondaryButton": "路线" },
+              { "image": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1974&auto=format&fit=crop", "title": "广州 · 天河校区", "subtitle": "珠江新城 · 高德置地", "badge": "🎹 双钢琴教室", "description": "天河区珠江新城高德置地夏广场 · 3/5号线珠江新城站", "tags": ["双钢琴教学", "乐理多媒体", "家长休息区"], "primaryButton": "预约参观", "secondaryButton": "路线" },
+              { "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1974&auto=format&fit=crop", "title": "杭州 · 西湖校区", "subtitle": "黄龙 · 音乐厅旁", "badge": "🍃 景区校区", "description": "西湖区黄龙路3号 · 3号线黄龙洞站", "tags": ["三角琴房x8", "室内乐厅", "景观落地窗"], "primaryButton": "预约参观", "secondaryButton": "路线" },
+              { "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1974&auto=format&fit=crop", "title": "成都 · 锦江校区", "subtitle": "太古里 · 2025夏季开业", "badge": "🔥 筹备中 · 敬请期待", "description": "锦江区中纱帽街 · 地铁2/3号线春熙路站", "tags": ["规划中", "接受课程预定"], "primaryButton": "抢先登记", "secondaryButton": "通知我" }
             ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "cam-standards",
+          "type": "features",
+          "order": 3,
+          "props": {
+            "title": "所有校区 · 统一高配标准",
+            "subtitle": "我们相信，环境也是音乐教育的一部分",
+            "items": [
+              { "icon": "🎹", "title": "演奏级钢琴", "description": "全施坦威/雅马哈CFX/Boston三角琴，每月调律" },
+              { "icon": "🔇", "title": "专业声学装修", "description": "隔音琴房、可变混响音乐厅，录音棚级标准" },
+              { "icon": "📹", "title": "智能教室系统", "description": "每间教室配备摄像头，可回看练琴/上课视频" },
+              { "icon": "☕", "title": "家长休息区", "description": "免费咖啡、图书、琴童交流区，实时观看上课" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "cam-open",
+          "type": "imageText",
+          "order": 4,
+          "props": {
+            "badge": "👋 欢迎实地参观",
+            "image": "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1986&auto=format&fit=crop",
+            "imageAlt": "校区接待厅",
+            "title": "预约校区开放日",
+            "description": "每周六/日为固定开放日，可参观教学环境、体验乐器、与课程顾问一对一交流。现场报名享额外福利。",
+            "tags": ["⏰ 10:00-17:00 (每整点导览)"],
+            "buttons": [
+              { "text": "立即预约开放日", "url": "#", "primary": true },
+              { "text": "VR云探校", "url": "#", "primary": false }
+            ],
+            "reverse": false
           },
           "styles": {}
         },
         {
           "id": "cam-faq",
           "type": "faq",
-          "order": 3,
+          "order": 5,
           "props": {
             "title": "校区 · 常见问题",
             "items": [
@@ -581,7 +770,7 @@
         {
           "id": "cam-cta",
           "type": "cta",
-          "order": 4,
+          "order": 6,
           "props": {
             "badge": "🏫 新校区开放中",
             "title": "期待在你城市相见",
@@ -596,7 +785,7 @@
         {
           "id": "cam-footer",
           "type": "footer",
-          "order": 5,
+          "order": 7,
           "props": {
             "brandName": "YELLOWKEYS",
             "logoEmoji": "🎵",
@@ -656,19 +845,42 @@
           "styles": {}
         },
         {
-          "id": "n-featured",
-          "type": "featuredCard",
+          "id": "n-hot",
+          "type": "newsHotSection",
           "order": 2,
           "props": {
-            "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
-            "imageAlt": "学员获奖",
-            "badge": "🏆 学员佳绩",
-            "date": "2025.03.28",
-            "title": "黄黑键学员包揽“珠江·恺撒堡”国际钢琴大赛少儿组金银奖",
-            "description": "在刚刚结束的2025珠江·恺撒堡国际青少年钢琴大赛中，我校选送的6名学员全部获奖，其中张奕老师指导的周雨桐获少儿A组金奖，陈曦老师指导的李明泽获银奖。展现了黄黑键的教学实力。",
-            "buttons": [
-              { "text": "阅读全文", "url": "/news-detail", "primary": true },
-              { "text": "获奖名单", "url": "#", "primary": false }
+            "title": "🔥 热点 · 聚焦",
+            "linkText": "更多热点 →",
+            "linkUrl": "#",
+            "featured": {
+              "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
+              "imageAlt": "学员获奖",
+              "badge": "🏆 学员佳绩",
+              "title": "黄黑键学员包揽“珠江·恺撒堡”国际钢琴大赛少儿组金银奖",
+              "description": "在刚刚结束的2025珠江·恺撒堡国际青少年钢琴大赛中，我校选送的6名学员全部获奖，其中张奕老师指导的周雨桐获少儿A组金奖，陈曦老师指导的李明泽获银奖。展现了黄黑键的教学实力。",
+              "meta": ["2025.03.28"],
+              "buttons": [
+                { "text": "阅读全文", "url": "/news-detail", "primary": true },
+                { "text": "获奖名单", "url": "#", "primary": false }
+              ]
+            },
+            "secondaryCards": [
+              {
+                "image": "https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?q=80&w=1974&auto=format&fit=crop",
+                "title": "成都锦江校区正式开工，预计夏季开放",
+                "badge": "🏫 学校动态",
+                "subtitle": "2025.03.25 · 西南首家旗舰店落户太古里商圈",
+                "linkText": "查看详情 →",
+                "linkUrl": "#"
+              },
+              {
+                "image": "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=2070&auto=format&fit=crop",
+                "title": "\"春之弦语\"教师室内乐音乐会圆满落幕",
+                "badge": "🎻 教师风采",
+                "subtitle": "2025.03.20 · 陈曦、李舒等老师奏响施坦威音乐厅",
+                "linkText": "回顾精彩 →",
+                "linkUrl": "#"
+              }
             ]
           },
           "styles": {}
@@ -683,15 +895,60 @@
             "cards": [
               { "badge": "音乐资讯", "title": "2025年英皇考级新纲解析讲座报名", "subtitle": "4月9日，资深考官现场解读钢琴、弦乐新考纲变化，免费预约开放。", "date": "2025.03.30", "linkText": "阅读", "link": "/news-detail" },
               { "badge": "学员佳绩", "title": "13名学员通过英皇八级，优良率85%", "subtitle": "2025年第一期英皇演奏考级成绩公布，黄黑键学员再创佳绩，优秀良好率达85%。", "date": "2025.03.28", "linkText": "阅读", "link": "/news-detail" },
-              { "badge": "学校动态", "title": "黄黑键与施坦威续约战略合作", "subtitle": "双方将继续在钢琴教育、教师培训、学员音乐会等方面深度合作。", "date": "2025.03.25", "linkText": "阅读", "link": "#" }
+              { "badge": "学校动态", "title": "黄黑键与施坦威续约战略合作", "subtitle": "双方将继续在钢琴教育、教师培训、学员音乐会等方面深度合作。", "date": "2025.03.25", "linkText": "阅读", "link": "#" },
+              { "badge": "教师风采", "title": "张奕老师受邀担任金钟奖钢琴评委", "subtitle": "我校艺术总监张奕老师连续第三届获邀担任中国音乐金钟奖钢琴比赛评委。", "date": "2025.03.22", "linkText": "阅读", "link": "/news-detail" },
+              { "badge": "考级/比赛", "title": "2025夏季国际青少年音乐比赛启动", "subtitle": "由黄黑键协办的第五届青少年音乐比赛开始报名，分钢琴、弦乐、管乐等组别。", "date": "2025.03.20", "linkText": "阅读", "link": "/news-detail" },
+              { "badge": "音乐资讯", "title": "Music China 2025 黄黑键展位预告", "subtitle": "10月上海国际乐器展，黄黑键将携新课程体系与教师团队亮相E3馆。", "date": "2025.03.18", "linkText": "阅读", "link": "/news-detail" }
             ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "n-story",
+          "type": "imageText",
+          "order": 4,
+          "props": {
+            "badge": "📖 人物专访 · 学员故事",
+            "image": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "学员专访",
+            "title": "从零基础到英皇八级，他只用了三年",
+            "description": "12岁学员李明泽的学琴之路：如何平衡学业与练琴？黄黑键的智能陪练系统给了他什么帮助？来听听他的故事。",
+            "buttons": [{ "text": "阅读完整专访", "url": "/news-detail", "primary": true }],
+            "reverse": false
+          },
+          "styles": {}
+        },
+        {
+          "id": "n-subscribe",
+          "type": "newsletterSubscribe",
+          "order": 5,
+          "props": {
+            "badge": "📬 新闻通讯",
+            "title": "订阅黄黑键动态",
+            "text": "每周精选新闻、活动预告、学员故事直达你的邮箱",
+            "emailPlaceholder": "你的邮箱地址",
+            "subscribeButtonText": "立即订阅",
+            "subscribeButtonUrl": "#",
+            "footerNote": "随时退订，我们承诺不滥用你的信息"
+          },
+          "styles": {}
+        },
+        {
+          "id": "n-contribute",
+          "type": "cta",
+          "order": 6,
+          "props": {
+            "variant": "dark",
+            "title": "📝 新闻/故事投稿",
+            "text": "如果你是学员家长、教师或音乐爱好者，欢迎投稿分享你与黄黑键的故事。入选将获得定制礼品。",
+            "buttons": [{ "text": "投稿须知 & 联系编辑", "url": "#", "primary": false }]
           },
           "styles": {}
         },
         {
           "id": "n-footer",
           "type": "footer",
-          "order": 4,
+          "order": 7,
           "props": {
             "brandName": "YELLOWKEYS",
             "logoEmoji": "🎵",
