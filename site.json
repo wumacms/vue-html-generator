@@ -1,95 +1,790 @@
 {
-  "id": "site-demo",
-  "name": "示例站点",
+  "id": "yellow-keys",
+  "name": "黄黑琴键 · 创意音乐学校",
   "basePath": "",
-  "theme": "default",
+  "theme": "yellow-keys",
   "seo": {
-    "title": "示例站点",
-    "description": "由 vue-html-generator 生成的静态站点示例"
+    "title": "黄黑琴键 · 创意音乐学校",
+    "description": "从零到即兴伴奏，现代音乐学校为儿童、成人提供爵士/流行/古典乐器培训。让音乐成为习惯。"
+  },
+  "nav": {
+    "logoEmoji": "🎵",
+    "logoText": "YELLOWKEYS",
+    "links": [
+      { "label": "首页", "path": "/" },
+      { "label": "课程", "path": "/courses" },
+      { "label": "名师", "path": "/teachers" },
+      { "label": "活动", "path": "/events" },
+      { "label": "校区", "path": "/campuses" },
+      { "label": "新闻", "path": "/news" }
+    ],
+    "cta": { "text": "免费试听课", "href": "/courses" }
   },
   "pages": [
     {
       "id": "page-home",
       "path": "/",
       "title": "首页",
-      "meta": { "description": "欢迎来到示例站点首页" },
+      "meta": { "description": "即兴你的第一首钢琴曲 · 黄黑琴键创意音乐学校" },
       "layout": "default",
       "blocks": [
         {
-          "id": "b1",
+          "id": "b-hero",
           "type": "hero",
           "order": 0,
           "props": {
-            "title": "欢迎使用静态站点生成器",
-            "subtitle": "基于 Vue 3 与网站 JSON，一键生成多页静态站并发布到 GitHub Pages。"
+            "badge": null,
+            "titleLine1": "即兴",
+            "titleHighlight": "即兴",
+            "titleLine2": "你的第一首\n钢琴曲",
+            "subtitle": "从零到即兴伴奏，现代音乐学校为儿童、成人提供爵士/流行/古典乐器培训。让音乐成为习惯。",
+            "note": "线下实体校区 · 专业演奏级师资 · 定期舞台展演",
+            "image": "https://images.unsplash.com/photo-1560010954-0ea652c47dff?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "钢琴老师指导学生",
+            "buttons": [
+              { "text": "预约体验课", "url": "/courses", "primary": true },
+              { "text": "课程顾问", "url": "/courses", "primary": false }
+            ]
           },
           "styles": {}
         },
         {
-          "id": "b2",
-          "type": "features",
+          "id": "b-partners",
+          "type": "partners",
           "order": 1,
           "props": {
-            "title": "功能特点",
+            "title": "我们的音乐伙伴",
+            "subtitle": "全球顶级乐器品牌与教育机构官方合作",
             "items": [
-              { "title": "JSON 配置化", "description": "网站、页面、区块均用 JSON 描述，与建站平台预览一致" },
-              { "title": "多页静态", "description": "每个页面生成独立 HTML，适合 SEO 与 GitHub Pages" },
-              { "title": "区块模板", "description": "内置 Hero、Features、CTA、Footer 等区块，可扩展" }
+              { "image": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=128&h=128&fit=crop", "name": "施坦威", "tag": "钢琴合作伙伴" },
+              { "image": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=128&h=128&fit=crop", "name": "雅马哈", "tag": "乐器官方伙伴" },
+              { "image": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=128&h=128&fit=crop", "name": "罗兰", "tag": "数字乐器支持" },
+              { "image": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=128&h=128&fit=crop", "name": "芬达", "tag": "吉他战略伙伴" },
+              { "image": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=128&h=128&fit=crop", "name": "英皇考级", "tag": "官方考点" },
+              { "image": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=128&h=128&fit=crop", "name": "舒尔", "tag": "音频设备" }
             ]
           },
           "styles": {}
         },
         {
-          "id": "b3",
-          "type": "cta",
+          "id": "b-band",
+          "type": "imageText",
           "order": 2,
           "props": {
-            "title": "开始使用",
-            "text": "查看文档或参与贡献。",
-            "buttonText": "查看文档",
-            "buttonUrl": "https://github.com"
+            "image": "https://images.unsplash.com/photo-1512053459797-38c3a066cabd?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "小组音乐课",
+            "title": "玩转乐队课",
+            "description": "打破一对一枯燥，组建少儿摇滚/爵士小乐队。从第一次合奏开始爱上音乐。键盘、吉他、鼓、贝斯同步训练。",
+            "tags": ["🎸 合奏意识", "🥁 节奏感强化", "🎤 舞台实践"],
+            "reverse": false
           },
           "styles": {}
         },
         {
-          "id": "b4",
-          "type": "footer",
+          "id": "b-masters",
+          "type": "imageText",
           "order": 3,
           "props": {
-            "copyright": "© 2024 示例站点",
-            "links": [
-              { "label": "首页", "url": "/" },
-              { "label": "关于", "url": "/about" }
+            "image": "https://images.unsplash.com/photo-1474692295473-66ba4d54e0d3?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "音乐大师课",
+            "title": "演奏家导师团",
+            "description": "来自爱乐乐团、上海音乐学院等背景的导师亲自授课。每季度开设大师课，一对一指点演奏细节与音乐表现力。",
+            "tags": ["旅美钢琴家", "爵士吉他手"],
+            "reverse": true
+          },
+          "styles": {}
+        },
+        {
+          "id": "b-features",
+          "type": "features",
+          "order": 4,
+          "props": {
+            "title": "黄黑键的独特之处",
+            "subtitle": "不只教乐器，更塑造音乐素养",
+            "items": [
+              { "icon": "🎼", "title": "体系化课程", "description": "从启蒙到专业，覆盖英皇/国内考级，乐理+演奏+视唱练耳融合。" },
+              { "icon": "📀", "title": "智能陪练系统", "description": "课后APP实时纠错，练习数据同步老师，家长随时掌握进度。" },
+              { "icon": "🎤", "title": "年度音乐节", "description": "所有学员登上Livehouse舞台，专业录制个人演出视频。" },
+              { "icon": "🎹", "title": "演奏级琴房", "description": "全施坦威/雅马哈三角琴教室，顶级声学装修，免费练琴。" }
             ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "b-testimonials",
+          "type": "testimonials",
+          "order": 5,
+          "props": {
+            "title": "他们的音乐蜕变",
+            "subtitle": "来自真实学员和家长的声音",
+            "items": [
+              { "avatar": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=96&h=96&fit=crop", "name": "周雨桐", "subtitle": "钢琴学员 · 8岁", "quote": "\"在黄黑键学了两年，从讨厌练琴到主动弹爵士即兴，还拿到了英皇六级优秀。\"" },
+              { "avatar": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=96&h=96&fit=crop", "name": "电吉他手·赵一鸣", "subtitle": "18岁 乐队队长", "quote": "\"跟老师学会了即兴solo，现在我们乐队已经写了三首原创，去年登上草莓音乐节新血舞台。\"" },
+              { "avatar": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=96&h=96&fit=crop", "name": "成人学员·李女士", "subtitle": "零基础 一年", "quote": "\"从没想过40岁还能学会钢琴，老师很有耐心，现在能在家庭聚会上弹《卡农》了。\"" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "b-stats",
+          "type": "stats",
+          "order": 6,
+          "props": {
+            "items": [
+              { "value": "3000+", "label": "在读学员" },
+              { "value": "98%", "label": "续课率" },
+              { "value": "15+", "label": "校区(沪/京/深)" },
+              { "value": "🏆 82", "label": "年度奖项" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "b-faq",
+          "type": "faq",
+          "order": 7,
+          "props": {
+            "title": "常见问题",
+            "items": [
+              { "question": "零基础可以学吗？几岁开始？", "answer": "设有3-6岁音乐启蒙、7-12岁少儿课程以及成人零基础班。从第一节课就能弹出小曲子。" },
+              { "question": "需要自己带乐器吗？", "answer": "教室提供顶级乐器，练习区可免费预约。买乐器可享合作品牌内部折扣。" },
+              { "question": "有考级培训吗？通过率如何？", "answer": "英皇/音协/上音考级指定报名点，通过率100%，良好率超70%。" },
+              { "question": "可以试听吗？", "answer": "当然，免费预约一对一体验课或乐队公开课。文末点击预约。" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "b-cta",
+          "type": "cta",
+          "order": 8,
+          "props": {
+            "title": "让音乐成为你的第二语言",
+            "text": "免费试听30分钟，解锁你的音乐潜能",
+            "buttons": [
+              { "text": "领取体验课", "url": "/courses", "primary": true },
+              { "text": "课程咨询", "url": "/courses", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "b-footer",
+          "type": "footer",
+          "order": 9,
+          "props": {
+            "brandName": "YELLOWKEYS",
+            "logoEmoji": "🎵",
+            "tagline": "创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能",
+            "copyright": "© 2025 黄黑键音乐教育集团 保留一切权利",
+            "addresses": "上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3",
+            "contact": "课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn",
+            "qrImage": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop",
+            "qrCaption": "扫一扫 领体验课",
+            "bottomLine": "用明亮黄与黑，弹奏你的故事。"
           },
           "styles": {}
         }
       ]
     },
     {
-      "id": "page-about",
-      "path": "/about",
-      "title": "关于",
-      "meta": { "description": "关于本示例站点" },
+      "id": "page-courses",
+      "path": "/courses",
+      "title": "课程",
+      "meta": { "description": "用黄黑键，打开所有音乐门类" },
       "layout": "default",
       "blocks": [
         {
-          "id": "b5",
+          "id": "c-hero",
           "type": "hero",
           "order": 0,
           "props": {
-            "title": "关于我们",
-            "subtitle": "这是一个由 JSON 驱动的静态页面。"
+            "variant": "cover",
+            "badge": "🎹 全体系 · 从兴趣到专业",
+            "titleLine1": "用",
+            "titleHighlight": "黄黑键",
+            "titleLine2": "，打开所有音乐门类",
+            "subtitle": "钢琴、吉他、鼓、声乐、乐队合奏……无论古典或现代，总有一套课程适合你的音乐目标。",
+            "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "钢琴与音乐课堂",
+            "tags": ["🎹 钢琴 · 键盘", "🎸 吉他 · 贝斯", "🥁 鼓 · 打击乐", "🎤 声乐 · 合唱", "🎻 弦乐 · 管乐", "🎼 乐理 · 即兴"]
           },
           "styles": {}
         },
         {
-          "id": "b6",
-          "type": "footer",
+          "id": "c-categories",
+          "type": "features",
           "order": 1,
           "props": {
-            "copyright": "© 2024 示例站点",
-            "links": [{ "label": "返回首页", "url": "/" }]
+            "title": "四大课程板块",
+            "subtitle": "全龄覆盖 · 科学分阶",
+            "items": [
+              { "icon": "🎹", "title": "古典 · 钢琴", "description": "一对一/小组课，英皇/音协考级，从启蒙到演奏级。施坦威琴房标配。", "linkText": "12个级别 →" },
+              { "icon": "🎸", "title": "流行 · 摇滚", "description": "电/木吉他、贝斯、流行演唱、键盘即兴。组乐队、玩编曲、写原创。", "linkText": "现代风格 →" },
+              { "icon": "🥁", "title": "打击乐 · 节奏", "description": "爵士鼓、拉丁/非洲打击乐、小军鼓。手脚协调与律动专项训练。", "linkText": "8间隔音鼓房 →" },
+              { "icon": "🎼", "title": "创作 · 素养课", "description": "乐理/视唱练耳、即兴伴奏、作曲编曲、音乐制作(Logic/Cubase)。", "linkText": "MIDI教室 →" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "c-band",
+          "type": "imageText",
+          "order": 2,
+          "props": {
+            "badge": "🔥 热门推荐 · 乐队课",
+            "image": "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "少儿乐队排练",
+            "title": "少儿摇滚乐队课",
+            "description": "8-15岁 · 以乐队为单位授课。每位学员选择一件乐器（吉他/贝斯/鼓/键盘/主唱），学习经典摇滚曲目并创作自己的原创。期末live演出。",
+            "tags": ["🎸 节奏吉他/主音", "🎤 主唱/和声", "🥁 鼓手律动"],
+            "buttons": [{ "text": "了解乐队课大纲", "url": "#", "primary": true }],
+            "reverse": false
+          },
+          "styles": {}
+        },
+        {
+          "id": "c-piano",
+          "type": "imageText",
+          "order": 3,
+          "props": {
+            "badge": "🎹 王牌课程 · 施坦威工作室",
+            "image": "https://images.unsplash.com/photo-1560421683-6856ea585c78?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "钢琴一对一课程",
+            "title": "古典钢琴 · 演奏体系",
+            "description": "从巴赫到拉赫玛尼诺夫。一对一精英教学，可选ABRSM/国内考级或纯演奏提升。每年两次施坦威音乐厅汇报演出。",
+            "tags": ["9级 进阶体系", "100% 考级通过率", "大师班 季度举行"],
+            "buttons": [{ "text": "预约钢琴试听课", "url": "#", "primary": false }],
+            "reverse": true
+          },
+          "styles": {}
+        },
+        {
+          "id": "c-list",
+          "type": "cardGrid",
+          "order": 4,
+          "props": {
+            "title": "全课程一览",
+            "subtitle": "每个孩子/成人都能找到自己的音乐方向",
+            "cards": [
+              { "icon": "🎹", "title": "钢琴启蒙课", "subtitle": "4-6岁 · 音乐绘本+键盘游戏" },
+              { "icon": "🎸", "title": "木吉他弹唱", "subtitle": "7岁+ / 成人 · 弹唱/指弹" },
+              { "icon": "🥁", "title": "爵士鼓系统课", "subtitle": "5岁+ · 手脚协调/摇滚/放克" },
+              { "icon": "🎤", "title": "流行演唱", "subtitle": "8岁+ · 声乐技巧+舞台表现" },
+              { "icon": "🎻", "title": "小提琴启蒙", "subtitle": "4岁+ · 铃木教学法" },
+              { "icon": "🎼", "title": "乐理与视唱练耳", "subtitle": "全龄 · 考级必修" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "c-faq",
+          "type": "faq",
+          "order": 5,
+          "props": {
+            "title": "课程 · 常见问题",
+            "items": [
+              { "question": "一节课多长时间？", "answer": "启蒙/少儿多为45分钟，进阶与成人为60分钟。乐队课为90分钟。" },
+              { "question": "可以换老师吗？", "answer": "可以。我们会根据您的需求匹配最合适的导师，也可申请试听多位老师后选择。" },
+              { "question": "一定要买乐器才能上课吗？", "answer": "所有教室提供上课乐器，练习区可免费预约。如需购买，合作品牌提供学员专属折扣。" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "c-cta",
+          "type": "cta",
+          "order": 6,
+          "props": {
+            "badge": "🎧 所有课程均享免费试听",
+            "title": "找到你的第一节课",
+            "text": "30分钟体验课，零基础也可以弹出一首小曲",
+            "buttons": [
+              { "text": "立即预约试听", "url": "#", "primary": true },
+              { "text": "课程咨询", "url": "#", "primary": false }
+            ],
+            "footerNote": "或拨打 400-6688-muse 工作日9:00-21:00"
+          },
+          "styles": {}
+        },
+        {
+          "id": "c-footer",
+          "type": "footer",
+          "order": 7,
+          "props": {
+            "brandName": "YELLOWKEYS",
+            "logoEmoji": "🎵",
+            "tagline": "创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能",
+            "copyright": "© 2025 黄黑键音乐教育集团 保留一切权利",
+            "addresses": "上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3",
+            "contact": "课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn",
+            "qrImage": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop",
+            "qrCaption": "扫一扫 领体验课",
+            "bottomLine": "用明亮黄与黑，弹奏你的故事。"
+          },
+          "styles": {}
+        }
+      ]
+    },
+    {
+      "id": "page-teachers",
+      "path": "/teachers",
+      "title": "名师",
+      "meta": { "description": "与真正懂音乐的人学音乐" },
+      "layout": "default",
+      "blocks": [
+        {
+          "id": "t-hero",
+          "type": "hero",
+          "order": 0,
+          "props": {
+            "badge": "👑 演奏家导师团",
+            "titleLine1": "与",
+            "titleHighlight": "真正懂音乐的人",
+            "titleLine2": " 学音乐",
+            "subtitle": "我们的教师不仅是老师，更是活跃在舞台上的演奏家、教育家。平均教龄10年以上，把最纯正的音乐语言传递给你。",
+            "image": "https://images.unsplash.com/photo-1763705310142-6ab868e4ca6c?q=80&w=900&auto=format&fit=crop",
+            "imageAlt": "室内乐演奏",
+            "buttons": [
+              { "text": "预约名师体验课", "url": "#", "primary": true },
+              { "text": "师资介绍手册", "url": "#", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "t-filter",
+          "type": "filterTabs",
+          "order": 1,
+          "props": {
+            "label": "快速筛选 :",
+            "tabs": [
+              { "label": "全部", "path": "#" },
+              { "label": "钢琴", "path": "#" },
+              { "label": "弦乐", "path": "#" },
+              { "label": "管乐", "path": "#" },
+              { "label": "吉他/贝斯", "path": "#" },
+              { "label": "声乐", "path": "#" },
+              { "label": "打击乐", "path": "#" },
+              { "label": "作曲/制作", "path": "#" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "t-grid",
+          "type": "cardGrid",
+          "order": 2,
+          "props": {
+            "title": "首席导师 · 艺术领路人",
+            "subtitle": "舞台上的演奏家，讲台上的引路人",
+            "variant": "teacher",
+            "cards": [
+              { "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop", "title": "张奕", "subtitle": "钢琴 · 艺术总监", "badge": "施坦威荣誉教师", "description": "上海音乐学院钢琴系硕士、柏林艺术大学访问学者。曾获中国音乐金钟奖，学员屡获国内外钢琴赛事金奖。", "meta": ["🎓 教龄18年", "🏅 英皇考官"] },
+              { "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop", "title": "陈曦", "subtitle": "小提琴 · 室内乐主任", "badge": "前爱乐首席", "description": "中央音乐学院硕士，原中国爱乐乐团副首席。多次担任国内外弦乐比赛评委，其学生考入柯蒂斯、新英格兰等名校。", "meta": ["🎓 教龄15年", "🏅 国际比赛评委"] },
+              { "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop", "title": "林清", "subtitle": "声乐 · 流行演唱", "badge": "金曲奖提名", "description": "伯克利音乐学院毕业，活跃于爵士音乐节。擅长SLS唱法教学，指导学员登上《中国好声音》舞台。", "meta": ["🎓 教龄12年", "🏅 明星导师"] },
+              { "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop", "title": "黄骏", "subtitle": "电吉他/指弹吉他", "badge": "代言人", "description": "知名乐手，Fender品牌合作艺术家。参与录制《我是歌手》现场吉他手，擅长摇滚、Fusion风格教学。", "meta": ["🎓 教龄14年"] }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "t-footer",
+          "type": "footer",
+          "order": 3,
+          "props": {
+            "brandName": "YELLOWKEYS",
+            "logoEmoji": "🎵",
+            "tagline": "创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能",
+            "copyright": "© 2025 黄黑键音乐教育集团 保留一切权利",
+            "addresses": "上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3",
+            "contact": "课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn",
+            "qrImage": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop",
+            "qrCaption": "扫一扫 领体验课",
+            "bottomLine": "用明亮黄与黑，弹奏你的故事。"
+          },
+          "styles": {}
+        }
+      ]
+    },
+    {
+      "id": "page-events",
+      "path": "/events",
+      "title": "活动",
+      "meta": { "description": "舞台已就绪，等你发光" },
+      "layout": "default",
+      "blocks": [
+        {
+          "id": "e-hero",
+          "type": "hero",
+          "order": 0,
+          "props": {
+            "badge": "🎪 全年音乐活动 · 不止于课堂",
+            "titleLine1": "舞台已就绪，",
+            "titleHighlight": "等你发光",
+            "titleLine2": null,
+            "subtitle": "从学员音乐会到国际大师课，从音乐节到公益演出。在黄黑键，每个学员都能找到属于自己的舞台。",
+            "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "音乐节现场",
+            "buttons": [
+              { "text": "近期活动预约", "url": "#", "primary": true },
+              { "text": "活动日历", "url": "#", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "e-filter",
+          "type": "filterTabs",
+          "order": 1,
+          "props": {
+            "label": "活动类型 :",
+            "tabs": [
+              { "label": "全部", "path": "#" },
+              { "label": "学员音乐会", "path": "#" },
+              { "label": "大师课/工作坊", "path": "#" },
+              { "label": "音乐节/夏令营", "path": "#" },
+              { "label": "考级/比赛", "path": "#" },
+              { "label": "公益演出", "path": "#" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "e-featured",
+          "type": "featuredCard",
+          "order": 2,
+          "props": {
+            "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "黄黑键春季音乐节",
+            "badge": "🎪 年度盛事 · 4月30日-5月2日",
+            "title": "黄黑键 · 首届春季原音乐节",
+            "description": "三天户外音乐派对，学员乐队、教师乐团、特邀嘉宾轮番登场。现场设乐器体验区、亲子工坊、创意市集。",
+            "meta": ["📍 上海 · 浦江音乐公园", "👥 预计2000+观众"],
+            "buttons": [
+              { "text": "免费预约观摩", "url": "#", "primary": true },
+              { "text": "演出报名(学员)", "url": "#", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "e-list",
+          "type": "cardGrid",
+          "order": 3,
+          "props": {
+            "title": "📅 四月活动日历",
+            "variant": "event",
+            "cards": [
+              { "badge": "4月5日 周六", "meta": "14:00-15:30", "title": "爵士即兴工作坊", "subtitle": "黄骏(吉他) + 王雷(鼓) · 适合3级以上", "note": "📍 深圳校区 · 演奏厅", "linkText": "免费预约" },
+              { "badge": "4月9日 周三", "meta": "19:00-20:30", "title": "英皇考级说明会", "subtitle": "英皇官方代表+资深考官解读新考纲", "note": "📍 上海总部 · 线上同步直播", "linkText": "预约席位" },
+              { "badge": "4月12日 周六", "meta": "10:00-11:30", "title": "亲子音乐启蒙体验", "subtitle": "3-6岁 · 音乐游戏+节奏律动", "note": "📍 北京朝阳校区", "linkText": "立即报名" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "e-footer",
+          "type": "footer",
+          "order": 4,
+          "props": {
+            "brandName": "YELLOWKEYS",
+            "logoEmoji": "🎵",
+            "tagline": "创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能",
+            "copyright": "© 2025 黄黑键音乐教育集团 保留一切权利",
+            "addresses": "上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3",
+            "contact": "课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn",
+            "qrImage": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop",
+            "qrCaption": "扫一扫 领体验课",
+            "bottomLine": "用明亮黄与黑，弹奏你的故事。"
+          },
+          "styles": {}
+        }
+      ]
+    },
+    {
+      "id": "page-campuses",
+      "path": "/campuses",
+      "title": "校区",
+      "meta": { "description": "在你身边的专业音乐教室" },
+      "layout": "default",
+      "blocks": [
+        {
+          "id": "cam-hero",
+          "type": "hero",
+          "order": 0,
+          "props": {
+            "badge": "📍 全国15+校区 · 持续扩展中",
+            "titleLine1": "在",
+            "titleHighlight": "你身边",
+            "titleLine2": "的专业音乐教室",
+            "subtitle": "所有校区均配备演奏级琴房、声学装修教室和音乐厅。让优质的音乐教育触手可及。",
+            "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "黄黑键校区环境",
+            "buttons": [
+              { "text": "查找附近校区", "url": "#", "primary": true },
+              { "text": "预约校区参观", "url": "#", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "cam-filter",
+          "type": "filterTabs",
+          "order": 1,
+          "props": {
+            "label": "选择城市 :",
+            "tabs": [
+              { "label": "全部", "path": "#" },
+              { "label": "上海", "path": "#" },
+              { "label": "北京", "path": "#" },
+              { "label": "深圳", "path": "#" },
+              { "label": "广州", "path": "#" },
+              { "label": "杭州", "path": "#" },
+              { "label": "成都", "path": "#" },
+              { "label": "更多筹建中", "path": "#" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "cam-grid",
+          "type": "cardGrid",
+          "order": 2,
+          "props": {
+            "title": "全国校区 · 音乐地标",
+            "subtitle": "每个校区都是精心打造的音乐空间",
+            "variant": "campus",
+            "cards": [
+              { "image": "https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?q=80&w=1974&auto=format&fit=crop", "title": "上海 · 徐汇校区", "subtitle": "总部 · 旗舰店", "badge": "🎓 施坦威音乐厅", "description": "徐汇区创意音乐谷B座 · 地铁1/7号线常熟路站", "tags": ["三角琴房12间", "录音棚", "容纳200人音乐厅"], "primaryButton": "预约参观", "secondaryButton": "路线" },
+              { "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop", "title": "北京 · 朝阳校区", "subtitle": "望京 · 艺术区", "badge": "🎸 乐队排练厅", "description": "朝阳区艺术大街108号 · 14号线望京南站", "tags": ["电声教室x4", "鼓隔音间x6", "黑胶休息区"], "primaryButton": "预约参观", "secondaryButton": "路线" },
+              { "image": "https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=2070&auto=format&fit=crop", "title": "深圳 · 南山校区", "subtitle": "后海 · 海岸城", "badge": "🌊 海景琴房", "description": "南山区后海汇L3 · 2号线后海站", "tags": ["雅马哈CFX琴房", "多媒体教室", "学员休息露台"], "primaryButton": "预约参观", "secondaryButton": "路线" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "cam-faq",
+          "type": "faq",
+          "order": 3,
+          "props": {
+            "title": "校区 · 常见问题",
+            "items": [
+              { "question": "不同校区的课程和收费一样吗？", "answer": "课程体系、师资标准、收费全国统一。但部分校区因场地成本可能有微小浮动，具体以校区报价为准。" },
+              { "question": "可以跨校区上课吗？", "answer": "可以。学员可在全国任意校区预约练琴或补课（需提前联系教务协调）。长期跨城可办理校区转移。" },
+              { "question": "校区附近有停车场吗？", "answer": "每个校区均临近地铁站，并配有停车位/合作停车场，详情可查看具体校区路线说明。" },
+              { "question": "新校区筹备期间可以报名吗？", "answer": "可以。提前报名可享早鸟优惠，且可选择就近已开放校区上课，新校区开放后转回。" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "cam-cta",
+          "type": "cta",
+          "order": 4,
+          "props": {
+            "badge": "🏫 新校区开放中",
+            "title": "期待在你城市相见",
+            "text": "填写意向城市，新校区第一时间通知，并享创始学员优惠",
+            "buttons": [
+              { "text": "登记意向校区", "url": "#", "primary": true },
+              { "text": "加盟合作", "url": "#", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "cam-footer",
+          "type": "footer",
+          "order": 5,
+          "props": {
+            "brandName": "YELLOWKEYS",
+            "logoEmoji": "🎵",
+            "tagline": "创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能",
+            "copyright": "© 2025 黄黑键音乐教育集团 保留一切权利",
+            "addresses": "上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3",
+            "contact": "课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn",
+            "qrImage": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop",
+            "qrCaption": "扫一扫 领体验课",
+            "bottomLine": "用明亮黄与黑，弹奏你的故事。"
+          },
+          "styles": {}
+        }
+      ]
+    },
+    {
+      "id": "page-news",
+      "path": "/news",
+      "title": "新闻",
+      "meta": { "description": "新闻与故事 · 黄黑键动态" },
+      "layout": "default",
+      "blocks": [
+        {
+          "id": "n-hero",
+          "type": "hero",
+          "order": 0,
+          "props": {
+            "badge": "📰 黄黑键动态 · 音乐大小事",
+            "titleLine1": "新闻",
+            "titleHighlight": "新闻",
+            "titleLine2": " 与 故事",
+            "subtitle": "学校最新动态、学员佳绩、行业资讯、音乐教育趋势……在这里，读懂黄黑键。",
+            "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1973&auto=format&fit=crop",
+            "imageAlt": "音乐新闻与阅读",
+            "buttons": [
+              { "text": "订阅新闻通讯", "url": "#", "primary": true },
+              { "text": "往期回顾", "url": "#", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "n-filter",
+          "type": "filterTabs",
+          "order": 1,
+          "props": {
+            "label": "新闻分类 :",
+            "tabs": [
+              { "label": "全部", "path": "#" },
+              { "label": "学校动态", "path": "#" },
+              { "label": "学员佳绩", "path": "#" },
+              { "label": "教师风采", "path": "#" },
+              { "label": "音乐资讯", "path": "#" },
+              { "label": "考级/比赛", "path": "#" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "n-featured",
+          "type": "featuredCard",
+          "order": 2,
+          "props": {
+            "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "学员获奖",
+            "badge": "🏆 学员佳绩",
+            "date": "2025.03.28",
+            "title": "黄黑键学员包揽“珠江·恺撒堡”国际钢琴大赛少儿组金银奖",
+            "description": "在刚刚结束的2025珠江·恺撒堡国际青少年钢琴大赛中，我校选送的6名学员全部获奖，其中张奕老师指导的周雨桐获少儿A组金奖，陈曦老师指导的李明泽获银奖。展现了黄黑键的教学实力。",
+            "buttons": [
+              { "text": "阅读全文", "url": "/news-detail", "primary": true },
+              { "text": "获奖名单", "url": "#", "primary": false }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "n-list",
+          "type": "cardGrid",
+          "order": 3,
+          "props": {
+            "title": "📰 最新新闻 · 一览",
+            "variant": "news",
+            "cards": [
+              { "badge": "音乐资讯", "title": "2025年英皇考级新纲解析讲座报名", "subtitle": "4月9日，资深考官现场解读钢琴、弦乐新考纲变化，免费预约开放。", "date": "2025.03.30", "linkText": "阅读", "link": "/news-detail" },
+              { "badge": "学员佳绩", "title": "13名学员通过英皇八级，优良率85%", "subtitle": "2025年第一期英皇演奏考级成绩公布，黄黑键学员再创佳绩，优秀良好率达85%。", "date": "2025.03.28", "linkText": "阅读", "link": "/news-detail" },
+              { "badge": "学校动态", "title": "黄黑键与施坦威续约战略合作", "subtitle": "双方将继续在钢琴教育、教师培训、学员音乐会等方面深度合作。", "date": "2025.03.25", "linkText": "阅读", "link": "#" }
+            ]
+          },
+          "styles": {}
+        },
+        {
+          "id": "n-footer",
+          "type": "footer",
+          "order": 4,
+          "props": {
+            "brandName": "YELLOWKEYS",
+            "logoEmoji": "🎵",
+            "tagline": "创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能",
+            "copyright": "© 2025 黄黑键音乐教育集团 保留一切权利",
+            "addresses": "上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3",
+            "contact": "课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn",
+            "qrImage": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop",
+            "qrCaption": "扫一扫 领体验课",
+            "bottomLine": "用明亮黄与黑，弹奏你的故事。"
+          },
+          "styles": {}
+        }
+      ]
+    },
+    {
+      "id": "page-news-detail",
+      "path": "/news-detail",
+      "title": "新闻详情 · 黄黑琴键",
+      "meta": { "description": "黄黑键学员包揽珠江·恺撒堡国际钢琴大赛少儿组金银奖" },
+      "layout": "default",
+      "blocks": [
+        {
+          "id": "nd-hero",
+          "type": "hero",
+          "order": 0,
+          "props": {
+            "variant": "article",
+            "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop",
+            "imageAlt": "学员获奖现场",
+            "breadcrumb": [{ "label": "新闻", "url": "/news" }, { "label": "更多热点", "url": "/news" }, { "label": "正文", "url": null }],
+            "badge": "🏆 学员佳绩",
+            "date": "2025.03.28",
+            "title": "黄黑键学员包揽“珠江·恺撒堡”国际钢琴大赛少儿组金银奖",
+            "meta": ["📝 采编：品牌部", "📍 上海 · 施坦威音乐厅"]
+          },
+          "styles": {}
+        },
+        {
+          "id": "nd-content",
+          "type": "articleContent",
+          "order": 1,
+          "props": {
+            "paragraphs": [
+              "在刚刚落幕的2025“珠江·恺撒堡”国际青少年钢琴大赛中，黄黑键音乐学校选派的6名学员全部获奖，共斩获1项金奖、2项银奖及3项优秀表演奖。其中，张奕老师指导的周雨桐（8岁）以出色的发挥夺得少儿A组金奖，陈曦老师指导的李明泽（10岁）获得银奖。这是黄黑键连续第三年在该赛事中取得优异成绩。",
+              "本次比赛吸引了全国近千名选手参与，评审团由中央音乐学院、上海音乐学院等权威专家组成。周雨桐在决赛中演奏了斯卡拉蒂奏鸣曲和肖邦圆舞曲，其细腻的音乐表现力和稳定的技术发挥获得评委一致好评。“孩子学琴三年，每天坚持练琴1.5小时，黄黑键的智能陪练系统帮助她高效纠错。”周雨桐妈妈在赛后分享道。",
+              "黄黑键艺术总监张奕表示：“这次获奖不仅是对学员努力的肯定，也印证了我们‘技术+音乐素养’并重的教学理念。周雨桐和李明泽都是从启蒙阶段就在黄黑键学习，我们为他们量身定制了包含乐理、视唱、即兴在内的综合课程。”据悉，两位获奖学员的指导老师均为我校资深教师，拥有丰富的比赛指导经验。",
+              "此外，黄黑键在本次比赛中还获得了“优秀组织奖”。所有参赛学员都经过了校内三轮选拔和为期两个月的大师班集训。未来，学校将继续为学员提供更多高规格舞台和实践机会。",
+              "接下来，周雨桐和李明泽将受邀参加5月在上海音乐厅举行的获奖选手音乐会。黄黑键也将继续为学员搭建更多展示平台，敬请期待后续报道。"
+            ],
+            "subheadings": [
+              { "level": 2, "text": "教学成果的集中体现" }
+            ],
+            "quote": { "text": "\"音乐教育不是培养演奏机器，而是激发孩子内心的音乐。看到他们在舞台上享受音乐，是最欣慰的时刻。\"", "author": "—— 张奕 · 艺术总监" },
+            "list": { "title": "📋 黄黑键学员获奖名单", "items": ["🏅 金奖：周雨桐（少儿A组，指导老师：张奕）", "🥈 银奖：李明泽（少儿B组，指导老师：陈曦）", "🥈 银奖：王思睿（少年A组，指导老师：李舒）", "🎹 优秀表演奖：赵一鸣、陈果儿、刘子涵"] }
+          },
+          "styles": {}
+        },
+        {
+          "id": "nd-meta",
+          "type": "articleMeta",
+          "order": 2,
+          "props": {
+            "tagsLabel": "相关标签：",
+            "tags": ["#学员获奖", "#钢琴比赛", "#恺撒堡", "#张奕"],
+            "shareLabel": "分享："
+          },
+          "styles": {}
+        },
+        {
+          "id": "nd-nav",
+          "type": "articleNav",
+          "order": 3,
+          "props": {
+            "prev": { "title": "成都锦江校区正式开工，夏季开放", "date": "2025.03.25", "url": "#" },
+            "next": { "title": "13名学员通过英皇八级，优良率85%", "date": "2025.03.28", "url": "#" }
+          },
+          "styles": {}
+        },
+        {
+          "id": "nd-footer",
+          "type": "footer",
+          "order": 4,
+          "props": {
+            "brandName": "YELLOWKEYS",
+            "logoEmoji": "🎵",
+            "tagline": "创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能",
+            "copyright": "© 2025 黄黑键音乐教育集团 保留一切权利",
+            "addresses": "上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3",
+            "contact": "课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn",
+            "qrImage": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop",
+            "qrCaption": "扫一扫 领体验课",
+            "bottomLine": "用明亮黄与黑，弹奏你的故事。"
           },
           "styles": {}
         }

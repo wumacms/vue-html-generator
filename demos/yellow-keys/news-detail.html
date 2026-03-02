@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻详情 · 黄黑琴键</title>
+    <!-- 沿用原页面 Tailwind + Inter 字体，无自定义css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-black text-white antialiased">
+
+    <!-- 导航栏 (与新闻列表一致，新闻菜单高亮) -->
+    <nav class="bg-black border-b border-yellow-300/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- logo + 标题 -->
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="text-4xl filter drop-shadow-lg">🎵</div>
+                        <span class="text-2xl font-black tracking-tight text-yellow-300">YELLOW<span class="text-white">KEYS</span></span>
+                    </a>
+                </div>
+                <!-- 导航菜单 (桌面) -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="index.html" class="text-gray-300 hover:text-yellow-300 transition">首页</a>
+                    <a href="courses.html" class="text-gray-300 hover:text-yellow-300 transition">课程</a>
+                    <a href="teachers.html" class="text-gray-300 hover:text-yellow-300 transition">名师</a>
+                    <a href="events.html" class="text-gray-300 hover:text-yellow-300 transition">活动</a>
+                    <a href="campuses.html" class="text-gray-300 hover:text-yellow-300 transition">校区</a>
+                    <a href="news.html" class="text-yellow-300 hover:text-white transition">新闻</a>
+                </div>
+                <!-- CTA 按钮 -->
+                <div>
+                    <a href="courses.html" class="bg-yellow-300 text-black px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-200 transition shadow-lg shadow-yellow-300/30">免费试听课</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========= 新闻详情页面 ========= 以一篇热点新闻为例 -->
+
+    <!-- 1. Hero区域：配图作为背景 + 颜色蒙版，版心内容统一 -->
+    <section class="relative py-24 md:py-32 overflow-hidden">
+        <!-- 背景图片 (原文章主图) 带深色蒙版 -->
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover" 
+                 src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop" 
+                 alt="学员获奖现场" 
+                 loading="lazy">
+            <!-- 深色蒙版 (黑黄渐变/纯黑透明) 确保文字清晰 -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"></div>
+        </div>
+        
+        <!-- 版心内容 (与页面其他区块版心一致: max-w-4xl) -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 面包屑 (在深色背景上依然清晰) -->
+            <div class="text-sm text-gray-300 mb-4">
+                <a href="news.html" class="hover:text-yellow-300 transition">新闻</a> <span class="mx-2 text-gray-400">/</span> 
+                <a href="news.html" class="hover:text-yellow-300 transition">更多热点</a> <span class="mx-2 text-gray-400">/</span> 
+                <span class="text-yellow-300">正文</span>
+            </div>
+            <!-- 文章分类标签 -->
+            <div class="flex gap-3 items-center mb-4">
+                <span class="bg-yellow-300 text-black text-xs px-3 py-1 rounded-full font-bold">🏆 学员佳绩</span>
+                <span class="text-gray-200 text-sm">2025.03.28</span>
+                <span class="text-gray-200 text-sm">🔥 阅读 2.3k</span>
+            </div>
+            <!-- 主标题 (更大更突出) -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-yellow-300 leading-tight drop-shadow-lg">黄黑键学员包揽“珠江·恺撒堡”国际钢琴大赛少儿组金银奖</h1>
+            <!-- 副标题/作者 -->
+            <div class="flex items-center gap-4 mt-6 text-gray-200">
+                <span>📝 采编：品牌部</span>
+                <span>📍 上海 · 施坦威音乐厅</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 正文内容区 (版心统一) -->
+    <section class="bg-black py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-200 text-lg leading-relaxed space-y-6">
+            <p class="first-letter:text-5xl first-letter:text-yellow-300 first-letter:font-black first-letter:mr-2 first-letter:float-left">在</p>
+            <p>刚刚落幕的2025“珠江·恺撒堡”国际青少年钢琴大赛中，黄黑键音乐学校选派的6名学员全部获奖，共斩获1项金奖、2项银奖及3项优秀表演奖。其中，张奕老师指导的周雨桐（8岁）以出色的发挥夺得少儿A组金奖，陈曦老师指导的李明泽（10岁）获得银奖。这是黄黑键连续第三年在该赛事中取得优异成绩。</p>
+            
+            <p>本次比赛吸引了全国近千名选手参与，评审团由中央音乐学院、上海音乐学院等权威专家组成。周雨桐在决赛中演奏了斯卡拉蒂奏鸣曲和肖邦圆舞曲，其细腻的音乐表现力和稳定的技术发挥获得评委一致好评。“孩子学琴三年，每天坚持练琴1.5小时，黄黑键的智能陪练系统帮助她高效纠错。”周雨桐妈妈在赛后分享道。</p>
+            
+            <h2 class="text-2xl font-bold text-yellow-300 mt-8 mb-4">教学成果的集中体现</h2>
+            <p>黄黑键艺术总监张奕表示：“这次获奖不仅是对学员努力的肯定，也印证了我们‘技术+音乐素养’并重的教学理念。周雨桐和李明泽都是从启蒙阶段就在黄黑键学习，我们为他们量身定制了包含乐理、视唱、即兴在内的综合课程。”据悉，两位获奖学员的指导老师均为我校资深教师，拥有丰富的比赛指导经验。</p>
+            
+            <!-- 嵌入一个小 Quote 或 数据 -->
+            <div class="bg-zinc-900 border-l-4 border-yellow-300 p-5 my-8 rounded-r-2xl">
+                <p class="text-gray-300 italic text-lg">“音乐教育不是培养演奏机器，而是激发孩子内心的音乐。看到他们在舞台上享受音乐，是最欣慰的时刻。”</p>
+                <p class="text-yellow-300 mt-2 font-bold">—— 张奕 · 艺术总监</p>
+            </div>
+            
+            <p>此外，黄黑键在本次比赛中还获得了“优秀组织奖”。所有参赛学员都经过了校内三轮选拔和为期两个月的大师班集训。未来，学校将继续为学员提供更多高规格舞台和实践机会。</p>
+            
+            <!-- 简单列表展示获奖详情 -->
+            <div class="bg-black border border-yellow-300/30 rounded-3xl p-6 my-8">
+                <h3 class="text-xl font-bold text-yellow-300 mb-4">📋 黄黑键学员获奖名单</h3>
+                <ul class="space-y-2 text-gray-300">
+                    <li>🏅 金奖：周雨桐（少儿A组，指导老师：张奕）</li>
+                    <li>🥈 银奖：李明泽（少儿B组，指导老师：陈曦）</li>
+                    <li>🥈 银奖：王思睿（少年A组，指导老师：李舒）</li>
+                    <li>🎹 优秀表演奖：赵一鸣、陈果儿、刘子涵</li>
+                </ul>
+            </div>
+            
+            <p>接下来，周雨桐和李明泽将受邀参加5月在上海音乐厅举行的获奖选手音乐会。黄黑键也将继续为学员搭建更多展示平台，敬请期待后续报道。</p>
+        </div>
+    </section>
+
+    <!-- 3. 文章底部信息 (标签、分享) 版心统一 -->
+    <section class="bg-black py-10 border-y border-yellow-300/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <!-- 标签 -->
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-yellow-300 font-bold text-sm">相关标签：</span>
+                    <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-3 py-1.5 rounded-full text-sm hover:bg-yellow-300 hover:text-black transition">#学员获奖</a>
+                    <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-3 py-1.5 rounded-full text-sm hover:bg-yellow-300 hover:text-black transition">#钢琴比赛</a>
+                    <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-3 py-1.5 rounded-full text-sm hover:bg-yellow-300 hover:text-black transition">#恺撒堡</a>
+                    <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-3 py-1.5 rounded-full text-sm hover:bg-yellow-300 hover:text-black transition">#张奕</a>
+                </div>
+                <!-- 分享 -->
+                <div class="flex items-center gap-3">
+                    <span class="text-gray-400 text-sm">分享：</span>
+                    <a href="#" class="bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition">📤</a>
+                    <a href="#" class="bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition">🐦</a>
+                    <a href="#" class="bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition">🔗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 上下篇文章导航 (版心统一) -->
+    <section class="bg-zinc-950 py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 上一篇 -->
+                <a href="#" class="bg-black border border-yellow-300/20 rounded-2xl p-5 hover:border-yellow-300 transition group">
+                    <span class="text-gray-500 text-sm flex items-center gap-1 mb-2">← 上一篇</span>
+                    <h4 class="font-bold text-white text-lg group-hover:text-yellow-300">成都锦江校区正式开工，夏季开放</h4>
+                    <p class="text-gray-400 text-sm">2025.03.25</p>
+                </a>
+                <!-- 下一篇 -->
+                <a href="#" class="bg-black border border-yellow-300/20 rounded-2xl p-5 hover:border-yellow-300 transition group text-right">
+                    <span class="text-gray-500 text-sm flex items-center justify-end gap-1 mb-2">下一篇 →</span>
+                    <h4 class="font-bold text-white text-lg group-hover:text-yellow-300">13名学员通过英皇八级，优良率85%</h4>
+                    <p class="text-gray-400 text-sm">2025.03.30</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 相关新闻推荐 (版心统一为 max-w-4xl) 此处用稍宽网格但保持整体一致性 -->
+    <section class="bg-black py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-black text-yellow-300 mb-8">📌 相关推荐</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 推荐卡片 1 -->
+                <div class="bg-zinc-900 p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition">
+                    <span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full inline-block mb-3">学员佳绩</span>
+                    <h3 class="font-bold text-white text-lg mb-2">13名学员通过英皇八级，优良率85%</h3>
+                    <p class="text-sm text-gray-400 mb-3">2025年第一期英皇演奏考级成绩公布...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500 text-xs">2025.03.28</span>
+                        <a href="news-detail.html" class="text-yellow-300 text-sm font-bold border-b border-yellow-300/30">阅读</a>
+                    </div>
+                </div>
+                <!-- 推荐卡片 2 -->
+                <div class="bg-zinc-900 p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition">
+                    <span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full inline-block mb-3">教师风采</span>
+                    <h3 class="font-bold text-white text-lg mb-2">张奕老师受邀担任金钟奖钢琴评委</h3>
+                    <p class="text-sm text-gray-400 mb-3">我校艺术总监连续第三届获邀...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500 text-xs">2025.03.22</span>
+                        <a href="news-detail.html" class="text-yellow-300 text-sm font-bold border-b border-yellow-300/30">阅读</a>
+                    </div>
+                </div>
+                <!-- 推荐卡片 3 -->
+                <div class="bg-zinc-900 p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition">
+                    <span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full inline-block mb-3">考级/比赛</span>
+                    <h3 class="font-bold text-white text-lg mb-2">2025夏季国际青少年音乐比赛启动</h3>
+                    <p class="text-sm text-gray-400 mb-3">由黄黑键协办，设钢琴、弦乐等组别...</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500 text-xs">2025.03.20</span>
+                        <a href="news-detail.html" class="text-yellow-300 text-sm font-bold border-b border-yellow-300/30">阅读</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 返回列表按钮 + 订阅 (版心统一) -->
+    <section class="bg-zinc-950 py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 items-center justify-between">
+            <a href="news.html" class="border-2 border-yellow-300 text-yellow-300 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 hover:text-black transition inline-flex items-center gap-2">
+                ← 返回新闻列表
+            </a>
+            <div class="flex items-center gap-3">
+                <span class="text-gray-400 text-sm">订阅新闻：</span>
+                <input type="email" placeholder="你的邮箱" class="bg-black border border-yellow-300/30 rounded-full px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-300 w-48">
+                <a href="#" class="bg-yellow-300 text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-yellow-200 transition">订阅</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 (与原页脚完全一致) -->
+    <footer class="bg-black border-t border-yellow-300/30 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- brand + logo -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-4xl">🎵</span>
+                        <span class="text-2xl font-black text-yellow-300">YELLOWKEYS</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-xs">创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能</p>
+                    <p class="text-gray-500 text-xs mt-4">© 2025 黄黑键音乐教育集团 保留一切权利</p>
+                </div>
+                <!-- 公司地址 -->
+                <div>
+                    <h4 class="text-yellow-300 font-bold mb-4">总部校区</h4>
+                    <p class="text-gray-400 text-sm">上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3</p>
+                </div>
+                <!-- 联系方式 -->
+                <div>
+                    <h4 class="text-yellow-300 font-bold mb-4">联系我们</h4>
+                    <p class="text-gray-400 text-sm">课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn</p>
+                </div>
+                <!-- 微信公众号二维码 -->
+                <div>
+                    <h4 class="text-yellow-300 font-bold mb-4">公众号</h4>
+                    <div class="bg-zinc-900 p-3 rounded-xl inline-block border border-yellow-300/40">
+                        <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop" class="w-24 h-24 rounded-lg grayscale" alt="公众号二维码">
+                    </div>
+                    <p class="text-gray-500 text-xs mt-2">扫一扫 领体验课</p>
+                </div>
+            </div>
+            <div class="text-center text-gray-600 text-sm border-t border-yellow-300/20 mt-12 pt-6">
+                用明亮黄与黑，弹奏你的故事。
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

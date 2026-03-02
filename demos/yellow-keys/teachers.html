@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名师 · 黄黑琴键</title>
+    <!-- 沿用原页面 Tailwind + Inter 字体，无自定义css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-black text-white antialiased">
+
+    <!-- 导航栏 (与原页面完全一致, 高亮"名师") -->
+    <nav class="bg-black border-b border-yellow-300/20 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- logo + 标题 -->
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="text-4xl filter drop-shadow-lg">🎵</div>
+                        <span class="text-2xl font-black tracking-tight text-yellow-300">YELLOW<span class="text-white">KEYS</span></span>
+                    </a>
+                </div>
+                <!-- 导航菜单 (桌面) -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="index.html" class="text-gray-300 hover:text-yellow-300 transition">首页</a>
+                    <a href="courses.html" class="text-gray-300 hover:text-yellow-300 transition">课程</a>
+                    <a href="teachers.html" class="text-yellow-300 hover:text-white transition">名师</a>
+                    <a href="events.html" class="text-gray-300 hover:text-yellow-300 transition">活动</a>
+                    <a href="campuses.html" class="text-gray-300 hover:text-yellow-300 transition">校区</a>
+                    <a href="news.html" class="text-gray-300 hover:text-yellow-300 transition">新闻</a>
+                </div>
+                <!-- CTA 按钮 -->
+                <div>
+                    <a href="courses.html" class="bg-yellow-300 text-black px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-200 transition shadow-lg shadow-yellow-300/30">免费试听课</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========= 名师页面核心内容 ========= -->
+
+    <!-- 1. 名师主视觉 · 致敬教育者 (呼应原hero风格，但聚焦师资) -->
+    <section class="relative bg-gradient-to-b from-black to-zinc-900 pt-20 pb-24 md:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="inline-block bg-yellow-300/10 text-yellow-300 border border-yellow-300/30 px-4 py-1.5 rounded-full text-sm font-bold">👑 演奏家导师团</span>
+                    <h1 class="text-5xl md:text-6xl font-black leading-tight">
+                        与<span class="text-yellow-300">真正懂音乐的人</span> 学音乐
+                    </h1>
+                    <p class="text-xl text-gray-300 max-w-lg">我们的教师不仅是老师，更是活跃在舞台上的演奏家、教育家。平均教龄10年以上，把最纯正的音乐语言传递给你。</p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#" class="bg-yellow-300 text-black px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-yellow-300/40 hover:bg-yellow-200 transition">预约名师体验课</a>
+                        <a href="#" class="border-2 border-yellow-300 text-yellow-300 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition">师资介绍手册</a>
+                    </div>
+                </div>
+                <div class="relative h-72 sm:h-80 md:h-96">
+                    <!-- Hero 图片固定高度，object-cover 保证裁剪一致 -->
+                    <img class="w-full h-full object-cover rounded-3xl border-4 border-yellow-300/30 shadow-2xl" 
+                         src="https://images.unsplash.com/photo-1763705310142-6ab868e4ca6c?q=80&w=900&auto=format&fit=crop" 
+                         alt="室内乐演奏" 
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 师资筛选/标签 (体现专业性) 使用伙伴区块类似风格 -->
+    <section class="bg-black py-12 border-y border-yellow-300/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
+                <span class="text-yellow-300 font-bold mr-2">快速筛选 :</span>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-yellow-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">全部</a>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">钢琴</a>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">弦乐</a>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">管乐</a>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">吉他/贝斯</a>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">声乐</a>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">打击乐</a>
+                <a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">作曲/制作</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 名师展示网格 (采用类似案例区块卡片风格 + 特性区块的边框) 强调个人 -->
+    <section class="bg-black py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-yellow-300">首席导师 · 艺术领路人</h2>
+                <p class="text-gray-400 text-lg mt-2">舞台上的演奏家，讲台上的引路人</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 名师 1 -->
+                <div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" 
+                             alt="钢琴导师 张奕" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">张奕</h3>
+                                <p class="text-yellow-300 text-sm">钢琴 · 艺术总监</p>
+                            </div>
+                            <span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">施坦威荣誉教师</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-4">上海音乐学院钢琴系硕士、柏林艺术大学访问学者。曾获中国音乐金钟奖，学员屡获国内外钢琴赛事金奖。</p>
+                        <div class="flex gap-4 mt-4 text-sm text-gray-500">
+                            <span>🎓 教龄18年</span>
+                            <span>🏅 英皇考官</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 名师 2 -->
+                <div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop" 
+                             alt="小提琴导师 陈曦" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">陈曦</h3>
+                                <p class="text-yellow-300 text-sm">小提琴 · 室内乐主任</p>
+                            </div>
+                            <span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">前爱乐首席</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-4">中央音乐学院硕士，原中国爱乐乐团副首席。多次担任国内外弦乐比赛评委，其学生考入柯蒂斯、新英格兰等名校。</p>
+                        <div class="flex gap-4 mt-4 text-sm text-gray-500">
+                            <span>🎓 教龄15年</span>
+                            <span>🏅 国际比赛评委</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 名师 3 -->
+                <div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" 
+                             alt="声乐导师 林清" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">林清</h3>
+                                <p class="text-yellow-300 text-sm">声乐 · 流行演唱</p>
+                            </div>
+                            <span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">金曲奖提名</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-4">伯克利音乐学院毕业，活跃于爵士音乐节。擅长SLS唱法教学，指导学员登上《中国好声音》舞台。</p>
+                        <div class="flex gap-4 mt-4 text-sm text-gray-500">
+                            <span>🎓 教龄12年</span>
+                            <span>🏅 明星导师</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 名师 4 -->
+                <div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" 
+                             alt="吉他导师 黄骏" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">黄骏</h3>
+                                <p class="text-yellow-300 text-sm">电吉他/指弹吉他</p>
+                            </div>
+                            <span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">代言人</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-4">知名乐手，Fender品牌合作艺术家。参与录制《我是歌手》现场吉他手，擅长摇滚、Fusion风格教学。</p>
+                        <div class="flex gap-4 mt-4 text-sm text-gray-500">
+                            <span>🎓 教龄14年</span>
+                            <span>🏅 演唱会乐手</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 名师 5 -->
+                <div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=1974&auto=format&fit=crop" 
+                             alt="大提琴导师 李舒" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">李舒</h3>
+                                <p class="text-yellow-300 text-sm">大提琴 · 低音提琴</p>
+                            </div>
+                            <span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">乐团首席</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-4">上海音乐学院博士，上海歌剧院大提琴声部首席。多次出访欧洲交流演出，学员考入德国汉斯·艾斯勒音乐学院。</p>
+                        <div class="flex gap-4 mt-4 text-sm text-gray-500">
+                            <span>🎓 教龄16年</span>
+                            <span>🏅 国际比赛获奖</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 名师 6 -->
+                <div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1974&auto=format&fit=crop" 
+                             alt="打击乐导师 王雷" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">王雷</h3>
+                                <p class="text-yellow-300 text-sm">爵士鼓 · 拉丁打击乐</p>
+                            </div>
+                            <span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">IPEA 委员</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-4">上海音乐学院现代器乐系教师，IPEA国际打击乐比赛评委。编写多套爵士鼓考级教材，学生遍布各大音乐学院。</p>
+                        <div class="flex gap-4 mt-4 text-sm text-gray-500">
+                            <span>🎓 教龄20年</span>
+                            <span>🏅 教材主编</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 查看更多按钮 -->
+            <div class="text-center mt-12">
+                <a href="#" class="border-2 border-yellow-300 text-yellow-300 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition inline-flex items-center gap-2">📋 查看全部52位教师 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 名师理念/特点 (沿用特性区块风格，突出师资优势) -->
+    <section class="bg-zinc-950 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-yellow-300">为什么选择我们的导师？</h2>
+                <p class="text-gray-400 text-lg mt-2">不仅是教音乐，更是传递音乐家的思维</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-black p-6 rounded-3xl border border-yellow-300/20">
+                    <div class="text-5xl mb-3">🎯</div>
+                    <h3 class="text-xl font-bold text-yellow-300">舞台经验</h3>
+                    <p class="text-gray-400 text-sm mt-2">所有导师保持每年至少10场演出，把最新的舞台经验带回课堂。</p>
+                </div>
+                <div class="bg-black p-6 rounded-3xl border border-yellow-300/20">
+                    <div class="text-5xl mb-3">📚</div>
+                    <h3 class="text-xl font-bold text-yellow-300">自主研发教材</h3>
+                    <p class="text-gray-400 text-sm mt-2">结合国际体系与本土学员特点，教学法科学且有趣。</p>
+                </div>
+                <div class="bg-black p-6 rounded-3xl border border-yellow-300/20">
+                    <div class="text-5xl mb-3">👥</div>
+                    <h3 class="text-xl font-bold text-yellow-300">双师制辅导</h3>
+                    <p class="text-gray-400 text-sm mt-2">主课老师+助教练习课，确保每周练习问题及时解决。</p>
+                </div>
+                <div class="bg-black p-6 rounded-3xl border border-yellow-300/20">
+                    <div class="text-5xl mb-3">🎓</div>
+                    <h3 class="text-xl font-bold text-yellow-300">升学/考级规划</h3>
+                    <p class="text-gray-400 text-sm mt-2">导师均为国内外考级评委或音乐学院校友，精准指导升学。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 名师公开课/大师班日程 (沿用活动或课程卡片) 融合左图右文风格 -->
+    <section class="bg-black py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img class="rounded-3xl border-4 border-yellow-300/40 shadow-2xl" 
+                         src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=2070&auto=format&fit=crop" 
+                         alt="大师班现场" 
+                         loading="lazy">
+                </div>
+                <div class="md:w-1/2 space-y-5">
+                    <span class="text-yellow-300 font-bold text-sm bg-black border border-yellow-300 px-4 py-1.5 rounded-full inline-block">🎻 近期活动 · 名额有限</span>
+                    <h2 class="text-4xl font-black text-yellow-300">陈曦小提琴大师班</h2>
+                    <p class="text-gray-300 text-lg">4月15日 · 上海总部音乐厅。公开指导+旁听，一对一指点演奏技巧与音乐处理。对外开放10个席位。</p>
+                    <div class="flex gap-2 text-gray-400 text-sm">
+                        <span>⏰ 报名截止4月10日</span>
+                        <span>📍 仅限6级以上学员</span>
+                    </div>
+                    <div class="pt-2">
+                        <a href="#" class="bg-yellow-300 text-black px-8 py-3 rounded-full font-bold inline-block hover:bg-yellow-200 transition">立即预约旁听</a>
+                        <a href="#" class="ml-4 border border-yellow-300 text-yellow-300 px-8 py-3 rounded-full font-bold inline-block hover:bg-yellow-300 hover:text-black transition">其他大师课</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. 名师专访/故事 (采用案例区块风格，展示老师与学生的互动) -->
+    <section class="bg-zinc-950 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-yellow-300">名师 · 育人故事</h2>
+                <p class="text-gray-400 text-lg mt-2">听听导师们的教学理念与学员成长</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 故事1 类似案例卡片，但展示老师观点 -->
+                <div class="bg-black p-6 rounded-3xl border border-yellow-300/20">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="张奕">
+                        <div>
+                            <h3 class="font-bold text-white">张奕 · 钢琴</h3>
+                            <p class="text-xs text-yellow-300">“音乐是情感的语言”</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic text-sm">“我有个学生刚来时特别内向，通过即兴演奏慢慢打开自己，现在能自信地在音乐厅独奏。每个孩子都有自己的音乐密码。”</p>
+                </div>
+                <!-- 故事2 -->
+                <div class="bg-black p-6 rounded-3xl border border-yellow-300/20">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="林清">
+                        <div>
+                            <h3 class="font-bold text-white">林清 · 声乐</h3>
+                            <p class="text-xs text-yellow-300">“流行演唱不只有技巧”</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic text-sm">“教过最年长的学生62岁，退休后开始学唱歌，现在在社区合唱团担任领唱。唱歌是每个人都拥有的权利。”</p>
+                </div>
+                <!-- 故事3 -->
+                <div class="bg-black p-6 rounded-3xl border border-yellow-300/20">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop" class="w-12 h-12 rounded-full object-cover" alt="陈曦">
+                        <div>
+                            <h3 class="font-bold text-white">陈曦 · 小提琴</h3>
+                            <p class="text-xs text-yellow-300">“乐团思维培养合作”</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic text-sm">“我的学生组了一个弦乐四重奏，去年获得上海国际青少年室内乐比赛一等奖。看到他们享受合奏，比拿奖更开心。”</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA 预约名师试课 (与原风格一致) -->
+    <section class="bg-yellow-300 py-16">
+        <div class="max-w-3xl mx-auto text-center px-4">
+            <span class="text-black bg-white/30 px-3 py-1 rounded-full text-sm font-bold">✨ 免费体验名师一对一</span>
+            <h2 class="text-4xl md:text-5xl font-black text-black mt-6 mb-4">选择你的专属导师</h2>
+            <p class="text-lg text-black/80 mb-8">30分钟体验课，感受演奏级教师的魅力</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#" class="bg-black text-yellow-300 px-10 py-4 rounded-full font-bold text-xl shadow-2xl hover:bg-zinc-900 transition">预约名师体验</a>
+                <a href="#" class="bg-transparent border-4 border-black text-black px-10 py-4 rounded-full font-bold text-xl hover:bg-black hover:text-yellow-300 transition">师资咨询</a>
+            </div>
+            <p class="text-sm text-black/60 mt-6">或联系课程顾问匹配最适合你的老师</p>
+        </div>
+    </section>
+
+    <!-- 页脚 (与原页脚完全一致) -->
+    <footer class="bg-black border-t border-yellow-300/30 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- brand + logo -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-4xl">🎵</span>
+                        <span class="text-2xl font-black text-yellow-300">YELLOWKEYS</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-xs">创意乐器培训品牌 · 黄黑键音乐学校 · 激发每个孩子的音乐本能</p>
+                    <p class="text-gray-500 text-xs mt-4">© 2025 黄黑键音乐教育集团 保留一切权利</p>
+                </div>
+                <!-- 公司地址 -->
+                <div>
+                    <h4 class="text-yellow-300 font-bold mb-4">总部校区</h4>
+                    <p class="text-gray-400 text-sm">上海市徐汇区创意音乐谷B座<br>北京市朝阳区艺术大街108号<br>深圳市南山区后海汇L3</p>
+                </div>
+                <!-- 联系方式 -->
+                <div>
+                    <h4 class="text-yellow-300 font-bold mb-4">联系我们</h4>
+                    <p class="text-gray-400 text-sm">课程咨询：400-6688-muse<br>合作：partner@yellowkeys.cn<br>投诉建议：support@yellowkeys.cn</p>
+                </div>
+                <!-- 微信公众号二维码 -->
+                <div>
+                    <h4 class="text-yellow-300 font-bold mb-4">公众号</h4>
+                    <div class="bg-zinc-900 p-3 rounded-xl inline-block border border-yellow-300/40">
+                        <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=120&h=120&fit=crop" class="w-24 h-24 rounded-lg grayscale" alt="公众号二维码">
+                    </div>
+                    <p class="text-gray-500 text-xs mt-2">扫一扫 领体验课</p>
+                </div>
+            </div>
+            <div class="text-center text-gray-600 text-sm border-t border-yellow-300/20 mt-12 pt-6">
+                用明亮黄与黑，弹奏你的故事。
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

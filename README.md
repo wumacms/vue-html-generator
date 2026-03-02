@@ -66,10 +66,21 @@ workflow 定义在 [.github/workflows/deploy.yml](./.github/workflows/deploy.yml
 
 | type     | 说明     |
 |----------|----------|
-| `hero`   | 首屏标题、副标题、可选图片 |
-| `features` | 特性网格（title + items[]） |
-| `cta`    | 行动号召：标题、文案、按钮 |
-| `footer` | 页脚版权与链接 |
+| `hero`   | 首屏（支持默认/全屏背景/文章页变体）：标题高亮、副标题、图片、按钮 |
+| `partners` | 合作伙伴/品牌 logo 网格 |
+| `imageText` | 左图右文/左文右图（reverse），标题、描述、标签、按钮 |
+| `features` | 特性网格（icon + title + description，可选 linkText） |
+| `testimonials` | 学员/客户评价卡片（头像、姓名、引用） |
+| `stats`  | 数据统计条（value + label） |
+| `faq`    | 常见问题（question + answer 列表） |
+| `cta`    | 行动号召：标题、文案、多按钮（支持 badge、footerNote） |
+| `footer` | 页脚：品牌、地址、联系、公众号二维码、底部标语 |
+| `filterTabs` | 筛选标签条（用于课程/活动/校区/新闻分类） |
+| `cardGrid` | 通用卡片网格（variant: default/teacher/campus/event/news） |
+| `featuredCard` | 大图+文案的精选单卡（活动/新闻置顶） |
+| `articleContent` | 文章正文（段落、小标题、引用、列表） |
+| `articleMeta` | 文章页标签与分享 |
+| `articleNav`   | 上一篇/下一篇导航 |
 
 区块样式使用 **Tailwind CSS** 工具类编写，无自定义 CSS。可在 [src/components/blocks/](./src/components/blocks/) 扩展或与建站平台共用区块组件；新增/修改工具类后需执行 `pnpm run build:css` 重新编译样式。
 
@@ -97,6 +108,8 @@ workflow 定义在 [.github/workflows/deploy.yml](./.github/workflows/deploy.yml
 ├── admin.html              # 管理页 HTML 入口（Vite 构建用）
 ├── vite.config.admin.js    # 管理页构建配置（输出 dist-admin/）
 ├── site.json               # 示例网站 JSON
+├── demos/                  # 演示用静态站点（用于静态生成与发布演示）
+│   └── yellow-keys/        # Yellow Keys 完整静态站（多页 HTML）
 ├── dist/                   # 静态站点生成输出（gitignore）
 ├── dist-admin/             # 管理页构建输出（gitignore）
 └── docs/                   # 设计文档
