@@ -35777,16 +35777,6 @@ function getHref(currentPath, targetPath, basePath = "") {
   const rel = up + down;
   return rel || ".";
 }
-function getAssetHref(currentPath, assetPath, basePath = "") {
-  if (!assetPath) return "";
-  if (basePath) {
-    const base = basePath.endsWith("/") ? basePath.slice(0, -1) : basePath;
-    return base + "/" + assetPath.replace(/^\//, "");
-  }
-  const depth = (currentPath || "/").replace(/^\/+|\/+$/g, "").split("/").filter(Boolean).length;
-  const prefix = depth === 0 ? "" : "../".repeat(depth);
-  return prefix + assetPath.replace(/^\//, "");
-}
 const _sfc_main$s = {
   __name: "HeroArticle",
   __ssrInlineRender: true,
@@ -35800,14 +35790,11 @@ const _sfc_main$s = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative py-24 md:py-32 overflow-hidden" }, _attrs))}><div class="absolute inset-0 z-0">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.image) {
-        _push(`<img${ssrRenderAttr("src", imageSrc(__props.block.props.image))}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="lazy">`);
+        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="lazy">`);
       } else {
         _push(`<!---->`);
       }
@@ -35877,15 +35864,11 @@ const _sfc_main$r = {
     currentPagePath: { type: String, default: "/" }
   },
   setup(__props) {
-    const props = __props;
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative pt-16 pb-20 md:py-24 overflow-hidden min-h-[28rem] md:min-h-[32rem] flex items-center" }, _attrs))}><div class="absolute inset-0 z-0">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.image) {
-        _push(`<img${ssrRenderAttr("src", imageSrc(__props.block.props.image))}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="eager">`);
+        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover" loading="eager">`);
       } else {
         _push(`<!---->`);
       }
@@ -35949,9 +35932,6 @@ const _sfc_main$q = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h, _i;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative bg-gradient-to-b from-black to-zinc-900 overflow-hidden" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28"><div class="grid md:grid-cols-2 gap-12 items-center"><div class="space-y-6">`);
@@ -36000,7 +35980,7 @@ const _sfc_main$q = {
       }
       _push(`</div><div class="relative h-72 sm:h-80 md:h-96">`);
       if ((_i = __props.block.props) == null ? void 0 : _i.image) {
-        _push(`<img${ssrRenderAttr("src", imageSrc(__props.block.props.image))}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover rounded-3xl border-4 border-yellow-300/30 shadow-2xl" loading="eager">`);
+        _push(`<img${ssrRenderAttr("src", __props.basePath ? __props.basePath.replace(/\/$/, "") + __props.block.props.image : __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover rounded-3xl border-4 border-yellow-300/30 shadow-2xl" loading="eager">`);
       } else {
         _push(`<!---->`);
       }
@@ -36182,10 +36162,6 @@ const _sfc_main$m = {
     currentPagePath: { type: String, default: "/" }
   },
   setup(__props) {
-    const props = __props;
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h, _i;
       _push(`<footer${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black border-t border-yellow-300/30 pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"><div class="lg:col-span-2"><div class="flex items-center gap-2 mb-4">`);
@@ -36217,7 +36193,7 @@ const _sfc_main$m = {
         _push(`<!---->`);
       }
       if ((_g = __props.block.props) == null ? void 0 : _g.qrImage) {
-        _push(`<div><h4 class="text-yellow-300 font-bold mb-4">公众号</h4><div class="bg-zinc-900 p-3 rounded-xl inline-block border border-yellow-300/40"><img${ssrRenderAttr("src", imageSrc(__props.block.props.qrImage))} alt="公众号二维码" class="w-24 h-24 rounded-lg grayscale"></div>`);
+        _push(`<div><h4 class="text-yellow-300 font-bold mb-4">公众号</h4><div class="bg-zinc-900 p-3 rounded-xl inline-block border border-yellow-300/40"><img${ssrRenderAttr("src", __props.block.props.qrImage)} alt="公众号二维码" class="w-24 h-24 rounded-lg grayscale"></div>`);
         if ((_h = __props.block.props) == null ? void 0 : _h.qrCaption) {
           _push(`<p class="text-gray-500 text-xs mt-2">${ssrInterpolate(__props.block.props.qrCaption)}</p>`);
         } else {
@@ -36252,10 +36228,6 @@ const _sfc_main$l = {
     currentPagePath: { type: String, default: "/" }
   },
   setup(__props) {
-    const props = __props;
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-16 border-y border-yellow-300/20" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-yellow-300">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "合作伙伴")}</h2>`);
@@ -36268,7 +36240,7 @@ const _sfc_main$l = {
       ssrRenderList(((_c = __props.block.props) == null ? void 0 : _c.items) ?? [], (item, i) => {
         _push(`<div class="bg-zinc-900 p-4 rounded-2xl text-center border border-yellow-300/20 hover:border-yellow-300 transition">`);
         if (item.image) {
-          _push(`<img${ssrRenderAttr("src", imageSrc(item.image))}${ssrRenderAttr("alt", item.name)} class="w-16 h-16 mx-auto rounded-full mb-2">`);
+          _push(`<img${ssrRenderAttr("src", item.image)}${ssrRenderAttr("alt", item.name)} class="w-16 h-16 mx-auto rounded-full mb-2">`);
         } else {
           _push(`<!---->`);
         }
@@ -36303,9 +36275,6 @@ const _sfc_main$k = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     const reverse = () => {
       var _a;
       return !!((_a = props.block.props) == null ? void 0 : _a.reverse);
@@ -36316,7 +36285,7 @@ const _sfc_main$k = {
         class: [reverse() ? "bg-zinc-950" : "bg-black", "py-20"]
       }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="${ssrRenderClass([reverse() ? "md:flex-row-reverse" : "md:flex-row", "flex flex-col gap-12 items-center"])}"><div class="md:w-1/2 w-full">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.image) {
-        _push(`<img${ssrRenderAttr("src", imageSrc(__props.block.props.image))}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="rounded-3xl border-4 border-yellow-300/40 shadow-2xl w-full h-auto object-cover" loading="lazy">`);
+        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="rounded-3xl border-4 border-yellow-300/40 shadow-2xl w-full h-auto object-cover" loading="lazy">`);
       } else {
         _push(`<!---->`);
       }
@@ -36367,10 +36336,6 @@ const _sfc_main$j = {
     currentPagePath: { type: String, default: "/" }
   },
   setup(__props) {
-    const props = __props;
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-zinc-950 py-20" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-black text-yellow-300">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "学员故事")}</h2>`);
@@ -36383,7 +36348,7 @@ const _sfc_main$j = {
       ssrRenderList(((_c = __props.block.props) == null ? void 0 : _c.items) ?? [], (item, i) => {
         _push(`<div class="bg-black p-6 rounded-3xl border border-yellow-300/20"><div class="flex items-center gap-3 mb-4">`);
         if (item.avatar) {
-          _push(`<img${ssrRenderAttr("src", imageSrc(item.avatar))}${ssrRenderAttr("alt", item.name)} class="w-12 h-12 rounded-full object-cover">`);
+          _push(`<img${ssrRenderAttr("src", item.avatar)}${ssrRenderAttr("alt", item.name)} class="w-12 h-12 rounded-full object-cover">`);
         } else {
           _push(`<!---->`);
         }
@@ -36529,22 +36494,16 @@ const _sfc_main$e = {
   __name: "CardGridTeacher",
   __ssrInlineRender: true,
   props: {
-    block: { type: Object, required: true },
-    basePath: { type: String, default: "" },
-    currentPagePath: { type: String, default: "/" }
+    block: { type: Object, required: true }
   },
   setup(__props) {
-    const props = __props;
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-2 lg:grid-cols-3 gap-8" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
         _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-80 overflow-hidden">`);
         if (card.image) {
-          _push(`<img${ssrRenderAttr("src", imageSrc(card.image))}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
+          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
         } else {
           _push(`<!---->`);
         }
@@ -36594,16 +36553,13 @@ const _sfc_main$d = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url, props.basePath);
     }
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-2 lg:grid-cols-3 gap-8" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
         _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-60 overflow-hidden">`);
         if (card.image) {
-          _push(`<img${ssrRenderAttr("src", imageSrc(card.image))}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
+          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
         } else {
           _push(`<!---->`);
         }
@@ -36709,16 +36665,13 @@ const _sfc_main$b = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url, props.basePath);
     }
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-3 gap-6" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
         _push(`<div class="bg-zinc-900 rounded-3xl overflow-hidden border border-yellow-300/20">`);
         if (card.image) {
-          _push(`<img${ssrRenderAttr("src", imageSrc(card.image))}${ssrRenderAttr("alt", card.title)} class="h-56 w-full object-cover">`);
+          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="h-56 w-full object-cover">`);
         } else {
           _push(`<!---->`);
         }
@@ -36907,14 +36860,11 @@ const _sfc_main$7 = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="bg-zinc-900 rounded-3xl border-2 border-yellow-300/30 overflow-hidden mb-8 hover:border-yellow-300 transition"><div class="grid md:grid-cols-2"><div class="h-80 md:h-auto overflow-hidden">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.image) {
-        _push(`<img${ssrRenderAttr("src", imageSrc(__props.block.props.image))}${ssrRenderAttr("alt", __props.block.props.imageAlt || ((_b = __props.block.props) == null ? void 0 : _b.title))} class="w-full h-full object-cover">`);
+        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || ((_b = __props.block.props) == null ? void 0 : _b.title))} class="w-full h-full object-cover">`);
       } else {
         _push(`<!---->`);
       }
@@ -36980,9 +36930,6 @@ const _sfc_main$6 = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    function imageSrc(path) {
-      return getAssetHref(props.currentPagePath, path, props.basePath);
-    }
     const title = () => {
       var _a;
       return ((_a = props.block.props) == null ? void 0 : _a.title) ?? "";
@@ -37014,7 +36961,7 @@ const _sfc_main$6 = {
       if (featured().image || featured().title) {
         _push(`<div class="bg-zinc-900 rounded-3xl border-2 border-yellow-300/30 overflow-hidden mb-8 hover:border-yellow-300 transition"><div class="grid md:grid-cols-2"><div class="h-80 md:h-auto overflow-hidden">`);
         if (featured().image) {
-          _push(`<img${ssrRenderAttr("src", imageSrc(featured().image))}${ssrRenderAttr("alt", featured().imageAlt || featured().title)} class="w-full h-full object-cover">`);
+          _push(`<img${ssrRenderAttr("src", featured().image)}${ssrRenderAttr("alt", featured().imageAlt || featured().title)} class="w-full h-full object-cover">`);
         } else {
           _push(`<!---->`);
         }
@@ -37055,7 +37002,7 @@ const _sfc_main$6 = {
         ssrRenderList(secondaryCards(), (card, i) => {
           _push(`<div class="bg-zinc-900 rounded-2xl border border-yellow-300/20 overflow-hidden flex flex-col md:flex-row hover:border-yellow-300 transition"><div class="md:w-2/5 h-40 overflow-hidden shrink-0">`);
           if (card.image) {
-            _push(`<img${ssrRenderAttr("src", imageSrc(card.image))}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover">`);
+            _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover">`);
           } else {
             _push(`<!---->`);
           }
