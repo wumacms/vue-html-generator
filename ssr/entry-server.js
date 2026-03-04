@@ -37386,9 +37386,9 @@ const _sfc_main = {
         _push(`<!---->`);
       }
       _push(`<main class="min-h-[50vh]"><!--[-->`);
-      ssrRenderList(sortedBlocks.value, (block) => {
+      ssrRenderList(sortedBlocks.value, (block, index) => {
         _push(ssrRenderComponent(_sfc_main$1, {
-          key: block.id,
+          key: block.id ?? `block-${index}`,
           block,
           "base-path": basePath.value,
           "current-page-path": __props.page.path
