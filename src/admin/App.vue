@@ -33,7 +33,6 @@ async function generate() {
     <h1>静态站点生成</h1>
     <p class="desc">
       根据当前项目下的 <code>site.json</code> 生成静态 HTML 到 <code>dist/</code> 目录。
-      生成前请确保已执行 <code>pnpm run build:ssr</code> 和 <code>pnpm run build:css</code>。
     </p>
     <button
       type="button"

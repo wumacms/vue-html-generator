@@ -5,7 +5,11 @@ import { createServer } from 'node:http'
 import { readFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { exec as execCb } from 'node:child_process'
+import { promisify } from 'node:util'
 import { runGenerate } from './generate.js'
+
+const exec = promisify(execCb)
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const projectRoot = join(__dirname, '..')
@@ -42,17 +46,27 @@ const server = createServer(async (req, res) => {
   // 生成静态站点 API
   if (method === 'POST' && url === '/api/generate') {
     try {
+      console.log('[API] 正在构建 SSR 入口与 CSS...')
+      // 在生成前执行构建命令
+      await exec('pnpm run build:ssr', { cwd: projectRoot })
+      await exec('pnpm run build:css', { cwd: projectRoot })
+      console.log('[API] 构建完成，开始生成 HTML...')
+
       const result = await runGenerate({
         inputPath: join(projectRoot, 'site.json'),
         distRoot: join(projectRoot, 'dist'),
         projectRoot,
       })
+      if (result.success) {
+        console.log(`[API] ${result.message}`)
+      }
       sendJson(res, 200, result)
     } catch (e) {
+      console.error('[API] 生成失败:', e)
       sendJson(res, 500, {
         success: false,
-        message: '生成过程出错',
-        error: e.message,
+        message: '构建或生成过程出错',
+        error: e.stderr || e.message,
       })
     }
     return
