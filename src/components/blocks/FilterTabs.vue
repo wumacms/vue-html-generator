@@ -13,15 +13,15 @@ function linkHref(url) {
 </script>
 
 <template>
-  <section class="bg-black py-12 border-y border-yellow-300/20">
+  <section class="bg-background py-12 border-y border-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-center justify-center gap-3 text-sm">
-        <span v-if="block.props?.label" class="text-yellow-300 font-bold mr-2">{{ block.props.label }}</span>
+        <span v-if="block.props?.label" class="text-primary font-bold mr-2">{{ block.props.label }}</span>
         <a
           v-for="(tab, i) in (block.props?.tabs ?? [])"
           :key="i"
           :href="linkHref(tab.path)"
-          class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition"
+          class="bg-muted border border-border text-muted-foreground px-4 py-2 rounded-full hover:bg-primary hover:text-primary-foreground transition"
         >
           {{ tab.label }}
         </a>

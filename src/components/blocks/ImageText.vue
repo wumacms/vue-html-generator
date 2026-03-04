@@ -15,7 +15,7 @@ const reverse = () => !!props.block.props?.reverse
 </script>
 
 <template>
-  <section :class="[reverse() ? 'bg-zinc-950' : 'bg-black', 'py-20']">
+  <section :class="[reverse() ? 'bg-muted' : 'bg-background', 'py-20 border-b border-border']">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div
         class="flex flex-col gap-12 items-center"
@@ -26,24 +26,24 @@ const reverse = () => !!props.block.props?.reverse
             v-if="block.props?.image"
             :src="block.props.image"
             :alt="block.props.imageAlt || ''"
-            class="rounded-3xl border-4 border-yellow-300/40 shadow-2xl w-full h-auto object-cover"
+            class="rounded-3xl border-4 border-primary/20 shadow-2xl w-full h-auto object-cover"
             loading="lazy"
           />
         </div>
         <div class="md:w-1/2 space-y-5">
           <span
             v-if="block.props?.badge"
-            class="text-yellow-300 font-bold text-sm bg-black border border-yellow-300 px-4 py-1.5 rounded-full inline-block"
+            class="text-primary font-bold text-sm bg-muted border border-primary px-4 py-1.5 rounded-full inline-block"
           >
             {{ block.props.badge }}
           </span>
-          <h2 class="text-4xl font-black text-yellow-300">{{ block.props?.title ?? '' }}</h2>
-          <p class="text-gray-300 text-lg">{{ block.props?.description ?? '' }}</p>
+          <h2 class="text-4xl font-black text-primary">{{ block.props?.title ?? '' }}</h2>
+          <p class="text-muted-foreground text-lg">{{ block.props?.description ?? '' }}</p>
           <div v-if="(block.props?.tags ?? []).length" class="flex flex-wrap gap-2 pt-2">
             <span
               v-for="(tag, i) in block.props.tags"
               :key="i"
-              class="bg-yellow-300/20 text-yellow-300 px-4 py-2 rounded-full text-sm font-bold border border-yellow-300"
+              class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold border border-primary/30"
             >
               {{ tag }}
             </span>
@@ -55,8 +55,8 @@ const reverse = () => !!props.block.props?.reverse
               :href="linkHref(btn.url)"
               :class="[
                 btn.primary
-                  ? 'bg-yellow-300 text-black hover:bg-yellow-200'
-                  : 'border-2 border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black',
+                  ? 'bg-primary text-primary-foreground hover:opacity-90'
+                  : 'border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground',
                 'px-8 py-3 rounded-full font-bold inline-block transition shadow-xl',
               ]"
             >

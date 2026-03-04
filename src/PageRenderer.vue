@@ -20,39 +20,26 @@ const sortedBlocks = computed(() => {
 })
 
 const hasNav = computed(() => props.site.nav && typeof props.site.nav === 'object')
-const isYellowKeys = computed(() => props.site.theme === 'yellow-keys')
 const navLinks = computed(() => props.site.nav?.links ?? [])
 const navCta = computed(() => props.site.nav?.cta ?? null)
 </script>
 
 <template>
   <div
-    class="min-h-screen"
-    :class="{ 'bg-black text-white antialiased': isYellowKeys }"
+    class="min-h-screen bg-background text-foreground"
   >
-    <!-- 黄黑键风格导航 -->
+    <!-- 统一导航栏 -->
     <nav
       v-if="hasNav"
-      class="bg-black border-b border-yellow-300/20 sticky top-0 z-50"
-      :class="{ 'border-yellow-300/20': isYellowKeys }"
+      class="bg-background border-b border-border sticky top-0 z-50 transition-colors"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
           <a :href="hrefTo('/')" class="flex items-center gap-2 no-underline">
             <span v-if="site.nav?.logoEmoji" class="text-4xl filter drop-shadow-lg">{{ site.nav.logoEmoji }}</span>
             <template v-if="site.nav?.logoText">
-              <span
-                v-if="site.nav?.logoTextTail && isYellowKeys"
-                class="text-2xl font-black tracking-tight text-yellow-300"
-              >{{ site.nav.logoText }}</span><span
-                v-if="site.nav?.logoTextTail && isYellowKeys"
-                class="text-2xl font-black tracking-tight text-white"
-              >{{ site.nav.logoTextTail }}</span>
-              <span
-                v-else
-                class="text-2xl font-black tracking-tight"
-                :class="isYellowKeys ? 'text-yellow-300' : 'text-gray-900'"
-              >{{ site.nav.logoText }}{{ site.nav.logoTextTail || '' }}</span>
+              <span class="text-2xl font-black tracking-tight text-primary">{{ site.nav.logoText }}</span>
+              <span v-if="site.nav?.logoTextTail" class="text-2xl font-black tracking-tight text-foreground">{{ site.nav.logoTextTail }}</span>
             </template>
           </a>
           <div class="hidden md:flex space-x-8 text-sm font-medium">
@@ -60,11 +47,11 @@ const navCta = computed(() => props.site.nav?.cta ?? null)
               v-for="link in navLinks"
               :key="link.path"
               :href="hrefTo(link.path)"
+              class="transition no-underline"
               :class="[
                 page.path === link.path
-                  ? isYellowKeys ? 'text-yellow-300' : 'text-gray-900 font-semibold'
-                  : isYellowKeys ? 'text-gray-300 hover:text-yellow-300' : 'text-gray-600 hover:text-gray-900',
-                'transition no-underline',
+                  ? 'text-primary font-semibold'
+                  : 'text-muted-foreground hover:text-primary',
               ]"
             >
               {{ link.label }}
@@ -73,7 +60,7 @@ const navCta = computed(() => props.site.nav?.cta ?? null)
           <div v-if="navCta">
             <a
               :href="hrefTo(navCta.href)"
-              class="bg-yellow-300 text-black px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-200 transition shadow-lg shadow-yellow-300/30 no-underline"
+              class="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-90 transition shadow-lg shadow-primary/30 no-underline"
             >
               {{ navCta.text }}
             </a>
@@ -85,7 +72,7 @@ const navCta = computed(() => props.site.nav?.cta ?? null)
     <!-- 无 site.nav 时使用简易顶栏 -->
     <header
       v-else-if="site.name"
-      class="flex justify-between items-center py-4 px-6 border-b border-gray-200"
+      class="flex justify-between items-center py-4 px-6 border-b border-border bg-background"
     >
       <a :href="hrefTo('/')" class="font-bold no-underline text-inherit">
         {{ site.name }}
@@ -95,7 +82,7 @@ const navCta = computed(() => props.site.nav?.cta ?? null)
           v-for="p in site.pages"
           :key="p.path"
           :href="hrefTo(p.path)"
-          class="text-gray-600 no-underline hover:underline"
+          class="text-muted-foreground no-underline hover:underline hover:text-foreground"
         >
           {{ p.title ?? p.path }}
         </a>

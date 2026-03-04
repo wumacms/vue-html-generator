@@ -39,7 +39,8 @@ function getTemplateReplacements(page, site, appHtml) {
   const styleHref = getStyleHrefForPage(page.path, basePath)
   const styleTag = `<link rel="stylesheet" href="${escapeHtml(styleHref)}">`
   const title = escapeHtml(page.title || site.name || '页面')
-  return { title, baseTag, metaDescription: metaDesc, styleTag, appHtml }
+  const theme = escapeHtml(site.theme || 'default')
+  return { title, baseTag, metaDescription: metaDesc, styleTag, appHtml, theme }
 }
 
 function escapeHtml(s) {
@@ -57,12 +58,13 @@ async function getHtmlTemplate(projectRoot) {
   return await readFile(templatePath, 'utf-8')
 }
 
-function fillTemplate(template, { title, baseTag, metaDescription: metaDesc, styleTag, appHtml }) {
+function fillTemplate(template, { title, baseTag, metaDescription: metaDesc, styleTag, appHtml, theme }) {
   return template
     .replace('{{title}}', title)
     .replace('{{baseTag}}', baseTag)
     .replace('{{metaDescription}}', metaDesc)
     .replace('{{styleTag}}', styleTag)
+    .replace('{{theme}}', theme)
     .replace('<!--app-html-->', appHtml)
 }
 
@@ -146,7 +148,7 @@ export async function runGenerate({ inputPath, distRoot, projectRoot = defaultPr
     const outAssets = join(resolvedDist, 'assets')
     await mkdir(outAssets, { recursive: true })
     await cp(assetsDir, outAssets, { recursive: true })
-  } catch (_) {}
+  } catch (_) { }
 
   return {
     success: true,

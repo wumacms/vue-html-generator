@@ -9,7 +9,7 @@ defineProps({
     <div
       v-for="(card, i) in (block.props?.cards ?? [])"
       :key="i"
-      class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"
+      class="bg-muted rounded-3xl border border-border overflow-hidden hover:border-primary transition group"
     >
       <div class="h-80 overflow-hidden">
         <img
@@ -22,18 +22,18 @@ defineProps({
       <div class="p-6">
         <div class="flex justify-between items-start">
           <div>
-            <h3 class="text-2xl font-bold text-white">{{ card.title }}</h3>
-            <p class="text-yellow-300 text-sm">{{ card.subtitle }}</p>
+            <h3 class="text-2xl font-bold text-foreground">{{ card.title }}</h3>
+            <p class="text-primary text-sm">{{ card.subtitle }}</p>
           </div>
           <span
             v-if="card.badge"
-            class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40"
+            class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full border border-primary/40"
           >
             {{ card.badge }}
           </span>
         </div>
-        <p v-if="card.description" class="text-gray-400 text-sm mt-4">{{ card.description }}</p>
-        <div v-if="(card.meta ?? []).length" class="flex gap-4 mt-4 text-sm text-gray-500">
+        <p v-if="card.description" class="text-muted-foreground text-sm mt-4">{{ card.description }}</p>
+        <div v-if="(card.meta ?? []).length" class="flex gap-4 mt-4 text-sm text-muted-foreground/60">
           <span v-for="(m, j) in card.meta" :key="j">{{ m }}</span>
         </div>
       </div>

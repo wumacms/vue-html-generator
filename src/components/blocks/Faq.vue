@@ -7,19 +7,19 @@ defineProps({
 </script>
 
 <template>
-  <section class="bg-black py-20">
+  <section class="bg-background py-20 border-b border-border">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-black text-center text-yellow-300 mb-10">
+      <h2 class="text-3xl font-black text-center text-primary mb-10">
         {{ block.props?.title ?? '常见问题' }}
       </h2>
       <div class="space-y-4">
         <div
           v-for="(item, i) in (block.props?.items ?? [])"
           :key="i"
-          class="border border-yellow-300/30 rounded-2xl p-5"
+          class="border border-border rounded-2xl p-5 hover:border-primary transition"
         >
-          <h3 class="font-bold text-white text-lg">{{ item.question }}</h3>
-          <p class="text-gray-400 mt-1">{{ item.answer }}</p>
+          <h3 class="font-bold text-foreground text-lg">{{ item.question }}</h3>
+          <p class="text-muted-foreground mt-1">{{ item.answer }}</p>
         </div>
       </div>
     </div>

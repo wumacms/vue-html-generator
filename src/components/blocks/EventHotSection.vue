@@ -19,14 +19,14 @@ const secondaryCards = () => props.block.props?.secondaryCards ?? []
 </script>
 
 <template>
-  <section class="bg-black pt-16 pb-8">
+  <section class="bg-background pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-end mb-10">
-        <h2 class="text-3xl md:text-4xl font-black text-yellow-300">{{ title() }}</h2>
+        <h2 class="text-3xl md:text-4xl font-black text-primary">{{ title() }}</h2>
         <a
           v-if="linkText()"
           :href="linkHref(linkUrl())"
-          class="text-yellow-300 border-b border-yellow-300/30 pb-0.5 text-sm font-bold hover:text-white transition"
+          class="text-primary border-b border-primary/30 pb-0.5 text-sm font-bold hover:text-foreground transition"
         >
           {{ linkText() }}
         </a>
@@ -34,7 +34,7 @@ const secondaryCards = () => props.block.props?.secondaryCards ?? []
       <!-- 大卡片 -->
       <div
         v-if="featured().image || featured().title"
-        class="bg-zinc-900 rounded-3xl border-2 border-yellow-300/30 overflow-hidden mb-8 hover:border-yellow-300 transition"
+        class="bg-muted rounded-3xl border-2 border-border overflow-hidden mb-8 hover:border-primary transition"
       >
         <div class="grid md:grid-cols-2">
           <div class="h-80 md:h-auto overflow-hidden">
@@ -48,13 +48,13 @@ const secondaryCards = () => props.block.props?.secondaryCards ?? []
           <div class="p-8 flex flex-col justify-center">
             <span
               v-if="featured().badge"
-              class="text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-xs font-bold inline-block w-fit mb-4"
+              class="text-primary bg-background border border-primary px-3 py-1 rounded-full text-xs font-bold inline-block w-fit mb-4"
             >
               {{ featured().badge }}
             </span>
-            <h3 class="text-3xl font-black text-white mb-3">{{ featured().title }}</h3>
-            <p class="text-gray-300 mb-4">{{ featured().description }}</p>
-            <div v-if="(featured().meta ?? []).length" class="flex gap-4 text-sm text-gray-400 mb-5">
+            <h3 class="text-3xl font-black text-foreground mb-3">{{ featured().title }}</h3>
+            <p class="text-muted-foreground mb-4">{{ featured().description }}</p>
+            <div v-if="(featured().meta ?? []).length" class="flex gap-4 text-sm text-muted-foreground/60 mb-5">
               <span v-for="(m, i) in featured().meta" :key="i">{{ m }}</span>
             </div>
             <div v-if="(featured().buttons ?? []).length" class="flex gap-3">
@@ -64,8 +64,8 @@ const secondaryCards = () => props.block.props?.secondaryCards ?? []
                 :href="linkHref(btn.url)"
                 :class="[
                   btn.primary
-                    ? 'bg-yellow-300 text-black hover:bg-yellow-200'
-                    : 'border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black',
+                    ? 'bg-primary text-primary-foreground hover:opacity-90'
+                    : 'border border-primary text-primary hover:bg-primary hover:text-primary-foreground',
                   'px-6 py-3 rounded-full font-bold text-sm transition',
                 ]"
               >
@@ -80,7 +80,7 @@ const secondaryCards = () => props.block.props?.secondaryCards ?? []
         <div
           v-for="(card, i) in secondaryCards()"
           :key="i"
-          class="bg-zinc-900 rounded-2xl border border-yellow-300/20 overflow-hidden flex flex-col md:flex-row hover:border-yellow-300 transition"
+          class="bg-muted rounded-2xl border border-border overflow-hidden flex flex-col md:flex-row hover:border-primary transition"
         >
           <div class="md:w-2/5 h-40 overflow-hidden shrink-0">
             <img
@@ -93,16 +93,16 @@ const secondaryCards = () => props.block.props?.secondaryCards ?? []
           <div class="p-5 md:w-3/5">
             <span
               v-if="card.badge"
-              class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full"
+              class="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full"
             >
               {{ card.badge }}
             </span>
-            <h4 class="font-bold text-white text-lg mt-2">{{ card.title }}</h4>
-            <p class="text-gray-400 text-sm">{{ card.subtitle }}</p>
+            <h4 class="font-bold text-foreground text-lg mt-2">{{ card.title }}</h4>
+            <p class="text-muted-foreground text-sm">{{ card.subtitle }}</p>
             <a
               v-if="card.linkText"
               :href="linkHref(card.linkUrl || '#')"
-              class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30"
+              class="inline-block mt-3 text-primary text-sm font-bold border-b border-primary/30 hover:border-primary transition"
             >
               {{ card.linkText }}
             </a>

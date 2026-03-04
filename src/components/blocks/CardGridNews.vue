@@ -17,22 +17,22 @@ function linkHref(url) {
     <div
       v-for="(card, i) in (block.props?.cards ?? [])"
       :key="i"
-      class="bg-black p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition"
+      class="bg-muted p-5 rounded-2xl border border-border hover:border-primary transition"
     >
       <span
         v-if="card.badge"
-        class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full inline-block mb-3"
+        class="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full inline-block mb-3"
       >
         {{ card.badge }}
       </span>
-      <h3 class="font-bold text-white text-lg mb-2">{{ card.title }}</h3>
-      <p v-if="card.subtitle" class="text-sm text-gray-400 mb-3">{{ card.subtitle }}</p>
+      <h3 class="font-bold text-foreground text-lg mb-2">{{ card.title }}</h3>
+      <p v-if="card.subtitle" class="text-sm text-muted-foreground mb-3">{{ card.subtitle }}</p>
       <div class="flex justify-between items-center">
-        <span v-if="card.date" class="text-gray-500 text-xs">{{ card.date }}</span>
+        <span v-if="card.date" class="text-muted-foreground/60 text-xs">{{ card.date }}</span>
         <a
           v-if="card.linkText"
           :href="linkHref(card.link)"
-          class="text-yellow-300 text-sm font-bold border-b border-yellow-300/30"
+          class="text-primary text-sm font-bold border-b border-primary/30 hover:border-primary transition"
         >
           {{ card.linkText }}
         </a>

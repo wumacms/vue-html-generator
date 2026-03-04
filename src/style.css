@@ -1,1 +1,181 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+}
+
+:root {
+    --background: #ffffff;
+    --foreground: #111827;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+    --border: #e5e7eb;
+}
+
+[data-theme='yellow-keys'] {
+    --background: #000000;
+    --foreground: #ffffff;
+    --primary: #fde047;
+    /* yellow-300 */
+    --primary-foreground: #000000;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
+    --border: rgba(253, 224, 71, 0.2);
+}
+
+[data-theme='cyber-purple'] {
+    --background: #0f172a;
+    /* 深蓝背景 */
+    --foreground: #f8fafc;
+    /* 极浅灰文字 */
+    --primary: #a855f7;
+    /* 亮紫色 */
+    --primary-foreground: #ffffff;
+    /* 白色文字 */
+    --muted: #1e293b;
+    /* 次要背景 */
+    --muted-foreground: #94a3b8;
+    /* 次要文字 */
+    --border: rgba(168, 85, 247, 0.3);
+    /* 带紫色的透明边框 */
+}
+
+[data-theme='forest-zen'] {
+    --background: #064e3b;
+    /* 深绿背景 */
+    --foreground: #ecfdf5;
+    /* 浅绿文字 */
+    --primary: #34d399;
+    /* 翠绿色 */
+    --primary-foreground: #064e3b;
+    --muted: #065f46;
+    --muted-foreground: #a7f3d0;
+    --border: rgba(52, 211, 153, 0.2);
+}
+
+[data-theme='royal-crimson'] {
+    --background: #450a0a;
+    /* 深红背景 */
+    --foreground: #fef2f2;
+    /* 浅粉文字 */
+    --primary: #fbbf24;
+    /* 皇家金 */
+    --primary-foreground: #450a0a;
+    --muted: #7f1d1d;
+    --muted-foreground: #fca5a5;
+    --border: rgba(251, 191, 36, 0.2);
+}
+
+[data-theme='nordic-light'] {
+    --background: #f8fafc;
+    /* 极简白 */
+    --foreground: #0f172a;
+    /* 深蓝灰文字 */
+    --primary: #2563eb;
+    /* 科技蓝 */
+    --primary-foreground: #ffffff;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --border: #e2e8f0;
+}
+
+[data-theme='github-light'] {
+    --background: #ffffff;
+    --foreground: #1f2328;
+    --primary: #0969da;
+    --primary-foreground: #ffffff;
+    --muted: #f6f8fa;
+    --muted-foreground: #636c76;
+    --border: #d0d7de;
+}
+
+[data-theme='github-dark'] {
+    --background: #0d1117;
+    --foreground: #e6edf3;
+    --primary: #2f81f7;
+    --primary-foreground: #ffffff;
+    --muted: #161b22;
+    --muted-foreground: #8b949e;
+    --border: #30363d;
+}
+
+[data-theme='midnight-neon'] {
+    --background: #020617;
+    /* 极深蓝 */
+    --foreground: #f8fafc;
+    --primary: #f472b6;
+    /* 亮粉色 */
+    --primary-foreground: #ffffff;
+    --muted: #1e1b4b;
+    /* 深紫背景 */
+    --muted-foreground: #94a3b8;
+    --border: rgba(244, 114, 182, 0.3);
+}
+
+[data-theme='solarized-paper'] {
+    --background: #fdf6e3;
+    /* 护眼黄 */
+    --foreground: #657b83;
+    --primary: #268bd2;
+    /* 经典蓝 */
+    --primary-foreground: #ffffff;
+    --muted: #eee8d5;
+    --muted-foreground: #93a1a1;
+    --border: #d5ccba;
+}
+
+[data-theme='matcha-latte'] {
+    --background: #f0f4f0;
+    /* 浅绿白 */
+    --foreground: #2d3a2d;
+    --primary: #5d8233;
+    /* 抹茶绿 */
+    --primary-foreground: #ffffff;
+    --muted: #e1e8e1;
+    --muted-foreground: #708a70;
+    --border: #c8d6c8;
+}
+
+[data-theme='ocean-depth'] {
+    --background: #002b36;
+    /* 深靛蓝 */
+    --foreground: #839496;
+    --primary: #2aa198;
+    /* 青色 */
+    --primary-foreground: #ffffff;
+    --muted: #073642;
+    --muted-foreground: #586e75;
+    --border: rgba(42, 161, 152, 0.3);
+}
+
+[data-theme='rose-petal'] {
+    --background: #fffafa;
+    /* 玫瑰白 */
+    --foreground: #4a3737;
+    --primary: #db7093;
+    /* 苍紫罗兰 */
+    --primary-foreground: #ffffff;
+    --muted: #f5e6e8;
+    --muted-foreground: #8b7d7d;
+    --border: #e8d0d2;
+}
+
+
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased;
+}
+
+.no-underline {
+    text-decoration: none;
+}

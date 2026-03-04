@@ -119,6 +119,7 @@ workflow 定义在 [.github/workflows/deploy.yml](./.github/workflows/deploy.yml
 
 - [平台设计思路（多用户、JSON 配置化）](./docs/平台设计思路-多用户与JSON配置化.md)
 - [静态生成与 GitHub Pages 选型](./docs/可视化建站-静态生成与发布分析.md)
+- [主题系统与可用主题列表](./docs/THEMES.md)
 - [静态站点生成模块实现思路](./docs/静态站点生成模块-实现思路.md)
 
 ## License

@@ -21,7 +21,7 @@ const props = defineProps({
 
 const variant = computed(() => props.block.props?.variant || 'default')
 const GridComponent = computed(() => variantComponents[variant.value] ?? CardGridFallback)
-const sectionClass = computed(() => (variant.value === 'event' ? 'bg-zinc-950' : 'bg-black'))
+const sectionClass = computed(() => (variant.value === 'event' ? 'bg-muted' : 'bg-background'))
 
 function linkHref(url) {
   return getHref(props.currentPagePath, url || '#', props.basePath)
@@ -29,13 +29,13 @@ function linkHref(url) {
 </script>
 
 <template>
-  <section :class="[sectionClass, 'py-20']">
+  <section :class="[sectionClass, 'py-20 border-b border-border']">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div v-if="block.props?.title || block.props?.subtitle" class="text-center mb-12">
-        <h2 v-if="block.props?.title" class="text-3xl md:text-4xl font-black text-yellow-300 mb-2">
+        <h2 v-if="block.props?.title" class="text-3xl md:text-4xl font-black text-primary mb-2">
           {{ block.props.title }}
         </h2>
-        <p v-if="block.props?.subtitle" class="text-gray-400 text-lg mt-2">{{ block.props.subtitle }}</p>
+        <p v-if="block.props?.subtitle" class="text-muted-foreground text-lg mt-2">{{ block.props.subtitle }}</p>
       </div>
       <Component
         :is="GridComponent"
@@ -49,7 +49,7 @@ function linkHref(url) {
       >
         <a
           :href="linkHref(block.props.bottomButton.href || '#')"
-          class="bg-transparent border-2 border-yellow-300 text-yellow-300 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition inline-flex items-center gap-2"
+          class="bg-transparent border-2 border-primary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-primary-foreground transition inline-flex items-center gap-2"
         >
           {{ block.props.bottomButton.text }}
         </a>

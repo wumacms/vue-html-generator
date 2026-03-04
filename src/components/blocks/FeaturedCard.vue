@@ -13,9 +13,9 @@ function linkHref(url) {
 </script>
 
 <template>
-  <section class="bg-black pt-16 pb-8">
+  <section class="bg-background pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-zinc-900 rounded-3xl border-2 border-yellow-300/30 overflow-hidden mb-8 hover:border-yellow-300 transition">
+      <div class="bg-muted rounded-3xl border-2 border-border overflow-hidden mb-8 hover:border-primary transition">
         <div class="grid md:grid-cols-2">
           <div class="h-80 md:h-auto overflow-hidden">
             <img
@@ -29,15 +29,15 @@ function linkHref(url) {
             <div v-if="block.props?.badge || block.props?.date" class="flex gap-2 items-center mb-3">
               <span
                 v-if="block.props?.badge"
-                class="text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-xs font-bold inline-block w-fit"
+                class="text-primary bg-background border border-primary px-3 py-1 rounded-full text-xs font-bold inline-block w-fit"
               >
                 {{ block.props.badge }}
               </span>
-              <span v-if="block.props?.date" class="text-gray-400 text-sm">{{ block.props.date }}</span>
+              <span v-if="block.props?.date" class="text-muted-foreground text-sm">{{ block.props.date }}</span>
             </div>
-            <h3 class="text-3xl font-black text-white mb-3">{{ block.props?.title ?? '' }}</h3>
-            <p class="text-gray-300 mb-4">{{ block.props?.description ?? '' }}</p>
-            <div v-if="(block.props?.meta ?? []).length" class="flex gap-4 text-sm text-gray-400 mb-5">
+            <h3 class="text-3xl font-black text-foreground mb-3">{{ block.props?.title ?? '' }}</h3>
+            <p class="text-muted-foreground mb-4">{{ block.props?.description ?? '' }}</p>
+            <div v-if="(block.props?.meta ?? []).length" class="flex gap-4 text-sm text-muted-foreground/60 mb-5">
               <span v-for="(m, i) in block.props.meta" :key="i">{{ m }}</span>
             </div>
             <div v-if="(block.props?.buttons ?? []).length" class="flex gap-3">
@@ -47,8 +47,8 @@ function linkHref(url) {
                 :href="linkHref(btn.url)"
                 :class="[
                   btn.primary
-                    ? 'bg-yellow-300 text-black hover:bg-yellow-200'
-                    : 'border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black',
+                    ? 'bg-primary text-primary-foreground hover:opacity-90'
+                    : 'border border-primary text-primary hover:bg-primary hover:text-primary-foreground',
                   'px-6 py-3 rounded-full font-bold text-sm transition',
                 ]"
               >
