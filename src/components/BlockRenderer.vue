@@ -1,42 +1,17 @@
 <script setup>
 import { computed } from 'vue'
-import Hero from './blocks/Hero.vue'
-import Features from './blocks/Features.vue'
-import Cta from './blocks/Cta.vue'
-import Footer from './blocks/Footer.vue'
-import Partners from './blocks/Partners.vue'
-import ImageText from './blocks/ImageText.vue'
-import Testimonials from './blocks/Testimonials.vue'
-import Stats from './blocks/Stats.vue'
-import Faq from './blocks/Faq.vue'
-import FilterTabs from './blocks/FilterTabs.vue'
-import CardGrid from './blocks/CardGrid.vue'
-import FeaturedCard from './blocks/FeaturedCard.vue'
-import EventHotSection from './blocks/EventHotSection.vue'
-import NewsletterSubscribe from './blocks/NewsletterSubscribe.vue'
-import ArticleContent from './blocks/ArticleContent.vue'
-import ArticleMeta from './blocks/ArticleMeta.vue'
-import ArticleNav from './blocks/ArticleNav.vue'
+const blocks = import.meta.glob('./blocks/*.vue', { eager: true })
+const blockComponents = Object.fromEntries(
+  Object.entries(blocks).map(([path, module]) => {
+    const name = path.match(/\/([^/]+)\.vue$/)[1]
+    const key = name.charAt(0).toLowerCase() + name.slice(1)
+    return [key, module.default]
+  })
+)
 
-const blockComponents = {
-  hero: Hero,
-  features: Features,
-  cta: Cta,
-  footer: Footer,
-  partners: Partners,
-  imageText: ImageText,
-  testimonials: Testimonials,
-  stats: Stats,
-  faq: Faq,
-  filterTabs: FilterTabs,
-  cardGrid: CardGrid,
-  featuredCard: FeaturedCard,
-  eventHotSection: EventHotSection,
-  newsHotSection: EventHotSection,
-  newsletterSubscribe: NewsletterSubscribe,
-  articleContent: ArticleContent,
-  articleMeta: ArticleMeta,
-  articleNav: ArticleNav,
+// 别名保留
+if (blockComponents.eventHotSection) {
+  blockComponents.newsHotSection = blockComponents.eventHotSection
 }
 
 const props = defineProps({

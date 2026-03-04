@@ -37,7 +37,9 @@ function uniqueFilename(url) {
  */
 export function collectImageUrls(obj, out = new Set(), key = '') {
   if (obj === null || typeof obj !== 'object') {
-    if (typeof obj === 'string' && IMAGE_KEYS.has(key) && isImageUrl(obj)) out.add(obj.trim())
+    if (typeof obj === 'string' && (IMAGE_KEYS.has(key) || IMAGE_EXT_RE.test(obj.split('?')[0])) && isImageUrl(obj)) {
+      out.add(obj.trim())
+    }
     return out
   }
   if (Array.isArray(obj)) {
@@ -45,8 +47,11 @@ export function collectImageUrls(obj, out = new Set(), key = '') {
     return out
   }
   for (const [k, v] of Object.entries(obj)) {
-    if (typeof v === 'string' && IMAGE_KEYS.has(k) && isImageUrl(v)) out.add(v.trim())
-    else collectImageUrls(v, out, k)
+    if (typeof v === 'string' && (IMAGE_KEYS.has(k) || IMAGE_EXT_RE.test(v.split('?')[0])) && isImageUrl(v)) {
+      out.add(v.trim())
+    } else {
+      collectImageUrls(v, out, k)
+    }
   }
   return out
 }
@@ -100,15 +105,16 @@ function deepClone(obj) {
 /**
  * 对 site 的深拷贝中，将出现在 urlToLocal 中的字符串替换为本地路径
  */
-function replaceUrlsInObject(obj, urlToLocal) {
+function replaceUrlsInObject(obj, urlToLocal, key = '') {
   if (obj === null || typeof obj !== 'object') return obj
   if (Array.isArray(obj)) return obj.map((item) => replaceUrlsInObject(item, urlToLocal))
   const o = {}
   for (const [k, v] of Object.entries(obj)) {
+    const isImg = typeof v === 'string' && (IMAGE_KEYS.has(k) || IMAGE_EXT_RE.test(v.split('?')[0]))
     o[k] =
-      typeof v === 'string' && IMAGE_KEYS.has(k) && urlToLocal.has(v.trim())
+      isImg && urlToLocal.has(v.trim())
         ? urlToLocal.get(v.trim())
-        : replaceUrlsInObject(v, urlToLocal)
+        : replaceUrlsInObject(v, urlToLocal, k)
   }
   return o
 }

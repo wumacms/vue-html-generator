@@ -1,22 +1,17 @@
 <script setup>
 import { computed } from 'vue'
 import { getHref } from '../../utils/relativeHref.js'
-import CardGridDefault from './CardGridDefault.vue'
-import CardGridTeacher from './CardGridTeacher.vue'
-import CardGridCampus from './CardGridCampus.vue'
-import CardGridEvent from './CardGridEvent.vue'
-import CardGridEventReview from './CardGridEventReview.vue'
-import CardGridNews from './CardGridNews.vue'
+const variants = import.meta.glob('./CardGrid*.vue', { eager: true })
+const variantComponents = Object.fromEntries(
+  Object.entries(variants)
+    .filter(([path]) => !path.includes('Fallback'))
+    .map(([path, module]) => {
+      const name = path.match(/\/CardGrid([^/]+)\.vue$/)[1]
+      const key = name.charAt(0).toLowerCase() + name.slice(1)
+      return [key, module.default]
+    })
+)
 import CardGridFallback from './CardGridFallback.vue'
-
-const variantComponents = {
-  default: CardGridDefault,
-  teacher: CardGridTeacher,
-  campus: CardGridCampus,
-  event: CardGridEvent,
-  eventReview: CardGridEventReview,
-  news: CardGridNews,
-}
 
 const props = defineProps({
   block: { type: Object, required: true },

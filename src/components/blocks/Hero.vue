@@ -1,14 +1,13 @@
 <script setup>
 import { computed } from 'vue'
-import HeroArticle from './HeroArticle.vue'
-import HeroCover from './HeroCover.vue'
-import HeroDefault from './HeroDefault.vue'
-
-const variantComponents = {
-  article: HeroArticle,
-  cover: HeroCover,
-  default: HeroDefault,
-}
+const variants = import.meta.glob('./Hero*.vue', { eager: true })
+const variantComponents = Object.fromEntries(
+  Object.entries(variants).map(([path, module]) => {
+    const name = path.match(/\/Hero([^/]+)\.vue$/)[1]
+    const key = name.charAt(0).toLowerCase() + name.slice(1)
+    return [key, module.default]
+  })
+)
 
 const props = defineProps({
   block: { type: Object, required: true },
