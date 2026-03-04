@@ -104,8 +104,8 @@ const navCta = computed(() => props.site.nav?.cta ?? null)
 
     <main class="min-h-[50vh]">
       <BlockRenderer
-        v-for="block in sortedBlocks"
-        :key="block.id"
+        v-for="(block, index) in sortedBlocks"
+        :key="block.id ?? `block-${index}`"
         :block="block"
         :base-path="basePath"
         :current-page-path="page.path"

@@ -18,6 +18,8 @@ export function validateSite(site) {
     }
     if (typeof page.path !== 'string' || !/^\//.test(page.path)) {
       errors.push(`site.pages[${i}].path 必须为以 / 开头的字符串`)
+    } else if (page.path.includes('..')) {
+      errors.push(`site.pages[${i}].path 不能包含 '..'`)
     }
     if (pathSet.has(page.path)) {
       errors.push(`重复的 path: ${page.path}`)

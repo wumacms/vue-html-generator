@@ -7,8 +7,8 @@
 export function pathToFile(path) {
   if (typeof path !== 'string') return ''
   let p = path.trim().replace(/^\/+|\/+$/g, '')
-  // 防止路径穿越
-  if (p.includes('..') || /^\s*$/.test(p)) return p ? p : ''
+  // 防止路径穿越：含 '..' 或空白时返回空，避免写入 dist 外或覆盖根页
+  if (p.includes('..') || /^\s*$/.test(p)) return ''
   return p
 }
 
