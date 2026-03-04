@@ -35777,11 +35777,11 @@ const _sfc_main$s = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-12" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-200 text-lg leading-relaxed space-y-6"><!--[-->`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-12" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-foreground text-lg leading-relaxed space-y-6"><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.paragraphs) ?? [], (p, i) => {
         _push(`<!--[-->`);
         if (i === 0) {
-          _push(`<p class="first-letter:text-5xl first-letter:text-yellow-300 first-letter:font-black first-letter:mr-2 first-letter:float-left">${ssrInterpolate(p)}</p>`);
+          _push(`<p class="first-letter:text-5xl first-letter:text-primary first-letter:font-black first-letter:mr-2 first-letter:float-left">${ssrInterpolate(p)}</p>`);
         } else {
           _push(`<p>${ssrInterpolate(p)}</p>`);
         }
@@ -35791,16 +35791,16 @@ const _sfc_main$s = {
       if ((_c = (_b = __props.block.props) == null ? void 0 : _b.subheadings) == null ? void 0 : _c.length) {
         _push(`<!--[-->`);
         ssrRenderList(__props.block.props.subheadings, (h, i) => {
-          _push(`<h2 class="text-2xl font-bold text-yellow-300 mt-8 mb-4">${ssrInterpolate(h.text)}</h2>`);
+          _push(`<h2 class="text-2xl font-bold text-primary mt-8 mb-4">${ssrInterpolate(h.text)}</h2>`);
         });
         _push(`<!--]-->`);
       } else {
         _push(`<!---->`);
       }
       if ((_d = __props.block.props) == null ? void 0 : _d.quote) {
-        _push(`<div class="bg-zinc-900 border-l-4 border-yellow-300 p-5 my-8 rounded-r-2xl"><p class="text-gray-300 italic text-lg">${ssrInterpolate(__props.block.props.quote.text)}</p>`);
+        _push(`<div class="bg-muted border-l-4 border-primary p-5 my-8 rounded-r-2xl"><p class="text-muted-foreground italic text-lg">${ssrInterpolate(__props.block.props.quote.text)}</p>`);
         if (__props.block.props.quote.author) {
-          _push(`<p class="text-yellow-300 mt-2 font-bold">${ssrInterpolate(__props.block.props.quote.author)}</p>`);
+          _push(`<p class="text-primary mt-2 font-bold">${ssrInterpolate(__props.block.props.quote.author)}</p>`);
         } else {
           _push(`<!---->`);
         }
@@ -35809,7 +35809,7 @@ const _sfc_main$s = {
         _push(`<!---->`);
       }
       if ((_e = __props.block.props) == null ? void 0 : _e.list) {
-        _push(`<div class="bg-black border border-yellow-300/30 rounded-3xl p-6 my-8"><h3 class="text-xl font-bold text-yellow-300 mb-4">${ssrInterpolate(__props.block.props.list.title)}</h3><ul class="space-y-2 text-gray-300"><!--[-->`);
+        _push(`<div class="bg-muted border border-border rounded-3xl p-6 my-8"><h3 class="text-xl font-bold text-primary mb-4">${ssrInterpolate(__props.block.props.list.title)}</h3><ul class="space-y-2 text-muted-foreground"><!--[-->`);
         ssrRenderList(__props.block.props.list.items ?? [], (item, i) => {
           _push(`<li>${ssrInterpolate(item)}</li>`);
         });
@@ -35842,19 +35842,19 @@ const _sfc_main$r = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-10 border-y border-yellow-300/20" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap items-center justify-between gap-4"><div class="flex flex-wrap gap-2">`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-10 border-y border-border" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap items-center justify-between gap-4"><div class="flex flex-wrap gap-2">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.tagsLabel) {
-        _push(`<span class="text-yellow-300 font-bold text-sm">${ssrInterpolate(__props.block.props.tagsLabel)}</span>`);
+        _push(`<span class="text-primary font-bold text-sm">${ssrInterpolate(__props.block.props.tagsLabel)}</span>`);
       } else {
         _push(`<!---->`);
       }
       _push(`<!--[-->`);
       ssrRenderList(((_b = __props.block.props) == null ? void 0 : _b.tags) ?? [], (tag, i) => {
-        _push(`<a href="#" class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-3 py-1.5 rounded-full text-sm hover:bg-yellow-300 hover:text-black transition">${ssrInterpolate(tag)}</a>`);
+        _push(`<a href="#" class="bg-muted border border-border text-muted-foreground px-3 py-1.5 rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition">${ssrInterpolate(tag)}</a>`);
       });
       _push(`<!--]--></div>`);
       if ((_c = __props.block.props) == null ? void 0 : _c.shareLabel) {
-        _push(`<div class="flex items-center gap-3"><span class="text-gray-400 text-sm">${ssrInterpolate(__props.block.props.shareLabel)}</span><a href="#" class="bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition">📤</a><a href="#" class="bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition">🐦</a><a href="#" class="bg-zinc-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-yellow-300 hover:text-black transition">🔗</a></div>`);
+        _push(`<div class="flex items-center gap-3"><span class="text-muted-foreground text-sm">${ssrInterpolate(__props.block.props.shareLabel)}</span><a href="#" class="bg-muted w-8 h-8 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition">📤</a><a href="#" class="bg-muted w-8 h-8 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition">🐦</a><a href="#" class="bg-muted w-8 h-8 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition">🔗</a></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -35898,11 +35898,11 @@ const _sfc_main$q = {
     }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-zinc-950 py-12" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid md:grid-cols-2 gap-6">`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-12 border-b border-border" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid md:grid-cols-2 gap-6">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.prev) {
-        _push(`<a${ssrRenderAttr("href", linkHref(__props.block.props.prev.url))} class="bg-black border border-yellow-300/20 rounded-2xl p-5 hover:border-yellow-300 transition group"><span class="text-gray-500 text-sm flex items-center gap-1 mb-2">← 上一篇</span><h4 class="font-bold text-white text-lg group-hover:text-yellow-300">${ssrInterpolate(__props.block.props.prev.title)}</h4>`);
+        _push(`<a${ssrRenderAttr("href", linkHref(__props.block.props.prev.url))} class="bg-muted border border-border rounded-2xl p-5 hover:border-primary transition group"><span class="text-muted-foreground text-sm flex items-center gap-1 mb-2">← 上一篇</span><h4 class="font-bold text-foreground text-lg group-hover:text-primary">${ssrInterpolate(__props.block.props.prev.title)}</h4>`);
         if (__props.block.props.prev.date) {
-          _push(`<p class="text-gray-400 text-sm">${ssrInterpolate(__props.block.props.prev.date)}</p>`);
+          _push(`<p class="text-muted-foreground/60 text-sm">${ssrInterpolate(__props.block.props.prev.date)}</p>`);
         } else {
           _push(`<!---->`);
         }
@@ -35911,9 +35911,9 @@ const _sfc_main$q = {
         _push(`<!---->`);
       }
       if ((_b = __props.block.props) == null ? void 0 : _b.next) {
-        _push(`<a${ssrRenderAttr("href", linkHref(__props.block.props.next.url))} class="bg-black border border-yellow-300/20 rounded-2xl p-5 hover:border-yellow-300 transition group text-right"><span class="text-gray-500 text-sm flex items-center gap-1 mb-2 justify-end">下一篇 →</span><h4 class="font-bold text-white text-lg group-hover:text-yellow-300">${ssrInterpolate(__props.block.props.next.title)}</h4>`);
+        _push(`<a${ssrRenderAttr("href", linkHref(__props.block.props.next.url))} class="bg-muted border border-border rounded-2xl p-5 hover:border-primary transition group text-right"><span class="text-muted-foreground text-sm flex items-center gap-1 mb-2 justify-end">下一篇 →</span><h4 class="font-bold text-foreground text-lg group-hover:text-primary">${ssrInterpolate(__props.block.props.next.title)}</h4>`);
         if (__props.block.props.next.date) {
-          _push(`<p class="text-gray-400 text-sm">${ssrInterpolate(__props.block.props.next.date)}</p>`);
+          _push(`<p class="text-muted-foreground/60 text-sm">${ssrInterpolate(__props.block.props.next.date)}</p>`);
         } else {
           _push(`<!---->`);
         }
@@ -35952,34 +35952,34 @@ const _sfc_main$p = {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-2 lg:grid-cols-3 gap-8" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
-        _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-60 overflow-hidden">`);
+        _push(`<div class="bg-muted rounded-3xl border border-border overflow-hidden hover:border-primary transition group"><div class="h-60 overflow-hidden">`);
         if (card.image) {
           _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
         } else {
           _push(`<!---->`);
         }
-        _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-yellow-300 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
+        _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-foreground">${ssrInterpolate(card.title)}</h3><p class="text-primary text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
         if (card.badge) {
-          _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">${ssrInterpolate(card.badge)}</span>`);
+          _push(`<span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full border border-primary/40">${ssrInterpolate(card.badge)}</span>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div>`);
         if (card.description) {
-          _push(`<p class="text-gray-400 text-sm mt-3">${ssrInterpolate(card.description)}</p>`);
+          _push(`<p class="text-muted-foreground text-sm mt-3">${ssrInterpolate(card.description)}</p>`);
         } else {
           _push(`<!---->`);
         }
         if ((card.tags ?? []).length) {
           _push(`<div class="flex flex-wrap gap-2 mt-4"><!--[-->`);
           ssrRenderList(card.tags, (tag, j) => {
-            _push(`<span class="bg-black border border-yellow-300/30 text-gray-300 text-xs px-2 py-1 rounded-full">${ssrInterpolate(tag)}</span>`);
+            _push(`<span class="bg-background border border-border text-muted-foreground text-xs px-2 py-1 rounded-full">${ssrInterpolate(tag)}</span>`);
           });
           _push(`<!--]--></div>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<div class="flex gap-3 mt-5"><a${ssrRenderAttr("href", linkHref("#"))} class="bg-yellow-300 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-200 transition">${ssrInterpolate(card.primaryButton ?? "预约参观")}</a><a${ssrRenderAttr("href", linkHref("#"))} class="border border-yellow-300 text-yellow-300 px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-300 hover:text-black transition">${ssrInterpolate(card.secondaryButton ?? "路线")}</a></div></div></div>`);
+        _push(`<div class="flex gap-3 mt-5"><a${ssrRenderAttr("href", linkHref("#"))} class="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold hover:opacity-90 transition">${ssrInterpolate(card.primaryButton ?? "预约参观")}</a><a${ssrRenderAttr("href", linkHref("#"))} class="border border-primary text-primary px-4 py-2 rounded-full text-sm font-bold hover:bg-primary hover:text-primary-foreground transition">${ssrInterpolate(card.secondaryButton ?? "路线")}</a></div></div></div>`);
       });
       _push(`<!--]--></div>`);
     };
@@ -36006,15 +36006,15 @@ const _sfc_main$o = {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
-        _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 flex items-start gap-4">`);
+        _push(`<div class="bg-muted p-5 rounded-2xl border border-border flex items-start gap-4 hover:border-primary transition">`);
         if (card.icon) {
-          _push(`<span class="text-3xl bg-yellow-300/10 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">${ssrInterpolate(card.icon)}</span>`);
+          _push(`<span class="text-3xl bg-primary/10 w-12 h-12 flex items-center justify-center rounded-xl shrink-0">${ssrInterpolate(card.icon)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<div><h3 class="font-bold text-white text-lg">${ssrInterpolate(card.title)}</h3>`);
+        _push(`<div><h3 class="font-bold text-foreground text-lg">${ssrInterpolate(card.title)}</h3>`);
         if (card.subtitle) {
-          _push(`<p class="text-sm text-gray-400">${ssrInterpolate(card.subtitle)}</p>`);
+          _push(`<p class="text-sm text-muted-foreground">${ssrInterpolate(card.subtitle)}</p>`);
         } else {
           _push(`<!---->`);
         }
@@ -36051,30 +36051,30 @@ const _sfc_main$n = {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid sm:grid-cols-2 lg:grid-cols-3 gap-5" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
-        _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition"><div class="flex justify-between items-start">`);
+        _push(`<div class="bg-muted p-5 rounded-2xl border border-border hover:border-primary transition"><div class="flex justify-between items-start">`);
         if (card.badge) {
-          _push(`<span class="bg-yellow-300 text-black text-xs font-bold px-3 py-1 rounded-full">${ssrInterpolate(card.badge)}</span>`);
+          _push(`<span class="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">${ssrInterpolate(card.badge)}</span>`);
         } else {
           _push(`<!---->`);
         }
         if (card.meta) {
-          _push(`<span class="text-yellow-300 text-sm">${ssrInterpolate(card.meta)}</span>`);
+          _push(`<span class="text-primary text-sm">${ssrInterpolate(card.meta)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`</div><h3 class="font-bold text-white text-lg mt-3">${ssrInterpolate(card.title)}</h3>`);
+        _push(`</div><h3 class="font-bold text-foreground text-lg mt-3">${ssrInterpolate(card.title)}</h3>`);
         if (card.subtitle) {
-          _push(`<p class="text-sm text-gray-400">${ssrInterpolate(card.subtitle)}</p>`);
+          _push(`<p class="text-sm text-muted-foreground">${ssrInterpolate(card.subtitle)}</p>`);
         } else {
           _push(`<!---->`);
         }
         if (card.note) {
-          _push(`<p class="text-xs text-gray-500 mt-2">${ssrInterpolate(card.note)}</p>`);
+          _push(`<p class="text-xs text-muted-foreground/60 mt-2">${ssrInterpolate(card.note)}</p>`);
         } else {
           _push(`<!---->`);
         }
         if (card.linkText) {
-          _push(`<a${ssrRenderAttr("href", linkHref("#"))} class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+          _push(`<a${ssrRenderAttr("href", linkHref("#"))} class="inline-block mt-3 text-primary text-sm font-bold border-b border-primary/30 hover:border-primary transition">${ssrInterpolate(card.linkText)}</a>`);
         } else {
           _push(`<!---->`);
         }
@@ -36111,26 +36111,26 @@ const _sfc_main$m = {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-3 gap-6" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
-        _push(`<div class="bg-zinc-900 rounded-3xl overflow-hidden border border-yellow-300/20">`);
+        _push(`<div class="bg-muted rounded-3xl overflow-hidden border border-border hover:border-primary transition group">`);
         if (card.image) {
-          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="h-56 w-full object-cover">`);
+          _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="h-56 w-full object-cover group-hover:scale-105 transition">`);
         } else {
           _push(`<!---->`);
         }
         _push(`<div class="p-4">`);
         if (card.date) {
-          _push(`<span class="text-yellow-300 text-sm font-bold">${ssrInterpolate(card.date)}</span>`);
+          _push(`<span class="text-primary text-sm font-bold">${ssrInterpolate(card.date)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<h4 class="font-bold text-white">${ssrInterpolate(card.title)}</h4>`);
+        _push(`<h4 class="font-bold text-foreground group-hover:text-primary transition">${ssrInterpolate(card.title)}</h4>`);
         if (card.subtitle) {
-          _push(`<p class="text-xs text-gray-400 mt-1">${ssrInterpolate(card.subtitle)}</p>`);
+          _push(`<p class="text-xs text-muted-foreground mt-1">${ssrInterpolate(card.subtitle)}</p>`);
         } else {
           _push(`<!---->`);
         }
         if (card.linkText) {
-          _push(`<a${ssrRenderAttr("href", linkHref(card.linkUrl || "#"))} class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+          _push(`<a${ssrRenderAttr("href", linkHref(card.linkUrl || "#"))} class="inline-block mt-3 text-primary text-sm font-bold border-b border-primary/30 hover:border-primary transition">${ssrInterpolate(card.linkText)}</a>`);
         } else {
           _push(`<!---->`);
         }
@@ -36161,7 +36161,7 @@ const _sfc_main$l = {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid gap-4" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
-        _push(`<div class="p-4 border border-yellow-300/20 rounded-2xl"><h3 class="font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-gray-400 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
+        _push(`<div class="p-4 border border-border rounded-2xl bg-muted"><h3 class="font-bold text-foreground">${ssrInterpolate(card.title)}</h3><p class="text-muted-foreground text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
       });
       _push(`<!--]--></div>`);
     };
@@ -36194,26 +36194,26 @@ const _sfc_main$k = {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid sm:grid-cols-2 lg:grid-cols-3 gap-6" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
-        _push(`<div class="bg-black p-5 rounded-2xl border border-yellow-300/20 hover:border-yellow-300 transition">`);
+        _push(`<div class="bg-muted p-5 rounded-2xl border border-border hover:border-primary transition">`);
         if (card.badge) {
-          _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full inline-block mb-3">${ssrInterpolate(card.badge)}</span>`);
+          _push(`<span class="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full inline-block mb-3">${ssrInterpolate(card.badge)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<h3 class="font-bold text-white text-lg mb-2">${ssrInterpolate(card.title)}</h3>`);
+        _push(`<h3 class="font-bold text-foreground text-lg mb-2">${ssrInterpolate(card.title)}</h3>`);
         if (card.subtitle) {
-          _push(`<p class="text-sm text-gray-400 mb-3">${ssrInterpolate(card.subtitle)}</p>`);
+          _push(`<p class="text-sm text-muted-foreground mb-3">${ssrInterpolate(card.subtitle)}</p>`);
         } else {
           _push(`<!---->`);
         }
         _push(`<div class="flex justify-between items-center">`);
         if (card.date) {
-          _push(`<span class="text-gray-500 text-xs">${ssrInterpolate(card.date)}</span>`);
+          _push(`<span class="text-muted-foreground/60 text-xs">${ssrInterpolate(card.date)}</span>`);
         } else {
           _push(`<!---->`);
         }
         if (card.linkText) {
-          _push(`<a${ssrRenderAttr("href", linkHref(card.link))} class="text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+          _push(`<a${ssrRenderAttr("href", linkHref(card.link))} class="text-primary text-sm font-bold border-b border-primary/30 hover:border-primary transition">${ssrInterpolate(card.linkText)}</a>`);
         } else {
           _push(`<!---->`);
         }
@@ -36244,26 +36244,26 @@ const _sfc_main$j = {
       var _a;
       _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "grid md:grid-cols-2 lg:grid-cols-3 gap-8" }, _attrs))}><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.cards) ?? [], (card, i) => {
-        _push(`<div class="bg-zinc-900 rounded-3xl border border-yellow-300/20 overflow-hidden hover:border-yellow-300 transition group"><div class="h-80 overflow-hidden">`);
+        _push(`<div class="bg-muted rounded-3xl border border-border overflow-hidden hover:border-primary transition group"><div class="h-80 overflow-hidden">`);
         if (card.image) {
           _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover group-hover:scale-105 transition duration-500">`);
         } else {
           _push(`<!---->`);
         }
-        _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-white">${ssrInterpolate(card.title)}</h3><p class="text-yellow-300 text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
+        _push(`</div><div class="p-6"><div class="flex justify-between items-start"><div><h3 class="text-2xl font-bold text-foreground">${ssrInterpolate(card.title)}</h3><p class="text-primary text-sm">${ssrInterpolate(card.subtitle)}</p></div>`);
         if (card.badge) {
-          _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300/40">${ssrInterpolate(card.badge)}</span>`);
+          _push(`<span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full border border-primary/40">${ssrInterpolate(card.badge)}</span>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div>`);
         if (card.description) {
-          _push(`<p class="text-gray-400 text-sm mt-4">${ssrInterpolate(card.description)}</p>`);
+          _push(`<p class="text-muted-foreground text-sm mt-4">${ssrInterpolate(card.description)}</p>`);
         } else {
           _push(`<!---->`);
         }
         if ((card.meta ?? []).length) {
-          _push(`<div class="flex gap-4 mt-4 text-sm text-gray-500"><!--[-->`);
+          _push(`<div class="flex gap-4 mt-4 text-sm text-muted-foreground/60"><!--[-->`);
           ssrRenderList(card.meta, (m, j) => {
             _push(`<span>${ssrInterpolate(m)}</span>`);
           });
@@ -36310,24 +36310,24 @@ const _sfc_main$i = {
       return ((_a = props.block.props) == null ? void 0 : _a.variant) || "default";
     });
     const GridComponent = vueExports.computed(() => variantComponents[variant.value] ?? _sfc_main$l);
-    const sectionClass = vueExports.computed(() => variant.value === "event" ? "bg-zinc-950" : "bg-black");
+    const sectionClass = vueExports.computed(() => variant.value === "event" ? "bg-muted" : "bg-background");
     function linkHref(url) {
       return getHref(props.currentPagePath, url, props.basePath);
     }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({
-        class: [sectionClass.value, "py-20"]
+        class: [sectionClass.value, "py-20 border-b border-border"]
       }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">`);
       if (((_a = __props.block.props) == null ? void 0 : _a.title) || ((_b = __props.block.props) == null ? void 0 : _b.subtitle)) {
         _push(`<div class="text-center mb-12">`);
         if ((_c = __props.block.props) == null ? void 0 : _c.title) {
-          _push(`<h2 class="text-3xl md:text-4xl font-black text-yellow-300 mb-2">${ssrInterpolate(__props.block.props.title)}</h2>`);
+          _push(`<h2 class="text-3xl md:text-4xl font-black text-primary mb-2">${ssrInterpolate(__props.block.props.title)}</h2>`);
         } else {
           _push(`<!---->`);
         }
         if ((_d = __props.block.props) == null ? void 0 : _d.subtitle) {
-          _push(`<p class="text-gray-400 text-lg mt-2">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+          _push(`<p class="text-muted-foreground text-lg mt-2">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
         } else {
           _push(`<!---->`);
         }
@@ -36341,7 +36341,7 @@ const _sfc_main$i = {
         "current-page-path": __props.currentPagePath
       }, null), _parent);
       if ((_f = (_e = __props.block.props) == null ? void 0 : _e.bottomButton) == null ? void 0 : _f.text) {
-        _push(`<div class="text-center mt-12"><a${ssrRenderAttr("href", linkHref(__props.block.props.bottomButton.href || "#"))} class="bg-transparent border-2 border-yellow-300 text-yellow-300 px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition inline-flex items-center gap-2">${ssrInterpolate(__props.block.props.bottomButton.text)}</a></div>`);
+        _push(`<div class="text-center mt-12"><a${ssrRenderAttr("href", linkHref(__props.block.props.bottomButton.href || "#"))} class="bg-transparent border-2 border-primary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-primary-foreground transition inline-flex items-center gap-2">${ssrInterpolate(__props.block.props.bottomButton.text)}</a></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -36372,54 +36372,38 @@ const _sfc_main$h = {
     function linkHref(url) {
       return getHref(props.currentPagePath, url || "#", props.basePath);
     }
-    const isDark = () => {
-      var _a;
-      return ((_a = props.block.props) == null ? void 0 : _a.variant) === "dark";
-    };
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c, _d, _e, _f, _g, _h;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({
-        class: [
-          isDark() ? "bg-black py-16 border-y border-yellow-300/20" : "bg-yellow-300 py-20"
-        ]
-      }, _attrs))}><div class="${ssrRenderClass([
-        isDark() ? "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" : "max-w-3xl mx-auto text-center px-4",
-        isDark() && (((_a = __props.block.props) == null ? void 0 : _a.buttons) ?? []).length ? "grid md:grid-cols-2 gap-8 items-center" : ""
-      ])}"><div class="${ssrRenderClass(isDark() && (((_b = __props.block.props) == null ? void 0 : _b.buttons) ?? []).length ? "md:col-span-1" : "")}">`);
-      if ((_c = __props.block.props) == null ? void 0 : _c.badge) {
-        _push(`<span class="${ssrRenderClass([
-          isDark() ? "text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-sm font-bold inline-block mb-4" : "text-black bg-white/30 px-3 py-1 rounded-full text-sm font-bold"
-        ])}">${ssrInterpolate(__props.block.props.badge)}</span>`);
+      var _a, _b, _c, _d, _e;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-primary py-20 border-y border-border" }, _attrs))}><div class="max-w-3xl mx-auto text-center px-4"><div>`);
+      if ((_a = __props.block.props) == null ? void 0 : _a.badge) {
+        _push(`<span class="text-primary-foreground bg-foreground/20 px-3 py-1 rounded-full text-sm font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_d = __props.block.props) == null ? void 0 : _d.title) {
-        _push(`<h2 class="${ssrRenderClass([
-          isDark() ? "text-2xl font-bold text-yellow-300 mb-2" : "text-4xl md:text-5xl font-black text-black mb-4",
-          { "mt-6": ((_e = __props.block.props) == null ? void 0 : _e.badge) && !isDark() }
-        ])}">${ssrInterpolate(__props.block.props.title)}</h2>`);
+      if ((_b = __props.block.props) == null ? void 0 : _b.title) {
+        _push(`<h2 class="text-4xl md:text-5xl font-black text-primary-foreground mb-4 mt-6">${ssrInterpolate(__props.block.props.title)}</h2>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_f = __props.block.props) == null ? void 0 : _f.text) {
-        _push(`<p class="${ssrRenderClass([isDark() ? "text-gray-400 mt-2" : "text-lg text-black/80 mb-8"])}">${ssrInterpolate(__props.block.props.text)}</p>`);
+      if ((_c = __props.block.props) == null ? void 0 : _c.text) {
+        _push(`<p class="text-lg text-primary-foreground/80 mb-8">${ssrInterpolate(__props.block.props.text)}</p>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div>`);
-      if ((((_g = __props.block.props) == null ? void 0 : _g.buttons) ?? []).length) {
-        _push(`<div class="${ssrRenderClass([isDark() ? "md:col-span-1 text-right" : "flex flex-wrap gap-4 justify-center"])}"><!--[-->`);
+      if ((((_d = __props.block.props) == null ? void 0 : _d.buttons) ?? []).length) {
+        _push(`<div class="flex flex-wrap gap-4 justify-center"><!--[-->`);
         ssrRenderList(__props.block.props.buttons, (btn, i) => {
           _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
-            isDark() ? "border-2 border-yellow-300 text-yellow-300 px-8 py-3 rounded-full font-bold hover:bg-yellow-300 hover:text-black transition inline-block" : btn.primary ? "bg-black text-yellow-300 px-10 py-4 rounded-full font-bold text-xl shadow-2xl hover:bg-zinc-900 transition" : "bg-transparent border-4 border-black text-black px-10 py-4 rounded-full font-bold text-xl hover:bg-black hover:text-yellow-300 transition"
+            btn.primary ? "bg-primary-foreground text-primary px-10 py-4 rounded-full font-bold text-xl shadow-2xl hover:opacity-90 transition" : "border-4 border-primary-foreground text-primary-foreground px-10 py-4 rounded-full font-bold text-xl hover:bg-primary-foreground hover:text-primary transition"
           ])}">${ssrInterpolate(btn.text)}</a>`);
         });
         _push(`<!--]--></div>`);
       } else {
         _push(`<!---->`);
       }
-      if (((_h = __props.block.props) == null ? void 0 : _h.footerNote) && !isDark()) {
-        _push(`<p class="text-sm text-black/60 mt-6">${ssrInterpolate(__props.block.props.footerNote)}</p>`);
+      if ((_e = __props.block.props) == null ? void 0 : _e.footerNote) {
+        _push(`<p class="text-sm text-primary-foreground/60 mt-6">${ssrInterpolate(__props.block.props.footerNote)}</p>`);
       } else {
         _push(`<!---->`);
       }
@@ -36471,15 +36455,15 @@ const _sfc_main$g = {
       return ((_a = props.block.props) == null ? void 0 : _a.secondaryCards) ?? [];
     };
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-end mb-10"><h2 class="text-3xl md:text-4xl font-black text-yellow-300">${ssrInterpolate(title())}</h2>`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-end mb-10"><h2 class="text-3xl md:text-4xl font-black text-primary">${ssrInterpolate(title())}</h2>`);
       if (linkText()) {
-        _push(`<a${ssrRenderAttr("href", linkHref(linkUrl()))} class="text-yellow-300 border-b border-yellow-300/30 pb-0.5 text-sm font-bold hover:text-white transition">${ssrInterpolate(linkText())}</a>`);
+        _push(`<a${ssrRenderAttr("href", linkHref(linkUrl()))} class="text-primary border-b border-primary/30 pb-0.5 text-sm font-bold hover:text-foreground transition">${ssrInterpolate(linkText())}</a>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div>`);
       if (featured().image || featured().title) {
-        _push(`<div class="bg-zinc-900 rounded-3xl border-2 border-yellow-300/30 overflow-hidden mb-8 hover:border-yellow-300 transition"><div class="grid md:grid-cols-2"><div class="h-80 md:h-auto overflow-hidden">`);
+        _push(`<div class="bg-muted rounded-3xl border-2 border-border overflow-hidden mb-8 hover:border-primary transition"><div class="grid md:grid-cols-2"><div class="h-80 md:h-auto overflow-hidden">`);
         if (featured().image) {
           _push(`<img${ssrRenderAttr("src", featured().image)}${ssrRenderAttr("alt", featured().imageAlt || featured().title)} class="w-full h-full object-cover">`);
         } else {
@@ -36487,13 +36471,13 @@ const _sfc_main$g = {
         }
         _push(`</div><div class="p-8 flex flex-col justify-center">`);
         if (featured().badge) {
-          _push(`<span class="text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-xs font-bold inline-block w-fit mb-4">${ssrInterpolate(featured().badge)}</span>`);
+          _push(`<span class="text-primary bg-background border border-primary px-3 py-1 rounded-full text-xs font-bold inline-block w-fit mb-4">${ssrInterpolate(featured().badge)}</span>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<h3 class="text-3xl font-black text-white mb-3">${ssrInterpolate(featured().title)}</h3><p class="text-gray-300 mb-4">${ssrInterpolate(featured().description)}</p>`);
+        _push(`<h3 class="text-3xl font-black text-foreground mb-3">${ssrInterpolate(featured().title)}</h3><p class="text-muted-foreground mb-4">${ssrInterpolate(featured().description)}</p>`);
         if ((featured().meta ?? []).length) {
-          _push(`<div class="flex gap-4 text-sm text-gray-400 mb-5"><!--[-->`);
+          _push(`<div class="flex gap-4 text-sm text-muted-foreground/60 mb-5"><!--[-->`);
           ssrRenderList(featured().meta, (m, i) => {
             _push(`<span>${ssrInterpolate(m)}</span>`);
           });
@@ -36505,7 +36489,7 @@ const _sfc_main$g = {
           _push(`<div class="flex gap-3"><!--[-->`);
           ssrRenderList(featured().buttons, (btn, i) => {
             _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
-              btn.primary ? "bg-yellow-300 text-black hover:bg-yellow-200" : "border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black",
+              btn.primary ? "bg-primary text-primary-foreground hover:opacity-90" : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground",
               "px-6 py-3 rounded-full font-bold text-sm transition"
             ])}">${ssrInterpolate(btn.text)}</a>`);
           });
@@ -36520,7 +36504,7 @@ const _sfc_main$g = {
       if (secondaryCards().length) {
         _push(`<div class="grid md:grid-cols-2 gap-6"><!--[-->`);
         ssrRenderList(secondaryCards(), (card, i) => {
-          _push(`<div class="bg-zinc-900 rounded-2xl border border-yellow-300/20 overflow-hidden flex flex-col md:flex-row hover:border-yellow-300 transition"><div class="md:w-2/5 h-40 overflow-hidden shrink-0">`);
+          _push(`<div class="bg-muted rounded-2xl border border-border overflow-hidden flex flex-col md:flex-row hover:border-primary transition"><div class="md:w-2/5 h-40 overflow-hidden shrink-0">`);
           if (card.image) {
             _push(`<img${ssrRenderAttr("src", card.image)}${ssrRenderAttr("alt", card.title)} class="w-full h-full object-cover">`);
           } else {
@@ -36528,13 +36512,13 @@ const _sfc_main$g = {
           }
           _push(`</div><div class="p-5 md:w-3/5">`);
           if (card.badge) {
-            _push(`<span class="bg-yellow-300/20 text-yellow-300 text-xs px-2 py-1 rounded-full">${ssrInterpolate(card.badge)}</span>`);
+            _push(`<span class="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full">${ssrInterpolate(card.badge)}</span>`);
           } else {
             _push(`<!---->`);
           }
-          _push(`<h4 class="font-bold text-white text-lg mt-2">${ssrInterpolate(card.title)}</h4><p class="text-gray-400 text-sm">${ssrInterpolate(card.subtitle)}</p>`);
+          _push(`<h4 class="font-bold text-foreground text-lg mt-2">${ssrInterpolate(card.title)}</h4><p class="text-muted-foreground text-sm">${ssrInterpolate(card.subtitle)}</p>`);
           if (card.linkText) {
-            _push(`<a${ssrRenderAttr("href", linkHref(card.linkUrl || "#"))} class="inline-block mt-3 text-yellow-300 text-sm font-bold border-b border-yellow-300/30">${ssrInterpolate(card.linkText)}</a>`);
+            _push(`<a${ssrRenderAttr("href", linkHref(card.linkUrl || "#"))} class="inline-block mt-3 text-primary text-sm font-bold border-b border-primary/30 hover:border-primary transition">${ssrInterpolate(card.linkText)}</a>`);
           } else {
             _push(`<!---->`);
           }
@@ -36569,9 +36553,9 @@ const _sfc_main$f = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-20" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl font-black text-center text-yellow-300 mb-10">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "常见问题")}</h2><div class="space-y-4"><!--[-->`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-20 border-b border-border" }, _attrs))}><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-3xl font-black text-center text-primary mb-10">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "常见问题")}</h2><div class="space-y-4"><!--[-->`);
       ssrRenderList(((_b = __props.block.props) == null ? void 0 : _b.items) ?? [], (item, i) => {
-        _push(`<div class="border border-yellow-300/30 rounded-2xl p-5"><h3 class="font-bold text-white text-lg">${ssrInterpolate(item.question)}</h3><p class="text-gray-400 mt-1">${ssrInterpolate(item.answer)}</p></div>`);
+        _push(`<div class="border border-border rounded-2xl p-5 hover:border-primary transition"><h3 class="font-bold text-foreground text-lg">${ssrInterpolate(item.question)}</h3><p class="text-muted-foreground mt-1">${ssrInterpolate(item.answer)}</p></div>`);
       });
       _push(`<!--]--></div></div></section>`);
     };
@@ -36602,7 +36586,7 @@ const _sfc_main$e = {
     }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="bg-zinc-900 rounded-3xl border-2 border-yellow-300/30 overflow-hidden mb-8 hover:border-yellow-300 transition"><div class="grid md:grid-cols-2"><div class="h-80 md:h-auto overflow-hidden">`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="bg-muted rounded-3xl border-2 border-border overflow-hidden mb-8 hover:border-primary transition"><div class="grid md:grid-cols-2"><div class="h-80 md:h-auto overflow-hidden">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.image) {
         _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || ((_b = __props.block.props) == null ? void 0 : _b.title))} class="w-full h-full object-cover">`);
       } else {
@@ -36612,12 +36596,12 @@ const _sfc_main$e = {
       if (((_c = __props.block.props) == null ? void 0 : _c.badge) || ((_d = __props.block.props) == null ? void 0 : _d.date)) {
         _push(`<div class="flex gap-2 items-center mb-3">`);
         if ((_e = __props.block.props) == null ? void 0 : _e.badge) {
-          _push(`<span class="text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-xs font-bold inline-block w-fit">${ssrInterpolate(__props.block.props.badge)}</span>`);
+          _push(`<span class="text-primary bg-background border border-primary px-3 py-1 rounded-full text-xs font-bold inline-block w-fit">${ssrInterpolate(__props.block.props.badge)}</span>`);
         } else {
           _push(`<!---->`);
         }
         if ((_f = __props.block.props) == null ? void 0 : _f.date) {
-          _push(`<span class="text-gray-400 text-sm">${ssrInterpolate(__props.block.props.date)}</span>`);
+          _push(`<span class="text-muted-foreground text-sm">${ssrInterpolate(__props.block.props.date)}</span>`);
         } else {
           _push(`<!---->`);
         }
@@ -36625,9 +36609,9 @@ const _sfc_main$e = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<h3 class="text-3xl font-black text-white mb-3">${ssrInterpolate(((_g = __props.block.props) == null ? void 0 : _g.title) ?? "")}</h3><p class="text-gray-300 mb-4">${ssrInterpolate(((_h = __props.block.props) == null ? void 0 : _h.description) ?? "")}</p>`);
+      _push(`<h3 class="text-3xl font-black text-foreground mb-3">${ssrInterpolate(((_g = __props.block.props) == null ? void 0 : _g.title) ?? "")}</h3><p class="text-muted-foreground mb-4">${ssrInterpolate(((_h = __props.block.props) == null ? void 0 : _h.description) ?? "")}</p>`);
       if ((((_i = __props.block.props) == null ? void 0 : _i.meta) ?? []).length) {
-        _push(`<div class="flex gap-4 text-sm text-gray-400 mb-5"><!--[-->`);
+        _push(`<div class="flex gap-4 text-sm text-muted-foreground/60 mb-5"><!--[-->`);
         ssrRenderList(__props.block.props.meta, (m, i) => {
           _push(`<span>${ssrInterpolate(m)}</span>`);
         });
@@ -36639,7 +36623,7 @@ const _sfc_main$e = {
         _push(`<div class="flex gap-3"><!--[-->`);
         ssrRenderList(__props.block.props.buttons, (btn, i) => {
           _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
-            btn.primary ? "bg-yellow-300 text-black hover:bg-yellow-200" : "border border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black",
+            btn.primary ? "bg-primary text-primary-foreground hover:opacity-90" : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground",
             "px-6 py-3 rounded-full font-bold text-sm transition"
           ])}">${ssrInterpolate(btn.text)}</a>`);
         });
@@ -36671,31 +36655,29 @@ const _sfc_main$d = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c, _d;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({
-        class: [((_a = __props.block.props) == null ? void 0 : _a.variant) === "zinc" ? "bg-zinc-950" : "bg-black", "py-20"]
-      }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12">`);
-      if ((_b = __props.block.props) == null ? void 0 : _b.title) {
-        _push(`<h2 class="text-3xl md:text-4xl font-black text-yellow-300">${ssrInterpolate(__props.block.props.title)}</h2>`);
+      var _a, _b, _c;
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-20 border-b border-border" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12">`);
+      if ((_a = __props.block.props) == null ? void 0 : _a.title) {
+        _push(`<h2 class="text-3xl md:text-4xl font-black text-primary">${ssrInterpolate(__props.block.props.title)}</h2>`);
       } else {
         _push(`<!---->`);
       }
-      if ((_c = __props.block.props) == null ? void 0 : _c.subtitle) {
-        _push(`<p class="text-gray-400 text-lg mt-2">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+      if ((_b = __props.block.props) == null ? void 0 : _b.subtitle) {
+        _push(`<p class="text-muted-foreground text-lg mt-2">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div><div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"><!--[-->`);
-      ssrRenderList(((_d = __props.block.props) == null ? void 0 : _d.items) ?? [], (item, i) => {
-        _push(`<div class="bg-zinc-900 p-6 rounded-3xl border border-yellow-300/20 hover:border-yellow-300 transition group">`);
+      ssrRenderList(((_c = __props.block.props) == null ? void 0 : _c.items) ?? [], (item, i) => {
+        _push(`<div class="bg-muted p-6 rounded-3xl border border-border hover:border-primary transition group">`);
         if (item.icon) {
           _push(`<div class="text-5xl mb-3 group-hover:scale-110 transition-transform">${ssrInterpolate(item.icon)}</div>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<h3 class="text-xl font-bold text-yellow-300">${ssrInterpolate(item.title ?? "特性")}</h3><p class="text-gray-400 text-sm mt-2">${ssrInterpolate(item.description ?? "")}</p>`);
+        _push(`<h3 class="text-xl font-bold text-primary">${ssrInterpolate(item.title ?? "特性")}</h3><p class="text-muted-foreground text-sm mt-2">${ssrInterpolate(item.description ?? "")}</p>`);
         if (item.linkText) {
-          _push(`<span class="inline-block mt-4 text-yellow-300 text-sm font-bold border-b border-yellow-300/30 pb-0.5">${ssrInterpolate(item.linkText)}</span>`);
+          _push(`<span class="inline-block mt-4 text-primary text-sm font-bold border-b border-primary/30 pb-0.5">${ssrInterpolate(item.linkText)}</span>`);
         } else {
           _push(`<!---->`);
         }
@@ -36730,15 +36712,15 @@ const _sfc_main$c = {
     }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-12 border-y border-yellow-300/20" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap items-center justify-center gap-3 text-sm">`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-12 border-y border-border" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex flex-wrap items-center justify-center gap-3 text-sm">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.label) {
-        _push(`<span class="text-yellow-300 font-bold mr-2">${ssrInterpolate(__props.block.props.label)}</span>`);
+        _push(`<span class="text-primary font-bold mr-2">${ssrInterpolate(__props.block.props.label)}</span>`);
       } else {
         _push(`<!---->`);
       }
       _push(`<!--[-->`);
       ssrRenderList(((_b = __props.block.props) == null ? void 0 : _b.tabs) ?? [], (tab, i) => {
-        _push(`<a${ssrRenderAttr("href", linkHref(tab.path))} class="bg-zinc-900 border border-yellow-300/30 text-gray-300 px-4 py-2 rounded-full hover:bg-yellow-300 hover:text-black transition">${ssrInterpolate(tab.label)}</a>`);
+        _push(`<a${ssrRenderAttr("href", linkHref(tab.path))} class="bg-muted border border-border text-muted-foreground px-4 py-2 rounded-full hover:bg-primary hover:text-primary-foreground transition">${ssrInterpolate(tab.label)}</a>`);
       });
       _push(`<!--]--></div></div></section>`);
     };
@@ -36765,38 +36747,38 @@ const _sfc_main$b = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-      _push(`<footer${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black border-t border-yellow-300/30 pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"><div class="lg:col-span-2"><div class="flex items-center gap-2 mb-4">`);
+      _push(`<footer${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background border-t border-border pt-16 pb-8" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"><div class="lg:col-span-2"><div class="flex items-center gap-2 mb-4">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.logoEmoji) {
-        _push(`<span class="text-4xl">${ssrInterpolate(__props.block.props.logoEmoji)}</span>`);
+        _push(`<span class="text-4xl filter drop-shadow-md">${ssrInterpolate(__props.block.props.logoEmoji)}</span>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<span class="text-2xl font-black text-yellow-300">${ssrInterpolate(((_b = __props.block.props) == null ? void 0 : _b.brandName) ?? "YELLOWKEYS")}</span></div>`);
+      _push(`<span class="text-2xl font-black text-primary">${ssrInterpolate(((_b = __props.block.props) == null ? void 0 : _b.brandName) ?? "MUSE")}</span></div>`);
       if ((_c = __props.block.props) == null ? void 0 : _c.tagline) {
-        _push(`<p class="text-gray-400 text-sm max-w-xs">${ssrInterpolate(__props.block.props.tagline)}</p>`);
+        _push(`<p class="text-muted-foreground text-sm max-w-xs">${ssrInterpolate(__props.block.props.tagline)}</p>`);
       } else {
         _push(`<!---->`);
       }
       if ((_d = __props.block.props) == null ? void 0 : _d.copyright) {
-        _push(`<p class="text-gray-500 text-xs mt-4">${ssrInterpolate(__props.block.props.copyright)}</p>`);
+        _push(`<p class="text-muted-foreground/60 text-xs mt-4">${ssrInterpolate(__props.block.props.copyright)}</p>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div>`);
       if ((_e = __props.block.props) == null ? void 0 : _e.addresses) {
-        _push(`<div><h4 class="text-yellow-300 font-bold mb-4">总部校区</h4><p class="text-gray-400 text-sm">${__props.block.props.addresses ?? ""}</p></div>`);
+        _push(`<div><h4 class="text-primary font-bold mb-4">总部校区</h4><p class="text-muted-foreground text-sm">${__props.block.props.addresses ?? ""}</p></div>`);
       } else {
         _push(`<!---->`);
       }
       if ((_f = __props.block.props) == null ? void 0 : _f.contact) {
-        _push(`<div><h4 class="text-yellow-300 font-bold mb-4">联系我们</h4><p class="text-gray-400 text-sm">${__props.block.props.contact ?? ""}</p></div>`);
+        _push(`<div><h4 class="text-primary font-bold mb-4">联系我们</h4><p class="text-muted-foreground text-sm">${__props.block.props.contact ?? ""}</p></div>`);
       } else {
         _push(`<!---->`);
       }
       if ((_g = __props.block.props) == null ? void 0 : _g.qrImage) {
-        _push(`<div><h4 class="text-yellow-300 font-bold mb-4">公众号</h4><div class="bg-zinc-900 p-3 rounded-xl inline-block border border-yellow-300/40"><img${ssrRenderAttr("src", __props.block.props.qrImage)} alt="公众号二维码" class="w-24 h-24 rounded-lg grayscale"></div>`);
+        _push(`<div><h4 class="text-primary font-bold mb-4">公众号</h4><div class="bg-muted p-3 rounded-xl inline-block border border-border"><img${ssrRenderAttr("src", __props.block.props.qrImage)} alt="公众号二维码" class="w-24 h-24 rounded-lg grayscale hover:grayscale-0 transition-all"></div>`);
         if ((_h = __props.block.props) == null ? void 0 : _h.qrCaption) {
-          _push(`<p class="text-gray-500 text-xs mt-2">${ssrInterpolate(__props.block.props.qrCaption)}</p>`);
+          _push(`<p class="text-muted-foreground/50 text-xs mt-2">${ssrInterpolate(__props.block.props.qrCaption)}</p>`);
         } else {
           _push(`<!---->`);
         }
@@ -36806,7 +36788,7 @@ const _sfc_main$b = {
       }
       _push(`</div>`);
       if ((_i = __props.block.props) == null ? void 0 : _i.bottomLine) {
-        _push(`<div class="text-center text-gray-600 text-sm border-t border-yellow-300/20 mt-12 pt-6">${ssrInterpolate(__props.block.props.bottomLine)}</div>`);
+        _push(`<div class="text-center text-muted-foreground/40 text-sm border-t border-border mt-12 pt-6">${ssrInterpolate(__props.block.props.bottomLine)}</div>`);
       } else {
         _push(`<!---->`);
       }
@@ -36845,18 +36827,18 @@ const _sfc_main$a = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"></div></div><div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">`);
+      _push(`<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60"></div></div><div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">`);
       if ((((_b = __props.block.props) == null ? void 0 : _b.breadcrumb) ?? []).length) {
-        _push(`<div class="text-sm text-gray-300 mb-4"><!--[-->`);
+        _push(`<div class="text-sm text-foreground/80 mb-4"><!--[-->`);
         ssrRenderList(__props.block.props.breadcrumb, (item, i) => {
           _push(`<!--[-->`);
           if (item.url) {
-            _push(`<a${ssrRenderAttr("href", linkHref(item.url))} class="hover:text-yellow-300 transition">${ssrInterpolate(item.label)}</a>`);
+            _push(`<a${ssrRenderAttr("href", linkHref(item.url))} class="hover:text-primary transition">${ssrInterpolate(item.label)}</a>`);
           } else {
-            _push(`<span class="text-yellow-300">${ssrInterpolate(item.label)}</span>`);
+            _push(`<span class="text-primary">${ssrInterpolate(item.label)}</span>`);
           }
           if (i < __props.block.props.breadcrumb.length - 1) {
-            _push(`<span class="mx-2 text-gray-400">/</span>`);
+            _push(`<span class="mx-2 text-muted-foreground/40">/</span>`);
           } else {
             _push(`<!---->`);
           }
@@ -36869,12 +36851,12 @@ const _sfc_main$a = {
       if (((_c = __props.block.props) == null ? void 0 : _c.badge) || ((_d = __props.block.props) == null ? void 0 : _d.date)) {
         _push(`<div class="flex gap-3 items-center mb-4">`);
         if ((_e = __props.block.props) == null ? void 0 : _e.badge) {
-          _push(`<span class="bg-yellow-300 text-black text-xs px-3 py-1 rounded-full font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
+          _push(`<span class="bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
         } else {
           _push(`<!---->`);
         }
         if ((_f = __props.block.props) == null ? void 0 : _f.date) {
-          _push(`<span class="text-gray-200 text-sm">${ssrInterpolate(__props.block.props.date)}</span>`);
+          _push(`<span class="text-foreground/70 text-sm">${ssrInterpolate(__props.block.props.date)}</span>`);
         } else {
           _push(`<!---->`);
         }
@@ -36882,9 +36864,9 @@ const _sfc_main$a = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-yellow-300 leading-tight drop-shadow-lg">${ssrInterpolate(((_g = __props.block.props) == null ? void 0 : _g.title) ?? "")}</h1>`);
+      _push(`<h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight drop-shadow-lg">${ssrInterpolate(((_g = __props.block.props) == null ? void 0 : _g.title) ?? "")}</h1>`);
       if ((((_h = __props.block.props) == null ? void 0 : _h.meta) ?? []).length) {
-        _push(`<div class="flex items-center gap-4 mt-6 text-gray-200"><!--[-->`);
+        _push(`<div class="flex items-center gap-4 mt-6 text-foreground/80"><!--[-->`);
         ssrRenderList(__props.block.props.meta, (m, i) => {
           _push(`<span>${ssrInterpolate(m)}</span>`);
         });
@@ -36923,38 +36905,38 @@ const _sfc_main$9 = {
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/60"></div></div><div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center max-w-3xl mx-auto">`);
+      _push(`<div class="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/60"></div></div><div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center max-w-3xl mx-auto">`);
       if ((_b = __props.block.props) == null ? void 0 : _b.badge) {
-        _push(`<span class="inline-block bg-yellow-300/10 text-yellow-300 border border-yellow-300/30 px-4 py-1 rounded-full text-sm font-bold mb-6 drop-shadow-lg">${ssrInterpolate(__props.block.props.badge)}</span>`);
+        _push(`<span class="inline-block bg-primary/10 text-primary border border-primary/30 px-4 py-1 rounded-full text-sm font-bold mb-6 drop-shadow-lg">${ssrInterpolate(__props.block.props.badge)}</span>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<h1 class="text-5xl md:text-6xl font-black leading-tight drop-shadow-lg">`);
+      _push(`<h1 class="text-5xl md:text-6xl font-black leading-tight drop-shadow-lg text-foreground">`);
       if ((_c = __props.block.props) == null ? void 0 : _c.titleLine1) {
         _push(`<span>${ssrInterpolate(__props.block.props.titleLine1)}</span>`);
       } else {
         _push(`<!---->`);
       }
       if ((_d = __props.block.props) == null ? void 0 : _d.titleHighlight) {
-        _push(`<span class="text-yellow-300">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
+        _push(`<span class="text-primary ml-2">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
       } else {
         _push(`<!---->`);
       }
       if ((_e = __props.block.props) == null ? void 0 : _e.titleLine2) {
-        _push(`<span>${ssrInterpolate(__props.block.props.titleLine2)}</span>`);
+        _push(`<span class="ml-2">${ssrInterpolate(__props.block.props.titleLine2)}</span>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</h1>`);
       if ((_f = __props.block.props) == null ? void 0 : _f.subtitle) {
-        _push(`<p class="text-xl text-gray-200 mt-6 max-w-2xl mx-auto drop-shadow-md">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+        _push(`<p class="text-xl text-foreground/80 mt-6 max-w-2xl mx-auto drop-shadow-md">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
       } else {
         _push(`<!---->`);
       }
       if ((((_g = __props.block.props) == null ? void 0 : _g.tags) ?? []).length) {
         _push(`<div class="flex flex-wrap gap-3 justify-center mt-10"><!--[-->`);
         ssrRenderList(__props.block.props.tags, (tag, i) => {
-          _push(`<span class="bg-black/50 backdrop-blur-sm text-yellow-300 px-4 py-2 rounded-full text-sm border border-yellow-300/30 shadow-lg">${ssrInterpolate(tag)}</span>`);
+          _push(`<span class="bg-background/50 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm border border-primary/30 shadow-lg">${ssrInterpolate(tag)}</span>`);
         });
         _push(`<!--]--></div>`);
       } else {
@@ -36989,36 +36971,36 @@ const _sfc_main$8 = {
     }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f, _g, _h, _i;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative bg-gradient-to-b from-black to-zinc-900 overflow-hidden" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28"><div class="grid md:grid-cols-2 gap-12 items-center"><div class="space-y-6">`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "relative bg-background overflow-hidden border-b border-border" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28"><div class="grid md:grid-cols-2 gap-12 items-center"><div class="space-y-6">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.badge) {
-        _push(`<span class="inline-block bg-yellow-300/10 text-yellow-300 border border-yellow-300/30 px-4 py-1.5 rounded-full text-sm font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
+        _push(`<span class="inline-block bg-primary/10 text-primary border border-primary/30 px-4 py-1.5 rounded-full text-sm font-bold">${ssrInterpolate(__props.block.props.badge)}</span>`);
       } else {
         _push(`<!---->`);
       }
       _push(`<h1 class="text-5xl md:text-6xl font-black leading-tight">`);
       if (((_b = __props.block.props) == null ? void 0 : _b.titleLine1) && __props.block.props.titleLine1 !== ((_c = __props.block.props) == null ? void 0 : _c.titleHighlight)) {
-        _push(`<span class="text-white">${ssrInterpolate(__props.block.props.titleLine1)}</span>`);
+        _push(`<span class="text-foreground">${ssrInterpolate(__props.block.props.titleLine1)}</span>`);
       } else {
         _push(`<!---->`);
       }
       if ((_d = __props.block.props) == null ? void 0 : _d.titleHighlight) {
-        _push(`<span class="text-yellow-300">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
+        _push(`<span class="text-primary">${ssrInterpolate(__props.block.props.titleHighlight)}</span>`);
       } else {
         _push(`<!---->`);
       }
       if ((_e = __props.block.props) == null ? void 0 : _e.titleLine2) {
-        _push(`<span>${" " + (__props.block.props.titleLine2 || "").replace(/\n/g, "<br>")}</span>`);
+        _push(`<span class="text-foreground">${" " + (__props.block.props.titleLine2 || "").replace(/\n/g, "<br>")}</span>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</h1>`);
       if ((_f = __props.block.props) == null ? void 0 : _f.subtitle) {
-        _push(`<p class="text-xl text-gray-300 max-w-lg">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+        _push(`<p class="text-xl text-muted-foreground max-w-lg">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
       } else {
         _push(`<!---->`);
       }
       if ((_g = __props.block.props) == null ? void 0 : _g.note) {
-        _push(`<p class="text-gray-400 text-sm">${ssrInterpolate(__props.block.props.note)}</p>`);
+        _push(`<p class="text-muted-foreground/60 text-sm">${ssrInterpolate(__props.block.props.note)}</p>`);
       } else {
         _push(`<!---->`);
       }
@@ -37026,7 +37008,7 @@ const _sfc_main$8 = {
         _push(`<div class="flex flex-wrap gap-4 pt-4"><!--[-->`);
         ssrRenderList(__props.block.props.buttons, (btn, i) => {
           _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
-            btn.primary ? "bg-yellow-300 text-black px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-yellow-300/40 hover:bg-yellow-200 transition" : "border-2 border-yellow-300 text-yellow-300 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 hover:text-black transition"
+            btn.primary ? "bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg shadow-xl shadow-primary/40 hover:opacity-90 transition" : "border-2 border-primary text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-primary hover:text-primary-foreground transition"
           ])}">${ssrInterpolate(btn.text)}</a>`);
         });
         _push(`<!--]--></div>`);
@@ -37035,7 +37017,7 @@ const _sfc_main$8 = {
       }
       _push(`</div><div class="relative h-72 sm:h-80 md:h-96">`);
       if ((_i = __props.block.props) == null ? void 0 : _i.image) {
-        _push(`<img${ssrRenderAttr("src", __props.basePath ? __props.basePath.replace(/\/$/, "") + __props.block.props.image : __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover rounded-3xl border-4 border-yellow-300/30 shadow-2xl" loading="eager">`);
+        _push(`<img${ssrRenderAttr("src", __props.basePath ? __props.basePath.replace(/\/$/, "") + __props.block.props.image : __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="w-full h-full object-cover rounded-3xl border-4 border-primary/30 shadow-2xl" loading="eager">`);
       } else {
         _push(`<!---->`);
       }
@@ -37115,24 +37097,24 @@ const _sfc_main$6 = {
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f;
       _push(`<section${ssrRenderAttrs(vueExports.mergeProps({
-        class: [reverse() ? "bg-zinc-950" : "bg-black", "py-20"]
+        class: [reverse() ? "bg-muted" : "bg-background", "py-20 border-b border-border"]
       }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="${ssrRenderClass([reverse() ? "md:flex-row-reverse" : "md:flex-row", "flex flex-col gap-12 items-center"])}"><div class="md:w-1/2 w-full">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.image) {
-        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="rounded-3xl border-4 border-yellow-300/40 shadow-2xl w-full h-auto object-cover" loading="lazy">`);
+        _push(`<img${ssrRenderAttr("src", __props.block.props.image)}${ssrRenderAttr("alt", __props.block.props.imageAlt || "")} class="rounded-3xl border-4 border-primary/20 shadow-2xl w-full h-auto object-cover" loading="lazy">`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div><div class="md:w-1/2 space-y-5">`);
       if ((_b = __props.block.props) == null ? void 0 : _b.badge) {
-        _push(`<span class="text-yellow-300 font-bold text-sm bg-black border border-yellow-300 px-4 py-1.5 rounded-full inline-block">${ssrInterpolate(__props.block.props.badge)}</span>`);
+        _push(`<span class="text-primary font-bold text-sm bg-muted border border-primary px-4 py-1.5 rounded-full inline-block">${ssrInterpolate(__props.block.props.badge)}</span>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<h2 class="text-4xl font-black text-yellow-300">${ssrInterpolate(((_c = __props.block.props) == null ? void 0 : _c.title) ?? "")}</h2><p class="text-gray-300 text-lg">${ssrInterpolate(((_d = __props.block.props) == null ? void 0 : _d.description) ?? "")}</p>`);
+      _push(`<h2 class="text-4xl font-black text-primary">${ssrInterpolate(((_c = __props.block.props) == null ? void 0 : _c.title) ?? "")}</h2><p class="text-muted-foreground text-lg">${ssrInterpolate(((_d = __props.block.props) == null ? void 0 : _d.description) ?? "")}</p>`);
       if ((((_e = __props.block.props) == null ? void 0 : _e.tags) ?? []).length) {
         _push(`<div class="flex flex-wrap gap-2 pt-2"><!--[-->`);
         ssrRenderList(__props.block.props.tags, (tag, i) => {
-          _push(`<span class="bg-yellow-300/20 text-yellow-300 px-4 py-2 rounded-full text-sm font-bold border border-yellow-300">${ssrInterpolate(tag)}</span>`);
+          _push(`<span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold border border-primary/30">${ssrInterpolate(tag)}</span>`);
         });
         _push(`<!--]--></div>`);
       } else {
@@ -37142,7 +37124,7 @@ const _sfc_main$6 = {
         _push(`<div class="flex flex-wrap gap-3 pt-4"><!--[-->`);
         ssrRenderList(__props.block.props.buttons, (btn, i) => {
           _push(`<a${ssrRenderAttr("href", linkHref(btn.url))} class="${ssrRenderClass([
-            btn.primary ? "bg-yellow-300 text-black hover:bg-yellow-200" : "border-2 border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black",
+            btn.primary ? "bg-primary text-primary-foreground hover:opacity-90" : "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
             "px-8 py-3 rounded-full font-bold inline-block transition shadow-xl"
           ])}">${ssrInterpolate(btn.text)}</a>`);
         });
@@ -37179,31 +37161,31 @@ const _sfc_main$5 = {
     }
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c, _d, _e, _f;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-zinc-950 py-16" }, _attrs))}><div class="max-w-3xl mx-auto text-center px-4">`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-16 border-b border-border" }, _attrs))}><div class="max-w-3xl mx-auto text-center px-4">`);
       if ((_a = __props.block.props) == null ? void 0 : _a.badge) {
-        _push(`<span class="text-yellow-300 bg-black border border-yellow-300 px-3 py-1 rounded-full text-sm font-bold inline-block mb-4">${ssrInterpolate(__props.block.props.badge)}</span>`);
+        _push(`<span class="text-primary bg-muted border border-primary px-3 py-1 rounded-full text-sm font-bold inline-block mb-4">${ssrInterpolate(__props.block.props.badge)}</span>`);
       } else {
         _push(`<!---->`);
       }
       if ((_b = __props.block.props) == null ? void 0 : _b.title) {
-        _push(`<h2 class="text-4xl font-black text-yellow-300 mb-4">${ssrInterpolate(__props.block.props.title)}</h2>`);
+        _push(`<h2 class="text-4xl font-black text-primary mb-4">${ssrInterpolate(__props.block.props.title)}</h2>`);
       } else {
         _push(`<!---->`);
       }
       if ((_c = __props.block.props) == null ? void 0 : _c.text) {
-        _push(`<p class="text-gray-400 text-lg mb-8">${ssrInterpolate(__props.block.props.text)}</p>`);
+        _push(`<p class="text-muted-foreground text-lg mb-8">${ssrInterpolate(__props.block.props.text)}</p>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4"><input type="email"${ssrRenderAttr("placeholder", (_d = __props.block.props) == null ? void 0 : _d.emailPlaceholder)} class="bg-black border border-yellow-300/30 rounded-full px-6 py-4 flex-1 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-300">`);
+      _push(`<div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4"><input type="email"${ssrRenderAttr("placeholder", (_d = __props.block.props) == null ? void 0 : _d.emailPlaceholder)} class="bg-muted border border-border rounded-full px-6 py-4 flex-1 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition">`);
       if ((_e = __props.block.props) == null ? void 0 : _e.subscribeButtonText) {
-        _push(`<a${ssrRenderAttr("href", linkHref(__props.block.props.subscribeButtonUrl || "#"))} class="bg-yellow-300 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-200 transition whitespace-nowrap text-center">${ssrInterpolate(__props.block.props.subscribeButtonText)}</a>`);
+        _push(`<a${ssrRenderAttr("href", linkHref(__props.block.props.subscribeButtonUrl || "#"))} class="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition whitespace-nowrap text-center">${ssrInterpolate(__props.block.props.subscribeButtonText)}</a>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div>`);
       if ((_f = __props.block.props) == null ? void 0 : _f.footerNote) {
-        _push(`<p class="text-xs text-gray-500 mt-4">${ssrInterpolate(__props.block.props.footerNote)}</p>`);
+        _push(`<p class="text-xs text-muted-foreground/50 mt-4">${ssrInterpolate(__props.block.props.footerNote)}</p>`);
       } else {
         _push(`<!---->`);
       }
@@ -37232,23 +37214,23 @@ const _sfc_main$4 = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-16 border-y border-yellow-300/20" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-yellow-300">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "合作伙伴")}</h2>`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-16 border-y border-border" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-primary">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "合作伙伴")}</h2>`);
       if ((_b = __props.block.props) == null ? void 0 : _b.subtitle) {
-        _push(`<p class="text-gray-400 mt-3">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+        _push(`<p class="text-muted-foreground mt-3">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div><div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"><!--[-->`);
       ssrRenderList(((_c = __props.block.props) == null ? void 0 : _c.items) ?? [], (item, i) => {
-        _push(`<div class="bg-zinc-900 p-4 rounded-2xl text-center border border-yellow-300/20 hover:border-yellow-300 transition">`);
+        _push(`<div class="bg-muted p-4 rounded-2xl text-center border border-border hover:border-primary transition group">`);
         if (item.image) {
-          _push(`<img${ssrRenderAttr("src", item.image)}${ssrRenderAttr("alt", item.name)} class="w-16 h-16 mx-auto rounded-full mb-2">`);
+          _push(`<img${ssrRenderAttr("src", item.image)}${ssrRenderAttr("alt", item.name)} class="w-16 h-16 mx-auto rounded-full mb-2 filter grayscale group-hover:grayscale-0 transition-all border-2 border-transparent group-hover:border-primary/20">`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<h3 class="font-bold text-white">${ssrInterpolate(item.name)}</h3>`);
+        _push(`<h3 class="font-bold text-foreground">${ssrInterpolate(item.name)}</h3>`);
         if (item.tag) {
-          _push(`<p class="text-xs text-yellow-300">${ssrInterpolate(item.tag)}</p>`);
+          _push(`<p class="text-xs text-primary">${ssrInterpolate(item.tag)}</p>`);
         } else {
           _push(`<!---->`);
         }
@@ -37279,9 +37261,9 @@ const _sfc_main$3 = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       var _a;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-black py-16 border-y border-yellow-300/20" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center"><!--[-->`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-16 border-y border-border" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center"><!--[-->`);
       ssrRenderList(((_a = __props.block.props) == null ? void 0 : _a.items) ?? [], (item, i) => {
-        _push(`<div><div class="text-5xl font-black text-yellow-300">${ssrInterpolate(item.value)}</div><div class="text-gray-400">${ssrInterpolate(item.label)}</div></div>`);
+        _push(`<div><div class="text-5xl font-black text-primary">${ssrInterpolate(item.value)}</div><div class="text-muted-foreground">${ssrInterpolate(item.label)}</div></div>`);
       });
       _push(`<!--]--></div></div></section>`);
     };
@@ -37308,27 +37290,27 @@ const _sfc_main$2 = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       var _a, _b, _c;
-      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-zinc-950 py-20" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-black text-yellow-300">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "学员故事")}</h2>`);
+      _push(`<section${ssrRenderAttrs(vueExports.mergeProps({ class: "bg-background py-20 border-b border-border" }, _attrs))}><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-black text-primary">${ssrInterpolate(((_a = __props.block.props) == null ? void 0 : _a.title) ?? "学员故事")}</h2>`);
       if ((_b = __props.block.props) == null ? void 0 : _b.subtitle) {
-        _push(`<p class="text-gray-400">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
+        _push(`<p class="text-muted-foreground">${ssrInterpolate(__props.block.props.subtitle)}</p>`);
       } else {
         _push(`<!---->`);
       }
       _push(`</div><div class="grid md:grid-cols-3 gap-6"><!--[-->`);
       ssrRenderList(((_c = __props.block.props) == null ? void 0 : _c.items) ?? [], (item, i) => {
-        _push(`<div class="bg-black p-6 rounded-3xl border border-yellow-300/20"><div class="flex items-center gap-3 mb-4">`);
+        _push(`<div class="bg-muted p-6 rounded-3xl border border-border hover:border-primary transition"><div class="flex items-center gap-3 mb-4">`);
         if (item.avatar) {
-          _push(`<img${ssrRenderAttr("src", item.avatar)}${ssrRenderAttr("alt", item.name)} class="w-12 h-12 rounded-full object-cover">`);
+          _push(`<img${ssrRenderAttr("src", item.avatar)}${ssrRenderAttr("alt", item.name)} class="w-12 h-12 rounded-full object-cover border-2 border-primary/20">`);
         } else {
           _push(`<!---->`);
         }
-        _push(`<div><h3 class="font-bold text-white">${ssrInterpolate(item.name)}</h3>`);
+        _push(`<div><h3 class="font-bold text-foreground">${ssrInterpolate(item.name)}</h3>`);
         if (item.subtitle) {
-          _push(`<p class="text-xs text-yellow-300">${ssrInterpolate(item.subtitle)}</p>`);
+          _push(`<p class="text-xs text-primary">${ssrInterpolate(item.subtitle)}</p>`);
         } else {
           _push(`<!---->`);
         }
-        _push(`</div></div><p class="text-gray-300 italic">${ssrInterpolate(item.quote ?? "")}</p></div>`);
+        _push(`</div></div><p class="text-muted-foreground italic line-clamp-4">${ssrInterpolate(item.quote ?? "")}</p></div>`);
       });
       _push(`<!--]--></div></div></section>`);
     };
@@ -37427,7 +37409,6 @@ const _sfc_main = {
       return [...blocks].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
     });
     const hasNav = vueExports.computed(() => props.site.nav && typeof props.site.nav === "object");
-    const isYellowKeys = vueExports.computed(() => props.site.theme === "yellow-keys");
     const navLinks = vueExports.computed(() => {
       var _a;
       return ((_a = props.site.nav) == null ? void 0 : _a.links) ?? [];
@@ -37437,28 +37418,21 @@ const _sfc_main = {
       return ((_a = props.site.nav) == null ? void 0 : _a.cta) ?? null;
     });
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b, _c, _d;
-      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({
-        class: ["min-h-screen", { "bg-black text-white antialiased": isYellowKeys.value }]
-      }, _attrs))}>`);
+      var _a, _b, _c;
+      _push(`<div${ssrRenderAttrs(vueExports.mergeProps({ class: "min-h-screen bg-background text-foreground" }, _attrs))}>`);
       if (hasNav.value) {
-        _push(`<nav class="${ssrRenderClass([{ "border-yellow-300/20": isYellowKeys.value }, "bg-black border-b border-yellow-300/20 sticky top-0 z-50"])}"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-20"><a${ssrRenderAttr("href", hrefTo("/"))} class="flex items-center gap-2 no-underline">`);
+        _push(`<nav class="bg-background border-b border-border sticky top-0 z-50 transition-colors"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-20"><a${ssrRenderAttr("href", hrefTo("/"))} class="flex items-center gap-2 no-underline">`);
         if ((_a = __props.site.nav) == null ? void 0 : _a.logoEmoji) {
           _push(`<span class="text-4xl filter drop-shadow-lg">${ssrInterpolate(__props.site.nav.logoEmoji)}</span>`);
         } else {
           _push(`<!---->`);
         }
         if ((_b = __props.site.nav) == null ? void 0 : _b.logoText) {
-          _push(`<!--[-->`);
-          if (((_c = __props.site.nav) == null ? void 0 : _c.logoTextTail) && isYellowKeys.value) {
-            _push(`<span class="text-2xl font-black tracking-tight text-yellow-300">${ssrInterpolate(__props.site.nav.logoText)}</span>`);
+          _push(`<!--[--><span class="text-2xl font-black tracking-tight text-primary">${ssrInterpolate(__props.site.nav.logoText)}</span>`);
+          if ((_c = __props.site.nav) == null ? void 0 : _c.logoTextTail) {
+            _push(`<span class="text-2xl font-black tracking-tight text-foreground">${ssrInterpolate(__props.site.nav.logoTextTail)}</span>`);
           } else {
             _push(`<!---->`);
-          }
-          if (((_d = __props.site.nav) == null ? void 0 : _d.logoTextTail) && isYellowKeys.value) {
-            _push(`<span class="text-2xl font-black tracking-tight text-white">${ssrInterpolate(__props.site.nav.logoTextTail)}</span>`);
-          } else {
-            _push(`<span class="${ssrRenderClass([isYellowKeys.value ? "text-yellow-300" : "text-gray-900", "text-2xl font-black tracking-tight"])}">${ssrInterpolate(__props.site.nav.logoText)}${ssrInterpolate(__props.site.nav.logoTextTail || "")}</span>`);
           }
           _push(`<!--]-->`);
         } else {
@@ -37466,22 +37440,21 @@ const _sfc_main = {
         }
         _push(`</a><div class="hidden md:flex space-x-8 text-sm font-medium"><!--[-->`);
         ssrRenderList(navLinks.value, (link) => {
-          _push(`<a${ssrRenderAttr("href", hrefTo(link.path))} class="${ssrRenderClass([
-            __props.page.path === link.path ? isYellowKeys.value ? "text-yellow-300" : "text-gray-900 font-semibold" : isYellowKeys.value ? "text-gray-300 hover:text-yellow-300" : "text-gray-600 hover:text-gray-900",
-            "transition no-underline"
-          ])}">${ssrInterpolate(link.label)}</a>`);
+          _push(`<a${ssrRenderAttr("href", hrefTo(link.path))} class="${ssrRenderClass([[
+            __props.page.path === link.path ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"
+          ], "transition no-underline"])}">${ssrInterpolate(link.label)}</a>`);
         });
         _push(`<!--]--></div>`);
         if (navCta.value) {
-          _push(`<div><a${ssrRenderAttr("href", hrefTo(navCta.value.href))} class="bg-yellow-300 text-black px-6 py-2.5 rounded-full font-bold text-sm hover:bg-yellow-200 transition shadow-lg shadow-yellow-300/30 no-underline">${ssrInterpolate(navCta.value.text)}</a></div>`);
+          _push(`<div><a${ssrRenderAttr("href", hrefTo(navCta.value.href))} class="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-90 transition shadow-lg shadow-primary/30 no-underline">${ssrInterpolate(navCta.value.text)}</a></div>`);
         } else {
           _push(`<!---->`);
         }
         _push(`</div></div></nav>`);
       } else if (__props.site.name) {
-        _push(`<header class="flex justify-between items-center py-4 px-6 border-b border-gray-200"><a${ssrRenderAttr("href", hrefTo("/"))} class="font-bold no-underline text-inherit">${ssrInterpolate(__props.site.name)}</a><nav class="flex gap-4"><!--[-->`);
+        _push(`<header class="flex justify-between items-center py-4 px-6 border-b border-border bg-background"><a${ssrRenderAttr("href", hrefTo("/"))} class="font-bold no-underline text-inherit">${ssrInterpolate(__props.site.name)}</a><nav class="flex gap-4"><!--[-->`);
         ssrRenderList(__props.site.pages, (p) => {
-          _push(`<a${ssrRenderAttr("href", hrefTo(p.path))} class="text-gray-600 no-underline hover:underline">${ssrInterpolate(p.title ?? p.path)}</a>`);
+          _push(`<a${ssrRenderAttr("href", hrefTo(p.path))} class="text-muted-foreground no-underline hover:underline hover:text-foreground">${ssrInterpolate(p.title ?? p.path)}</a>`);
         });
         _push(`<!--]--></nav></header>`);
       } else {
